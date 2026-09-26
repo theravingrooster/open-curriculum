@@ -1,13 +1,13 @@
 :root {
-  --paper: #12100e;
-  --paper-2: #1b1814;
-  --ink: #efe6d4;
-  --ink-soft: #b7aa94;
-  --rule: #3a342b;
-  --accent: #d4a15a;
-  --accent-soft: #e8c48a;
-  --card: #1a1713;
-  --card-hover: #221e18;
+  --paper: #080808;
+  --paper-2: #111111;
+  --ink: #f3f3f3;
+  --ink-soft: #9c9c9c;
+  --rule: #2a2a2a;
+  --accent: #f2f2f2;
+  --accent-soft: #ffffff;
+  --card: #101010;
+  --card-hover: #181818;
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   --serif: "Source Serif 4", "Iowan Old Style", Palatino, "Palatino Linotype", "Times New Roman", serif;
   --sans: "Source Sans 3", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -20,7 +20,7 @@ html { font-size: 18px; }
 body {
   margin: 0;
   background:
-    radial-gradient(1200px 500px at 50% -10%, rgba(212, 161, 90, 0.08), transparent 55%),
+    radial-gradient(1200px 500px at 50% -10%, rgba(255, 255, 255, 0.04), transparent 55%),
     var(--paper);
   color: var(--ink);
   font-family: var(--serif);
@@ -39,7 +39,7 @@ a:hover { color: var(--accent-soft); }
 header.site {
   padding: 1.15rem 0 1rem;
   border-bottom: 1px solid var(--rule);
-  background: rgba(18, 16, 14, 0.92);
+  background: rgba(8, 8, 8, 0.92);
   position: sticky;
   top: 0;
   z-index: 20;
@@ -123,13 +123,13 @@ h1 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  color: #1a140c;
+  color: #080808;
   background: var(--accent);
   border: 1px solid var(--accent);
   padding: 0.65rem 1.05rem;
 }
 
-.btn:hover { color: #1a140c; background: var(--accent-soft); border-color: var(--accent-soft); }
+.btn:hover { color: #080808; background: var(--accent-soft); border-color: var(--accent-soft); }
 
 .btn.ghost {
   color: var(--ink);
@@ -194,13 +194,13 @@ h2 {
   text-align: center;
 }
 
-.author img {
+.author img,
+.author .sketch {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
   border: 1px solid var(--rule);
-  filter: grayscale(0.25) contrast(1.05);
   background: var(--paper-2);
 }
 
@@ -400,7 +400,6 @@ article.reading li { margin: 0.3rem 0; }
   height: 180px;
   object-fit: cover;
   border: 1px solid var(--rule);
-  filter: grayscale(0.2);
 }
 
 footer.site {
