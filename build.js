@@ -176,7 +176,7 @@ function initials(name) {
 
 function authorItem(a, prefix, copy) {
   const face = a.portrait
-    ? `<img src="${prefix}${a.portrait}" alt="" width="120" height="120" loading="lazy" decoding="async" />`
+    ? `<img src="${prefix}${a.portrait}" alt="" width="144" height="144" loading="lazy" decoding="async" />`
     : `<span class="initials" aria-hidden="true">${esc(initials(a.name))}</span>`;
   const quote = a.quote
     ? `<span class="quote"><q>${esc(a.quote)}</q>${a.quoteSource ? `<cite>${esc(a.quoteSource)}</cite>` : ''}</span>`
