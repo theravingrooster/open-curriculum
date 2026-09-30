@@ -2,39 +2,15 @@
   "authors": {
     "Nassim Nicholas Taleb": {
       "portrait": "assets/portraits/nassim-nicholas-taleb.webp",
-      "credit": null
+      "credit": null,
+      "quote": "Wind extinguishes a candle and energizes fire.",
+      "quoteSource": "Antifragile"
     },
     "Daniel Kahneman": {
       "portrait": "assets/portraits/daniel-kahneman.webp",
-      "credit": null
-    },
-    "Charlie Munger": {
-      "portrait": null,
-      "credit": null
-    },
-    "Shane Parrish": {
-      "portrait": null,
-      "credit": null
-    },
-    "Rhiannon Beaubien": {
-      "portrait": null,
-      "credit": null
-    },
-    "Robert B. Cialdini": {
-      "portrait": null,
-      "credit": null
-    },
-    "Gary Klein": {
-      "portrait": null,
-      "credit": null
-    },
-    "Olivier Sibony": {
-      "portrait": null,
-      "credit": null
-    },
-    "Cass R. Sunstein": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "Nothing in life is as important as you think it is while you are thinking about it.",
+      "quoteSource": "Thinking, Fast and Slow"
     },
     "Timothy D. Wilson": {
       "portrait": "assets/portraits/timothy-d-wilson.webp",
@@ -42,263 +18,81 @@
     },
     "Thomas C. Schelling": {
       "portrait": "assets/portraits/thomas-c-schelling.webp",
-      "credit": null
+      "credit": null,
+      "quote": "One thing a person cannot do, no matter how rigorous his analysis or heroic his imagination, is to draw up a list of things that would never occur to him.",
+      "quoteSource": "“The Role of War Games and Exercises”"
     },
     "Karl Popper": {
       "portrait": "assets/portraits/karl-popper.webp",
-      "credit": null
-    },
-    "Thomas S. Kuhn": {
-      "portrait": null,
-      "credit": null
-    },
-    "David Deutsch": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "Our knowledge can only be finite, while our ignorance must necessarily be infinite.",
+      "quoteSource": "Conjectures and Refutations"
     },
     "Warren Buffett": {
       "portrait": "assets/portraits/warren-buffett.webp",
-      "credit": null
+      "credit": null,
+      "quote": "We simply attempt to be fearful when others are greedy and to be greedy only when others are fearful.",
+      "quoteSource": "Berkshire Hathaway shareholder letter, 1986"
     },
     "Benjamin Graham": {
       "portrait": "assets/portraits/benjamin-graham.webp",
-      "credit": null
-    },
-    "Andrew S. Grove": {
-      "portrait": null,
-      "credit": null
-    },
-    "Spencer B. Meredith": {
-      "portrait": null,
-      "credit": null
-    },
-    "Peter Lynch": {
-      "portrait": null,
-      "credit": null
-    },
-    "Ben Horowitz": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "The investor’s chief problem—and even his worst enemy—is likely to be himself.",
+      "quoteSource": "The Intelligent Investor"
     },
     "Peter Thiel": {
       "portrait": "assets/portraits/peter-thiel.webp",
-      "credit": null
-    },
-    "Blake Masters": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "What important truth do very few people agree with you on?",
+      "quoteSource": "Zero to One"
     },
     "Josh Waitzkin": {
       "portrait": "assets/portraits/josh-waitzkin.webp",
-      "credit": null
-    },
-    "Joel Greenblatt": {
-      "portrait": null,
-      "credit": null
-    },
-    "Edwin Lefèvre": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "The moment we believe that success is determined by an ingrained level of ability as opposed to resilience and hard work, we will be brittle in the face of adversity.",
+      "quoteSource": "The Art of Learning"
     },
     "Jack D. Schwager": {
       "portrait": "assets/portraits/jack-d-schwager.webp",
-      "credit": null
-    },
-    "Edward Chancellor": {
-      "portrait": null,
-      "credit": null
-    },
-    "Clayton M. Christensen": {
-      "portrait": null,
-      "credit": null
-    },
-    "Jerome H. Grossman": {
-      "portrait": null,
-      "credit": null
-    },
-    "Jason Hwang": {
-      "portrait": null,
-      "credit": null
-    },
-    "Andrew Chen": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "There is no single market secret to discover, no single correct way to trade the markets.",
+      "quoteSource": "Market Wizards"
     },
     "Mark Spitznagel": {
       "portrait": "assets/portraits/mark-spitznagel.webp",
-      "credit": null
-    },
-    "Atul Gawande": {
-      "portrait": null,
-      "credit": null
-    },
-    "Paul Kalanithi": {
-      "portrait": null,
-      "credit": null
-    },
-    "Elisabeth Kübler-Ross": {
-      "portrait": null,
-      "credit": null
-    },
-    "Ted J. Kaptchuk": {
-      "portrait": null,
-      "credit": null
-    },
-    "Anna Lembke": {
-      "portrait": null,
-      "credit": null
-    },
-    "Valter Longo": {
-      "portrait": null,
-      "credit": null
-    },
-    "Eric Topol": {
-      "portrait": null,
-      "credit": null
-    },
-    "Daniel Keown": {
-      "portrait": null,
-      "credit": null
-    },
-    "Amir Raz": {
-      "portrait": null,
-      "credit": null
-    },
-    "Bessel van der Kolk": {
-      "portrait": null,
-      "credit": null
-    },
-    "Michael D. Yapko": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "One gains by losing and loses by gaining.",
+      "quoteSource": "Laozi, as used in The Dao of Capital"
     },
     "Thucydides": {
       "portrait": "assets/portraits/thucydides.webp",
-      "credit": null
-    },
-    "Will Durant": {
-      "portrait": null,
-      "credit": null
-    },
-    "Ariel Durant": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "The strong do what they can and the weak suffer what they must.",
+      "quoteSource": "History of the Peloponnesian War, 5.89"
     },
     "Niccolò Machiavelli": {
       "portrait": "assets/portraits/niccolo-machiavelli.webp",
-      "credit": null
-    },
-    "Bruce Bueno de Mesquita": {
-      "portrait": null,
-      "credit": null
-    },
-    "Alastair Smith": {
-      "portrait": null,
-      "credit": null
-    },
-    "Chris Miller": {
-      "portrait": null,
-      "credit": null
-    },
-    "Gustave Le Bon": {
-      "portrait": null,
-      "credit": null
-    },
-    "Barbara Demick": {
-      "portrait": null,
-      "credit": null
-    },
-    "Robert A. Caro": {
-      "portrait": null,
-      "credit": null
-    },
-    "Alexis de Tocqueville": {
-      "portrait": null,
-      "credit": null
-    },
-    "Daniel Yergin": {
-      "portrait": null,
-      "credit": null
-    },
-    "Seymour M. Hersh": {
-      "portrait": null,
-      "credit": null
-    },
-    "Robert Jay Lifton": {
-      "portrait": null,
-      "credit": null
-    },
-    "Tim Reiterman": {
-      "portrait": null,
-      "credit": null
-    },
-    "John Jacobs": {
-      "portrait": null,
-      "credit": null
-    },
-    "Edward S. Herman": {
-      "portrait": null,
-      "credit": null
-    },
-    "Noam Chomsky": {
-      "portrait": null,
-      "credit": null
-    },
-    "Hannah Arendt": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "It is much safer to be feared than loved, when, of the two, either must be dispensed with.",
+      "quoteSource": "The Prince, ch. 17"
     },
     "Marcus Aurelius": {
       "portrait": "assets/portraits/marcus-aurelius.webp",
-      "credit": null
+      "credit": null,
+      "quote": "The impediment to action advances action. What stands in the way becomes the way.",
+      "quoteSource": "Meditations, 5.20"
     },
     "Seneca": {
       "portrait": "assets/portraits/seneca.webp",
-      "credit": null
-    },
-    "Viktor E. Frankl": {
-      "portrait": null,
-      "credit": null
-    },
-    "Baltasar Gracián": {
-      "portrait": null,
-      "credit": null
-    },
-    "Adele Faber": {
-      "portrait": null,
-      "credit": null
-    },
-    "Elaine Mazlish": {
-      "portrait": null,
-      "credit": null
-    },
-    "Sebastian Junger": {
-      "portrait": null,
-      "credit": null
-    },
-    "Erich Fromm": {
-      "portrait": null,
-      "credit": null
-    },
-    "Amir Levine": {
-      "portrait": null,
-      "credit": null
-    },
-    "Rachel Heller": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "We are more often frightened than hurt; and we suffer more from imagination than from reality.",
+      "quoteSource": "Letters from a Stoic, 13"
     },
     "Miyamoto Musashi": {
       "portrait": "assets/portraits/miyamoto-musashi.webp",
-      "credit": null
-    },
-    "Confucius": {
-      "portrait": null,
-      "credit": null
-    },
-    "Tom Holland": {
-      "portrait": null,
-      "credit": null
+      "credit": null,
+      "quote": "Do nothing which is of no use.",
+      "quoteSource": "The Book of Five Rings"
     }
   }
 }
