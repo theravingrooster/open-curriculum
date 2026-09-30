@@ -14,7 +14,9 @@
     },
     "Timothy D. Wilson": {
       "portrait": "assets/portraits/timothy-d-wilson.webp",
-      "credit": null
+      "credit": null,
+      "quote": "The untutored mind does not like to be alone with itself.",
+      "quoteSource": "“Just Think,” Science, 2014 (Wilson et al.)"
     },
     "Thomas C. Schelling": {
       "portrait": "assets/portraits/thomas-c-schelling.webp",
