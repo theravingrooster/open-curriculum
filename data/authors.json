@@ -9,7 +9,7 @@
     "Daniel Kahneman": {
       "portrait": "assets/portraits/daniel-kahneman.webp",
       "credit": null,
-      "quote": "Nothing in life is as important as you think it is while you are thinking about it.",
+      "quote": "Nothing in life is as important as you think it is when you are thinking about it.",
       "quoteSource": "Thinking, Fast and Slow"
     },
     "Timothy D. Wilson": {
@@ -20,18 +20,18 @@
       "portrait": "assets/portraits/thomas-c-schelling.webp",
       "credit": null,
       "quote": "One thing a person cannot do, no matter how rigorous his analysis or heroic his imagination, is to draw up a list of things that would never occur to him.",
-      "quoteSource": "“The Role of War Games and Exercises”"
+      "quoteSource": "“The Role of War Games and Exercises,” 1987"
     },
     "Karl Popper": {
       "portrait": "assets/portraits/karl-popper.webp",
       "credit": null,
-      "quote": "Our knowledge can only be finite, while our ignorance must necessarily be infinite.",
+      "quote": "Our knowledge can be only finite, while our ignorance must necessarily be infinite.",
       "quoteSource": "Conjectures and Refutations"
     },
     "Warren Buffett": {
       "portrait": "assets/portraits/warren-buffett.webp",
       "credit": null,
-      "quote": "We simply attempt to be fearful when others are greedy and to be greedy only when others are fearful.",
+      "quote": "Our goal is more modest: we simply attempt to be fearful when others are greedy and to be greedy only when others are fearful.",
       "quoteSource": "Berkshire Hathaway shareholder letter, 1986"
     },
     "Benjamin Graham": {
@@ -56,7 +56,7 @@
       "portrait": "assets/portraits/jack-d-schwager.webp",
       "credit": null,
       "quote": "There is no single market secret to discover, no single correct way to trade the markets.",
-      "quoteSource": "Market Wizards"
+      "quoteSource": "The Market Wizards series"
     },
     "Mark Spitznagel": {
       "portrait": "assets/portraits/mark-spitznagel.webp",
@@ -68,25 +68,25 @@
       "portrait": "assets/portraits/thucydides.webp",
       "credit": null,
       "quote": "The strong do what they can and the weak suffer what they must.",
-      "quoteSource": "History of the Peloponnesian War, 5.89"
+      "quoteSource": "History of the Peloponnesian War, 5.89 (tr. Richard Crawley)"
     },
     "Niccolò Machiavelli": {
       "portrait": "assets/portraits/niccolo-machiavelli.webp",
       "credit": null,
       "quote": "It is much safer to be feared than loved, when, of the two, either must be dispensed with.",
-      "quoteSource": "The Prince, ch. 17"
+      "quoteSource": "The Prince, ch. 17 (tr. W. K. Marriott)"
     },
     "Marcus Aurelius": {
       "portrait": "assets/portraits/marcus-aurelius.webp",
       "credit": null,
       "quote": "The impediment to action advances action. What stands in the way becomes the way.",
-      "quoteSource": "Meditations, 5.20"
+      "quoteSource": "Meditations, 5.20 (tr. Gregory Hays)"
     },
     "Seneca": {
       "portrait": "assets/portraits/seneca.webp",
       "credit": null,
-      "quote": "We are more often frightened than hurt; and we suffer more from imagination than from reality.",
-      "quoteSource": "Letters from a Stoic, 13"
+      "quote": "There are more things, Lucilius, likely to frighten us than there are to crush us; we suffer more often in imagination than in reality.",
+      "quoteSource": "Letters, 13 (tr. Richard M. Gummere)"
     },
     "Miyamoto Musashi": {
       "portrait": "assets/portraits/miyamoto-musashi.webp",
