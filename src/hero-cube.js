@@ -211,15 +211,12 @@ function start() {
   }
 
   // The diamond turns with the page instead of on its own: scrolling down turns it
-  // counterclockwise seen from above (front face moving left to right), one full turn from the
-  // top of the page to the bottom; scrolling back up turns it back. Frames are drawn only while
+  // counterclockwise seen from above (front face moving left to right), one full turn per
+  // 1200px scrolled; scrolling back up turns it back. Frames are drawn only while
   // it is catching up with the scroll position, so an idle page costs nothing.
   const SMOOTHING = 0.16; // share of the remaining angle closed per 60 Hz frame
-  const scrollAngle = () => {
-    const range = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-    const y = Math.min(Math.max(window.scrollY, 0), range);
-    return START_ANGLE + (y / range) * 2 * Math.PI;
-  };
+  const PX_PER_TURN = 1200; // scroll distance for one full turn, the same on every page length
+  const scrollAngle = () => START_ANGLE + (Math.max(window.scrollY, 0) / PX_PER_TURN) * 2 * Math.PI;
 
   let raf = 0;
   let last = null;
