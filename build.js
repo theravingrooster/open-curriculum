@@ -64,7 +64,6 @@ function bookItem(b, prefix) {
 
 const NAV = [
   ['library', 'Library', 'library.html'],
-  ['tracks', 'Tracks', 'tracks/index.html'],
   ['mission', 'Mission', 'mission.html'],
 ];
 
@@ -218,17 +217,31 @@ for (const p of STATIC_PAGES) {
 pages.set('library.html', layout({
   title: `Library — ${SITE}`,
   active: 'library',
+  head: '\n  <script src="tracks.js" defer></script>\n  <script src="library.js" defer></script>',
   body: `
   <div class="hero">
     <div class="wrap">
       <p class="kicker">Table of contents</p>
       <h1>The library</h1>
-      <p class="lede">Every track, every book, in one list. Linked titles have a guide; the rest are listed so you can see the sequence.</p>
-      <p class="meta-line">${books.length} books · ${books.filter(isPublished).length} guides · Ctrl+F / ⌘F a title</p>
     </div>
   </div>
 
-  <section>
+  <section class="library-filter">
+    <div class="wrap">
+      <div class="tracks track-filter" role="group" aria-label="Show books from">
+        <button type="button" class="track filter-box is-active" data-track="all" aria-pressed="true">
+          <span class="n">All</span>
+          <span class="name">Every track</span>
+        </button>
+${tracks.map((t) => `        <button type="button" class="track filter-box" data-track="${t.id}" aria-pressed="false">
+          <span class="n">${t.label}</span>
+          <span class="name">${esc(t.name)}</span>
+        </button>`).join('\n')}
+      </div>
+    </div>
+  </section>
+
+  <section class="library-list">
     <div class="wrap">
       <div class="toc">
 ${tracks.map((t) => `        <div class="toc-track" id="${t.id}">
@@ -253,7 +266,7 @@ tracks.forEach((t, i) => {
   pages.set(`tracks/${t.id}.html`, layout({
     title: `${t.label} — ${t.name} — ${SITE}`,
     prefix: '../',
-    active: 'tracks',
+    active: 'library',
     body: `
   <div class="hero">
     <div class="wrap">
@@ -277,27 +290,6 @@ ${list.filter((b) => b.level === lv).map((b) => '          ' + bookItem(b, '../'
       ${next ? `<a href="${next.id}.html">Next: ${esc(next.name)} →</a>` : ''}`,
   }));
 });
-
-// ---------- tracks index ----------
-
-pages.set('tracks/index.html', layout({
-  title: `Tracks — ${SITE}`,
-  prefix: '../',
-  active: 'tracks',
-  head: '\n  <script src="../tracks.js" defer></script>',
-  body: `
-  <div class="hero">
-    <div class="wrap">
-      <h1>Tracks</h1>
-    </div>
-  </div>
-
-  <section>
-    <div class="wrap">
-      ${trackCards.replace(/href="tracks\//g, 'href="')}
-    </div>
-  </section>`,
-}));
 
 // ---------- topics ----------
 
