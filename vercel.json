@@ -1,8 +1,11 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npm test",
   "outputDirectory": "dist",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/favicon.ico", "destination": "/favicon.svg" }
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.svg"
+    }
   ]
 }
