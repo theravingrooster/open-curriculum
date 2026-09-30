@@ -2,7 +2,7 @@
 
 Human judgment runs mostly on a fast, automatic system that produces confident answers from whatever information is at hand, and its errors are systematic enough to predict and correct.
 
-## The book in brief
+## The main ideas
 
 - Two modes of thought: System 1 is fast, automatic and effortless; System 2 is slow, deliberate and lazy, and mostly endorses what System 1 suggests.
 - System 1 builds the most coherent story it can from the information in view and ignores what is missing. Confidence follows the coherence of the story, not the quality of the evidence.

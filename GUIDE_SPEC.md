@@ -10,7 +10,7 @@ Rank ideas by how much they change a decision, and how non-obvious they are. An 
 ## Structure
 1. Title line. Title, author, year.
 2. Thesis. One sentence: the book's central claim, stated as a claim.
-3. The book in brief. 5–7 bullets, one or two sentences each, under 200 words in total. If someone read only this, they'd have the core.
+3. The main ideas. 5–7 bullets, one or two sentences each, under 200 words in total. If someone read only this, they'd have the core.
 4. Ideas. 4–8 sections, as many as the book earns. Each gets a heading using the author's name for the idea where there is one. Each section:
    - The idea, in one or two exact sentences.
    - The mechanism: why it holds, according to the author.
