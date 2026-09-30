@@ -38,6 +38,21 @@
       "source": "/how-to-read-faster.html",
       "destination": "/mission",
       "permanent": true
+    },
+    {
+      "source": "/tracks",
+      "destination": "/library",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/",
+      "destination": "/library",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/index.html",
+      "destination": "/library",
+      "permanent": true
     }
   ]
 }

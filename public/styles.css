@@ -361,6 +361,34 @@ ul.credits .title { font-weight: 600; }
 @media (max-width: 900px) {
   .track { flex-basis: calc((100% - var(--track-gap)) / 2); }
 }
+/* Library filter: compact track cards as toggle buttons. The selected one keeps the glow. */
+.library-filter { padding: 2rem 0 0.4rem; }
+.library-list { padding-top: 1.6rem; }
+.track.filter-box {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 0.85rem 1.1rem 0.9rem;
+}
+.filter-box .n { display: block; }
+.filter-box .name {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.track.filter-box.is-active {
+  background: var(--card-hover);
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 0 22px rgba(255, 255, 255, 0.3),
+    0 0 64px rgba(255, 255, 255, 0.14);
+}
+.toc-track[hidden] { display: none; }
+
 /* Home page mission: one centred card, styled and animated like the track cards. */
 .track.mission-card {
   flex: 0 1 44rem;
