@@ -336,7 +336,7 @@ for (const b of books.filter(isPublished)) {
     return `    <div class="guide-nav-row">
       <p class="level"><a href="${trackHref(t, '../')}">${t.label} — ${esc(t.name)}</a></p>
       <div class="guide-nav-links">
-        ${prev ? `<a href="${prev.slug}.html">← ${esc(prev.title)}</a>` : '<span></span>'}
+        ${prev ? `<a href="${prev.slug}.html">← ${esc(prev.title)}</a>` : `<a href="${trackHref(t, '../')}">← All books in ${esc(t.name)}</a>`}
         ${next ? `<a href="${next.slug}.html">${esc(next.title)} →</a>` : '<span></span>'}
       </div>
     </div>`;
