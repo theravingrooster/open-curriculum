@@ -174,40 +174,119 @@ function clip(faces, n, d) {
   return out;
 }
 
-function fracture(a, h, count, seed) {
+// Same clip as above, for a surface whose vertices carry their own normals (the soft diamond's
+// rounded edges): cut edges interpolate the normal, and the closing face is flat.
+function clipSmooth(faces, n, d) {
+  const out = [];
+  const cut = [];
+  const EPS = 1e-9;
+  for (const f of faces) {
+    const kept = [];
+    for (let i = 0; i < f.length; i++) {
+      const p = f[i], q = f[(i + 1) % f.length];
+      const dp = n.dot(p.p) - d, dq = n.dot(q.p) - d;
+      if (dp <= EPS) kept.push(p);
+      if ((dp < -EPS && dq > EPS) || (dp > EPS && dq < -EPS)) {
+        const t = dp / (dp - dq);
+        const x = { p: p.p.clone().lerp(q.p, t), n: p.n.clone().lerp(q.n, t).normalize() };
+        kept.push(x);
+        cut.push(x.p);
+      } else if (Math.abs(dp) <= EPS) cut.push(p.p);
+    }
+    if (kept.length >= 3) { kept.cap = f.cap; out.push(kept); }
+  }
+  if (cut.length >= 3) {
+    const c = cut.reduce((acc, p) => acc.add(p), new Vector3()).divideScalar(cut.length);
+    const far = cut.find((p) => p.distanceToSquared(c) > 1e-12);
+    if (far) {
+      const u = far.clone().sub(c).normalize();
+      const v = n.clone().cross(u);
+      const uniq = [];
+      for (const p of cut) if (!uniq.some((q) => q.distanceToSquared(p) < 1e-12)) uniq.push(p);
+      const ang = (p) => Math.atan2(p.clone().sub(c).dot(v), p.clone().sub(c).dot(u));
+      uniq.sort((p, q) => ang(p) - ang(q));
+      if (uniq.length >= 3) {
+        const capFace = uniq.map((p) => ({ p, n: n.clone() }));
+        capFace.cap = true; // an inside face, exposed only when the pieces separate
+        out.push(capFace);
+      }
+    }
+  }
+  return out;
+}
+
+// Break the soft-edged diamond (`soft`, a BufferGeometry) into pieces. Each piece's Voronoi cell
+// is first found against the plain octahedron (cheap), then the soft surface is cut by just
+// that cell's bisecting planes. The pieces' outer surfaces are the soft diamond's own surface,
+// normals included, so the reassembled pieces look exactly like the intact diamond.
+function fracture(a, h, count, seed, soft) {
   const rand = mulberry32(seed);
   const seeds = [];
   while (seeds.length < count) {
     const p = new Vector3((rand() * 2 - 1) * a, (rand() * 2 - 1) * h, (rand() * 2 - 1) * a);
     if (Math.abs(p.x) / a + Math.abs(p.y) / h + Math.abs(p.z) / a < 0.97) seeds.push(p);
   }
+  // The soft surface as triangles with per-vertex normals.
+  const sp = soft.attributes.position, sn = soft.attributes.normal;
+  const tris = [];
+  for (let t = 0; t < sp.count; t += 3) {
+    const f = [0, 1, 2].map((k) => ({
+      p: new Vector3(sp.getX(t + k), sp.getY(t + k), sp.getZ(t + k)),
+      n: new Vector3(sn.getX(t + k), sn.getY(t + k), sn.getZ(t + k)),
+    }));
+    const c = f[0].p.clone().add(f[1].p).add(f[2].p).divideScalar(3);
+    tris.push({ f, c, r: Math.max(...f.map((v) => v.p.distanceTo(c))) });
+  }
   const pieces = [];
   for (let i = 0; i < seeds.length; i++) {
-    let faces = octahedronFaces(a, h);
-    for (let j = 0; j < seeds.length && faces.length; j++) {
+    let cell = octahedronFaces(a, h);
+    const planes = [];
+    for (let j = 0; j < seeds.length && cell.length; j++) {
       if (i === j) continue;
       const n = seeds[j].clone().sub(seeds[i]).normalize();
       const d = n.dot(seeds[i].clone().add(seeds[j]).multiplyScalar(0.5));
-      faces = clip(faces, n, d);
+      const before = cell.length;
+      cell = clip(cell, n, d);
+      planes.push({ n, d, before });
+    }
+    if (cell.length < 4) continue;
+    // Keep only the bisecting planes that actually bound the final cell.
+    const pts = cell.flat();
+    const bounding = planes.filter(({ n, d }) => pts.some((p) => Math.abs(n.dot(p) - d) < 1e-7));
+    const cc = pts.reduce((acc, p) => acc.add(p), new Vector3()).divideScalar(pts.length);
+    const cr = Math.max(...pts.map((p) => p.distanceTo(cc)));
+    let faces = tris.filter((t) => t.c.distanceTo(cc) <= cr + t.r + 1e-6).map((t) => t.f);
+    for (const { n, d } of bounding) {
+      if (!faces.length) break;
+      faces = clipSmooth(faces, n, d);
     }
     if (faces.length < 4) continue;
     // Centre each piece on its own centroid so it can be moved as a unit.
-    const pts = faces.flat();
-    const centre = pts.reduce((acc, p) => acc.add(p), new Vector3()).divideScalar(pts.length);
+    const verts = faces.flat();
+    const centre = verts.reduce((acc, v) => acc.add(v.p), new Vector3()).divideScalar(verts.length);
+    // Outer surface first, inside (cut) faces second, as two draw groups: the cut faces get their
+    // own material, pushed back in the depth test so that where a cut face meets the outer
+    // surface, the surface always wins and the assembled pieces show no seams.
     const pos = [];
     const nor = [];
-    for (const f of faces) {
-      const fn = f[1].clone().sub(f[0]).cross(f[2].clone().sub(f[0])).normalize();
-      for (let k = 1; k < f.length - 1; k++) {
-        for (const p of [f[0], f[k], f[k + 1]]) {
-          pos.push(p.x - centre.x, p.y - centre.y, p.z - centre.z);
-          nor.push(fn.x, fn.y, fn.z);
+    let surfaceVerts = 0;
+    for (const pass of [false, true]) {
+      for (const f of faces) {
+        if (!!f.cap !== pass) continue;
+        for (let k = 1; k < f.length - 1; k++) {
+          for (const v of [f[0], f[k], f[k + 1]]) {
+            pos.push(v.p.x - centre.x, v.p.y - centre.y, v.p.z - centre.z);
+            nor.push(v.n.x, v.n.y, v.n.z);
+          }
         }
       }
+      if (!pass) surfaceVerts = pos.length / 3;
     }
     const geo = new BufferGeometry();
     geo.setAttribute('position', new Float32BufferAttribute(pos, 3));
     geo.setAttribute('normal', new Float32BufferAttribute(nor, 3));
+    geo.addGroup(0, surfaceVerts, 0);
+    geo.addGroup(surfaceVerts, pos.length / 3 - surfaceVerts, 1);
     // Fly outward from the centre, pieces near the surface further, with some variation so the
     // cloud is irregular rather than a scaled-up diamond.
     const dir = centre.lengthSq() > 1e-6 ? centre.clone().normalize() : new Vector3(0, 1, 0);
@@ -233,28 +312,48 @@ export function createHeroScene(canvas) {
   const assembly = new Group();
   assembly.rotation.y = START_ANGLE;
   scene.add(assembly);
-  // Intact, the diamond is drawn as one soft-edged mesh; once it starts to break, the pieces.
-  const whole = new Mesh(softOctahedron(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, EDGE_RADIUS), material);
+  // Intact, the diamond is drawn as one soft-edged mesh; once it starts to break, the pieces,
+  // which are cut from that same soft surface, so there is no visible switch between the two.
+  const softGeo = softOctahedron(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, EDGE_RADIUS);
+  // While the pieces are only just parting, the intact diamond stays drawn directly behind them
+  // (pushed back slightly in the depth test): it fills the pixel-wide gaps where three pieces
+  // meet with exactly the same surface, and then shrinks away inside the pieces as the cracks
+  // open, so there is never a moment where one version is swapped for the other.
+  const wholeMaterial = material.clone();
+  wholeMaterial.polygonOffset = true;
+  wholeMaterial.polygonOffsetFactor = 1;
+  wholeMaterial.polygonOffsetUnits = 1;
+  const whole = new Mesh(softGeo, wholeMaterial);
   assembly.add(whole);
+  const cutMaterial = material.clone();
+  cutMaterial.polygonOffset = true;
+  cutMaterial.polygonOffsetFactor = 4;
+  cutMaterial.polygonOffsetUnits = 16;
   const shards = new Group();
-  const flatMaterial = material.clone();
-  flatMaterial.flatShading = true;
-  const pieces = fracture(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, FRAGMENTS, FRAGMENT_SEED)
-    .map((p) => {
-      const mesh = new Mesh(p.geo, flatMaterial);
-      mesh.position.copy(p.centre);
-      shards.add(mesh);
-      return { mesh, centre: p.centre, offset: p.offset };
-    });
   shards.visible = false;
   assembly.add(shards);
+  // Cutting the pieces takes ~0.1 s, so it happens in an idle moment after the first frame
+  // (see prepare()), or on the spot if the page is scrolled before then.
+  let pieces = null;
+  const prepare = () => {
+    if (pieces) return;
+    pieces = fracture(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, FRAGMENTS, FRAGMENT_SEED, softGeo)
+      .map((p) => {
+        const mesh = new Mesh(p.geo, [material, cutMaterial]);
+        mesh.position.copy(p.centre);
+        shards.add(mesh);
+        return { mesh, centre: p.centre, offset: p.offset };
+      });
+  };
   let explosion = 0;
   // e: 0 = intact, 1 = fully apart.
   const setExplode = (e) => {
     explosion = e;
-    const broken = e > 0.002;
-    whole.visible = !broken;
+    const broken = e > 0;
+    if (broken) prepare();
     shards.visible = broken;
+    whole.visible = e < 0.08;
+    whole.scale.setScalar(Math.max(0.7, 1 - 4 * e));
     if (!broken) return;
     for (const p of pieces) p.mesh.position.copy(p.centre).addScaledVector(p.offset, e);
   };
@@ -301,6 +400,7 @@ export function createHeroScene(canvas) {
     setAngle(a) { assembly.rotation.y = a; },
     get angle() { return assembly.rotation.y; },
     setExplode,
+    prepare,
     get explosion() { return explosion; },
     render() { renderer.render(scene, camera); },
   };
@@ -406,6 +506,7 @@ function start() {
   const stop = () => { running = false; last = null; cancelAnimationFrame(raf); };
 
   if (!reduceMotion.matches) { show(scrollTarget()); hero.render(); }
+  if (!reduceMotion.matches) (window.requestIdleCallback || setTimeout)(() => hero.prepare(), { timeout: 3000 });
   document.addEventListener('visibilitychange', () => (document.hidden ? stop() : follow()));
   reduceMotion.addEventListener('change', () => {
     stop();
