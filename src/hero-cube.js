@@ -1,14 +1,17 @@
-// Home page background: a cream octahedron, centred on the page, that turns as the page scrolls.
+// Home page background: a cream octahedron, centred on the page, that turns as the page scrolls
+// and breaks apart into fragments as you scroll down (and reassembles as you scroll back up).
 // Bundled to assets/js/hero-cube.js with `npm run bundle:hero`. Loaded by pages/index.html
 // after the page's load event, and only on wide screens.
 import {
-  WebGLRenderer, Scene, PerspectiveCamera, Mesh, MeshStandardMaterial, BufferGeometry, Float32BufferAttribute,
+  WebGLRenderer, Scene, PerspectiveCamera, Mesh, Group, MeshStandardMaterial, BufferGeometry, Float32BufferAttribute,
   DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3,
 } from 'three';
 
 const DIAMOND_HALF_HEIGHT = 1.1;
 const DIAMOND_ASPECT = 1.4;         // height / width
 const EDGE_RADIUS = 0.04;          // radius of the rounded edges and tips (0 = knife-sharp)
+const FRAGMENTS = 56;             // number of pieces the diamond breaks into
+const FRAGMENT_SEED = 7;           // fixed, so the pieces are the same on every visit
 const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
@@ -109,6 +112,112 @@ function softOctahedron(halfWidth, halfHeight, radius, segments = 8) {
   return geo;
 }
 
+// ---------- fracture ----------
+// The diamond is pre-broken into irregular convex pieces: a Voronoi fracture of the octahedron.
+// Each piece is the octahedron clipped by the bisecting planes between its seed point and every
+// other seed. Pieces keep their orientation; only their positions change as they fly apart.
+
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+// A convex polyhedron as a list of faces; each face is a list of points wound counterclockwise
+// seen from outside.
+function octahedronFaces(a, h) {
+  const faces = [];
+  for (const sx of [1, -1]) for (const sy of [1, -1]) for (const sz of [1, -1]) {
+    let f = [new Vector3(sx * a, 0, 0), new Vector3(0, sy * h, 0), new Vector3(0, 0, sz * a)];
+    const n = f[1].clone().sub(f[0]).cross(f[2].clone().sub(f[0]));
+    if (n.dot(f[0]) < 0) f = [f[0], f[2], f[1]];
+    faces.push(f);
+  }
+  return faces;
+}
+
+// Keep the part of the polyhedron where n·x <= d, closing the cut with a new face.
+function clip(faces, n, d) {
+  const out = [];
+  const cut = [];
+  const EPS = 1e-9;
+  for (const f of faces) {
+    const kept = [];
+    for (let i = 0; i < f.length; i++) {
+      const p = f[i], q = f[(i + 1) % f.length];
+      const dp = n.dot(p) - d, dq = n.dot(q) - d;
+      if (dp <= EPS) kept.push(p);
+      if ((dp < -EPS && dq > EPS) || (dp > EPS && dq < -EPS)) {
+        const x = p.clone().lerp(q, dp / (dp - dq));
+        kept.push(x);
+        cut.push(x);
+      } else if (Math.abs(dp) <= EPS) cut.push(p);
+    }
+    if (kept.length >= 3) out.push(kept);
+  }
+  if (cut.length >= 3) {
+    const c = cut.reduce((acc, p) => acc.add(p), new Vector3()).divideScalar(cut.length);
+    const u = cut.find((p) => p.distanceToSquared(c) > 1e-12).clone().sub(c).normalize();
+    const v = n.clone().cross(u);
+    const uniq = [];
+    for (const p of cut) if (!uniq.some((q) => q.distanceToSquared(p) < 1e-12)) uniq.push(p);
+    uniq.sort((p, q) => {
+      const a = Math.atan2(p.clone().sub(c).dot(v), p.clone().sub(c).dot(u));
+      const b = Math.atan2(q.clone().sub(c).dot(v), q.clone().sub(c).dot(u));
+      return a - b;
+    });
+    if (uniq.length >= 3) out.push(uniq);
+  }
+  return out;
+}
+
+function fracture(a, h, count, seed) {
+  const rand = mulberry32(seed);
+  const seeds = [];
+  while (seeds.length < count) {
+    const p = new Vector3((rand() * 2 - 1) * a, (rand() * 2 - 1) * h, (rand() * 2 - 1) * a);
+    if (Math.abs(p.x) / a + Math.abs(p.y) / h + Math.abs(p.z) / a < 0.97) seeds.push(p);
+  }
+  const pieces = [];
+  for (let i = 0; i < seeds.length; i++) {
+    let faces = octahedronFaces(a, h);
+    for (let j = 0; j < seeds.length && faces.length; j++) {
+      if (i === j) continue;
+      const n = seeds[j].clone().sub(seeds[i]).normalize();
+      const d = n.dot(seeds[i].clone().add(seeds[j]).multiplyScalar(0.5));
+      faces = clip(faces, n, d);
+    }
+    if (faces.length < 4) continue;
+    // Centre each piece on its own centroid so it can be moved as a unit.
+    const pts = faces.flat();
+    const centre = pts.reduce((acc, p) => acc.add(p), new Vector3()).divideScalar(pts.length);
+    const pos = [];
+    const nor = [];
+    for (const f of faces) {
+      const fn = f[1].clone().sub(f[0]).cross(f[2].clone().sub(f[0])).normalize();
+      for (let k = 1; k < f.length - 1; k++) {
+        for (const p of [f[0], f[k], f[k + 1]]) {
+          pos.push(p.x - centre.x, p.y - centre.y, p.z - centre.z);
+          nor.push(fn.x, fn.y, fn.z);
+        }
+      }
+    }
+    const geo = new BufferGeometry();
+    geo.setAttribute('position', new Float32BufferAttribute(pos, 3));
+    geo.setAttribute('normal', new Float32BufferAttribute(nor, 3));
+    // Fly outward from the centre, pieces near the surface further, with some variation so the
+    // cloud is irregular rather than a scaled-up diamond.
+    const dir = centre.lengthSq() > 1e-6 ? centre.clone().normalize() : new Vector3(0, 1, 0);
+    dir.add(new Vector3(rand() - 0.5, rand() - 0.5, rand() - 0.5).multiplyScalar(0.6)).normalize();
+    const reach = 0.6 + rand() * 0.8 + centre.length() * 0.5;
+    pieces.push({ geo, centre, offset: dir.multiplyScalar(reach) });
+  }
+  return pieces;
+}
+
 export function createHeroScene(canvas) {
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setClearColor(0x000000, 0); // transparent: the page background shows through
@@ -118,12 +227,37 @@ export function createHeroScene(canvas) {
   const scene = new Scene();
 
   // Diamond: elongated octahedron with softened edges, matte cream.
-  const diamond = new Mesh(
-    softOctahedron(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, EDGE_RADIUS),
-    new MeshStandardMaterial({ color: 0xe6ddcf, roughness: 0.9, metalness: 0 }),
-  );
-  diamond.rotation.y = START_ANGLE;
-  scene.add(diamond);
+  const material = new MeshStandardMaterial({ color: 0xe6ddcf, roughness: 0.9, metalness: 0 });
+  // The whole assembly turns around the vertical axis; the pieces inside it never rotate on
+  // their own, so every fragment keeps the same orientation as it drifts outward.
+  const assembly = new Group();
+  assembly.rotation.y = START_ANGLE;
+  scene.add(assembly);
+  // Intact, the diamond is drawn as one soft-edged mesh; once it starts to break, the pieces.
+  const whole = new Mesh(softOctahedron(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, EDGE_RADIUS), material);
+  assembly.add(whole);
+  const shards = new Group();
+  const flatMaterial = material.clone();
+  flatMaterial.flatShading = true;
+  const pieces = fracture(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, FRAGMENTS, FRAGMENT_SEED)
+    .map((p) => {
+      const mesh = new Mesh(p.geo, flatMaterial);
+      mesh.position.copy(p.centre);
+      shards.add(mesh);
+      return { mesh, centre: p.centre, offset: p.offset };
+    });
+  shards.visible = false;
+  assembly.add(shards);
+  let explosion = 0;
+  // e: 0 = intact, 1 = fully apart.
+  const setExplode = (e) => {
+    explosion = e;
+    const broken = e > 0.002;
+    whole.visible = !broken;
+    shards.visible = broken;
+    if (!broken) return;
+    for (const p of pieces) p.mesh.position.copy(p.centre).addScaledVector(p.offset, e);
+  };
 
   const camera = new PerspectiveCamera(30, 1, 0.1, 100);
   const viewDir = new Vector3(
@@ -164,8 +298,10 @@ export function createHeroScene(canvas) {
   return {
     renderer,
     layout,
-    setAngle(a) { diamond.rotation.y = a; },
-    get angle() { return diamond.rotation.y; },
+    setAngle(a) { assembly.rotation.y = a; },
+    get angle() { return assembly.rotation.y; },
+    setExplode,
+    get explosion() { return explosion; },
     render() { renderer.render(scene, camera); },
   };
 }
@@ -201,22 +337,32 @@ function start() {
 
   // Export hook for scripts/hero-media.mjs (renders a square still for assets/hero-static.webp).
   if (params.has('hero-export')) {
-    window.__heroExport = (px, angle, heightFraction = 0.9) => {
+    window.__heroExport = (px, angle, heightFraction = 0.9, explode = 0) => {
       hero.renderer.setPixelRatio(1);
       hero.layout(px, px, { heightFraction });
       hero.setAngle(angle);
+      hero.setExplode(explode);
       hero.render();
       return canvas.toDataURL('image/png');
     };
   }
 
-  // The diamond turns with the page instead of on its own: scrolling down turns it
-  // counterclockwise seen from above (front face moving left to right), one full turn per
-  // 1200px scrolled; scrolling back up turns it back. Frames are drawn only while
-  // it is catching up with the scroll position, so an idle page costs nothing.
-  const SMOOTHING = 0.16; // share of the remaining angle closed per 60 Hz frame
-  const PX_PER_TURN = 1200; // scroll distance for one full turn, the same on every page length
-  const scrollAngle = () => START_ANGLE + (Math.max(window.scrollY, 0) / PX_PER_TURN) * 2 * Math.PI;
+  // The diamond follows the scroll position instead of moving on its own. Scrolling down turns
+  // it counterclockwise seen from above (front face moving left to right), one full turn per
+  // 1200px, and breaks it apart over the first 600px; scrolling back up turns it back and
+  // reassembles it. The scroll position is eased so wheel steps look smooth, and frames are
+  // drawn only while it is catching up, so an idle page costs nothing.
+  const SMOOTHING = 0.16;   // share of the remaining distance closed per 60 Hz frame
+  const PX_PER_TURN = 1200; // scroll distance for one full turn
+  const PX_TO_BREAK = 600;  // scroll distance from intact to fully apart
+  const scrollTarget = () => Math.max(window.scrollY, 0);
+  let shown = scrollTarget(); // the eased scroll position currently drawn
+  const show = (y) => {
+    shown = y;
+    hero.setAngle(START_ANGLE + (y / PX_PER_TURN) * 2 * Math.PI);
+    const t = Math.min(y / PX_TO_BREAK, 1);
+    hero.setExplode(t * t * (3 - 2 * t)); // smoothstep: eases out of and into the intact shape
+  };
 
   let raf = 0;
   let last = null;
@@ -242,15 +388,15 @@ function start() {
         return;
       }
     }
-    const target = scrollAngle();
-    const diff = target - hero.angle;
-    const settled = Math.abs(diff) < 0.0005;
+    const target = scrollTarget();
+    const diff = target - shown;
+    const settled = Math.abs(diff) < 0.25;
     const k = 1 - Math.pow(1 - SMOOTHING, dt > 0 ? dt * 60 : 1);
-    hero.setAngle(settled ? target : hero.angle + diff * k);
+    show(settled ? target : shown + diff * k);
     hero.render();
     if (settled) { running = false; last = null; } else raf = requestAnimationFrame(step);
   };
-  // Under prefers-reduced-motion the diamond stays still at its starting angle.
+  // Under prefers-reduced-motion the diamond stays still and intact.
   const follow = () => {
     if (running || reduceMotion.matches || document.hidden || !onScreen) return;
     running = true;
@@ -259,11 +405,11 @@ function start() {
   };
   const stop = () => { running = false; last = null; cancelAnimationFrame(raf); };
 
-  if (!reduceMotion.matches) { hero.setAngle(scrollAngle()); hero.render(); }
+  if (!reduceMotion.matches) { show(scrollTarget()); hero.render(); }
   document.addEventListener('visibilitychange', () => (document.hidden ? stop() : follow()));
   reduceMotion.addEventListener('change', () => {
     stop();
-    hero.setAngle(reduceMotion.matches ? START_ANGLE : scrollAngle());
+    show(reduceMotion.matches ? 0 : scrollTarget());
     hero.render();
   });
   new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; onScreen ? follow() : stop(); }).observe(canvas);
