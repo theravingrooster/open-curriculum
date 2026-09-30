@@ -33,9 +33,7 @@ All of these are edits to `data/curriculum.json`, then `npm test`.
 - Remove a track: delete it from `tracks` and remove its `id` from every book’s `tracks`. The build fails if a book still names it or is left with no track.
 - Reorder tracks: change `order`. Numbering (Track I, II, …) follows.
 - Books within a track are ordered by `level`, then by their position in `books`.
-- Add an author portrait: only Wikimedia Commons images that are public domain, CC BY or CC BY-SA. Save a square WebP at 208×208 (under ~30 KB) in `assets/portraits/`, then fill in the author's entry in `data/authors.json`:
-  `"portrait": "assets/portraits/<name>.webp", "credit": { "title": "…", "creator": "…", "license": "CC BY-SA 4.0", "licenseUrl": "…", "source": "<Commons file page URL>" }`.
-  The home carousel and the Credits page pick it up; authors without one show their initials.
+- Add author portraits: put transparent cut-outs (head and shoulders), named after the author, e.g. `daniel-kahneman.png`, in a folder and run `python3 scripts/portraits.py <folder>` (needs Pillow). It trims, scales, fades the bottom edge, writes `assets/portraits/<name>.webp` (240×240, ~10 KB) and records it in `data/authors.json`. Authors without one show floating initials. If a portrait is a licensed photo, add its `credit` (title, creator, license, licenseUrl, source) so the Credits page attributes it.
 
 ## License note
 

@@ -1,11 +1,11 @@
 {
   "authors": {
     "Nassim Nicholas Taleb": {
-      "portrait": null,
+      "portrait": "assets/portraits/nassim-nicholas-taleb.webp",
       "credit": null
     },
     "Daniel Kahneman": {
-      "portrait": null,
+      "portrait": "assets/portraits/daniel-kahneman.webp",
       "credit": null
     },
     "Charlie Munger": {
@@ -45,7 +45,7 @@
       "credit": null
     },
     "Karl Popper": {
-      "portrait": null,
+      "portrait": "assets/portraits/karl-popper.webp",
       "credit": null
     },
     "Thomas S. Kuhn": {
@@ -57,11 +57,11 @@
       "credit": null
     },
     "Warren Buffett": {
-      "portrait": null,
+      "portrait": "assets/portraits/warren-buffett.webp",
       "credit": null
     },
     "Benjamin Graham": {
-      "portrait": null,
+      "portrait": "assets/portraits/benjamin-graham.webp",
       "credit": null
     },
     "Andrew S. Grove": {
@@ -89,7 +89,7 @@
       "credit": null
     },
     "Josh Waitzkin": {
-      "portrait": null,
+      "portrait": "assets/portraits/josh-waitzkin.webp",
       "credit": null
     },
     "Joel Greenblatt": {
@@ -101,7 +101,7 @@
       "credit": null
     },
     "Jack D. Schwager": {
-      "portrait": null,
+      "portrait": "assets/portraits/jack-d-schwager.webp",
       "credit": null
     },
     "Edward Chancellor": {
@@ -125,7 +125,7 @@
       "credit": null
     },
     "Mark Spitznagel": {
-      "portrait": null,
+      "portrait": "assets/portraits/mark-spitznagel.webp",
       "credit": null
     },
     "Atul Gawande": {
@@ -185,7 +185,7 @@
       "credit": null
     },
     "Niccolò Machiavelli": {
-      "portrait": null,
+      "portrait": "assets/portraits/niccolo-machiavelli.webp",
       "credit": null
     },
     "Bruce Bueno de Mesquita": {
@@ -249,7 +249,7 @@
       "credit": null
     },
     "Marcus Aurelius": {
-      "portrait": null,
+      "portrait": "assets/portraits/marcus-aurelius.webp",
       "credit": null
     },
     "Seneca": {
@@ -289,7 +289,7 @@
       "credit": null
     },
     "Miyamoto Musashi": {
-      "portrait": null,
+      "portrait": "assets/portraits/miyamoto-musashi.webp",
       "credit": null
     },
     "Confucius": {

@@ -156,8 +156,10 @@ for (const a of authors) {
   a.credit = d.credit || null;
   if (a.portrait) {
     if (!fs.existsSync(path.join(ROOT, a.portrait))) errors.push(`data/authors.json: ${a.name}: ${a.portrait} does not exist`);
-    const c = a.credit || {};
-    for (const k of ['creator', 'license', 'licenseUrl', 'source']) if (!c[k]) errors.push(`data/authors.json: ${a.name}: portrait needs credit.${k}`);
+    // A credit is optional (portraits supplied by the site owner need none); if one is given,
+    // it must be complete so the Credits page can attribute it properly.
+    const c = a.credit;
+    if (c) for (const k of ['creator', 'license', 'licenseUrl', 'source']) if (!c[k]) errors.push(`data/authors.json: ${a.name}: credit needs ${k}`);
   }
 }
 for (const name of Object.keys(authorData)) {
@@ -172,7 +174,7 @@ function initials(name) {
 
 function authorItem(a, prefix, copy) {
   const face = a.portrait
-    ? `<img src="${prefix}${a.portrait}" alt="" width="104" height="104" loading="lazy" decoding="async" />`
+    ? `<img src="${prefix}${a.portrait}" alt="" width="120" height="120" loading="lazy" decoding="async" />`
     : `<span class="initials" aria-hidden="true">${esc(initials(a.name))}</span>`;
   const inner = `${face}<span class="name">${esc(a.name)}</span>`;
   if (!a.guide) return `<li class="author">${inner}</li>`;
@@ -320,7 +322,7 @@ ${books.filter((b) => (b.topics || []).includes(tp.id)).map((b) => '          ' 
 
 // ---------- credits ----------
 
-const credited = authors.filter((a) => a.portrait);
+const credited = authors.filter((a) => a.portrait && a.credit);
 const placeholders = authors.filter((a) => !a.portrait);
 pages.set('credits.html', layout({
   title: `Credits — ${SITE}`,

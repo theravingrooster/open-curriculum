@@ -226,37 +226,31 @@ h2 {
   margin: 0;
   /* Trailing space equals the gap, and every size is a whole pixel, so one set is exactly
      half the track and the -50% loop point lands on a pixel boundary: no visible jump. */
-  padding: 34px 28px 10px 0; /* headroom for the hover magnification */
+  padding: 42px 28px 10px 0; /* headroom for the hover magnification */
 }
-.marquee .author { flex: 0 0 auto; width: 104px; text-align: center; }
+.marquee .author { flex: 0 0 auto; width: 120px; text-align: center; }
 .marquee .author a { display: block; color: inherit; text-decoration: none; border-radius: 4px; }
 .marquee .author a:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+/* Portraits are transparent cut-outs that float on the page: no frame, no background. */
 .marquee .author img,
 .marquee .initials {
   display: block;
-  width: 104px;
-  height: 104px;
-  border-radius: 50%;
-  border: 1px solid var(--rule);
-  background: var(--paper-2);
-  object-fit: cover;
-  object-position: center;
-  filter: grayscale(1);
-  transition: filter 0.5s ease;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  object-position: center bottom;
 }
-.marquee .author a:hover img,
-.marquee .author a:focus-visible img { filter: grayscale(0); }
+.marquee .author img { filter: grayscale(1); }
+/* Authors without a portrait yet: their initials float the same way. */
 .marquee .initials {
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--serif);
-  font-size: 1.9rem;
+  font-size: 2.3rem;
   letter-spacing: 0.02em;
   color: var(--ink-soft);
 }
-.marquee .author a:hover .initials,
-.marquee .author a:focus-visible .initials { color: var(--ink); border-color: var(--ink-soft); }
 .marquee .name {
   display: block;
   margin-top: 0.5rem;
@@ -285,13 +279,19 @@ h2 {
 .marquee .author:hover .initials,
 .marquee .author:focus-within img,
 .marquee .author:focus-within .initials {
-  filter: grayscale(0);
   color: var(--ink);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 0 20px rgba(255, 255, 255, 0.32), 0 0 48px rgba(255, 255, 255, 0.14);
+}
+/* The glow follows the figure's own outline (drop-shadow respects transparency). */
+.marquee .author:hover img,
+.marquee .author:focus-within img {
+  filter: grayscale(0) drop-shadow(0 0 10px rgba(255, 255, 255, 0.35)) drop-shadow(0 0 26px rgba(255, 255, 255, 0.15));
+}
+.marquee .author:hover .initials,
+.marquee .author:focus-within .initials {
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.6), 0 0 28px rgba(255, 255, 255, 0.25);
 }
 .marquee .author img,
-.marquee .initials { transition: filter 0.5s ease, box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
+.marquee .initials { transition: filter 0.4s ease, color 0.3s ease, text-shadow 0.3s ease; }
 .hero-art ~ section .marquee .author:hover .name,
 .marquee .author:hover .name,
 .marquee .author:focus-within .name {
