@@ -361,6 +361,24 @@ ul.credits .title { font-weight: 600; }
 @media (max-width: 900px) {
   .track { flex-basis: calc((100% - var(--track-gap)) / 2); }
 }
+/* Home page mission: one centred card, styled and animated like the track cards. */
+.track.mission-card {
+  flex: 0 1 44rem;
+  text-align: center;
+  padding: 1.6rem 1.8rem 1.5rem;
+}
+.mission-card h2 { margin: 0 0 0.5rem; }
+.mission-card p { margin: 0; color: var(--ink-soft); font-size: 1.12rem; }
+.mission-card .more {
+  white-space: nowrap;
+  margin-left: 0.35rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
 @media (max-width: 720px) {
   .track { flex-basis: 100%; }
 }

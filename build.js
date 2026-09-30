@@ -98,8 +98,7 @@ ${body.trim()}
 
   <footer class="site">
     <div class="wrap">
-      ${footer || `<span>The Open Curriculum</span>
-      <a href="${prefix}library.html">Back to the library</a>`}
+      ${footer || '<span>The Open Curriculum</span>'}
     </div>
   </footer>
 </body>
@@ -275,7 +274,7 @@ ${list.filter((b) => b.level === lv).map((b) => '          ' + bookItem(b, '../'
     </div>
   </section>`,
     footer: `${prev ? `<a href="${prev.id}.html">← ${esc(prev.name)}</a>` : `<span>${t.label} of ${ROMAN[tracks.length - 1] || tracks.length}</span>`}
-      ${next ? `<a href="${next.id}.html">Next: ${esc(next.name)} →</a>` : '<a href="../library.html">Back to the library</a>'}`,
+      ${next ? `<a href="${next.id}.html">Next: ${esc(next.name)} →</a>` : ''}`,
   }));
 });
 
