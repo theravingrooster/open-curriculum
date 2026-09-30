@@ -2,16 +2,112 @@
 // Bundled to assets/js/hero-cube.js with `npm run bundle:hero`. Loaded by pages/index.html
 // after the page's load event, and only on wide screens.
 import {
-  WebGLRenderer, Scene, PerspectiveCamera, Mesh, MeshStandardMaterial, OctahedronGeometry,
+  WebGLRenderer, Scene, PerspectiveCamera, Mesh, MeshStandardMaterial, BufferGeometry, Float32BufferAttribute,
   DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3,
 } from 'three';
 
 const DIAMOND_HALF_HEIGHT = 1.1;
 const DIAMOND_ASPECT = 1.4;         // height / width
+const EDGE_RADIUS = 0.06;          // radius of the rounded edges and tips (0 = knife-sharp)
 const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
 const CAMERA_DISTANCE = 5.2;
+
+// An elongated octahedron with softened edges: flat faces joined by narrow rounded bevels.
+// Built as the octahedron shrunk inward by `radius`, then grown back by a sphere of that radius
+// (a Minkowski sum), so each face stays perfectly flat and keeps its own shade while the light
+// rolls over each edge and tip instead of breaking on a hard line. Normals are exact.
+function softOctahedron(halfWidth, halfHeight, radius, segments = 8) {
+  const V = (x, y, z) => new Vector3(x, y, z);
+  const faces = [];
+  for (const sx of [1, -1]) for (const sy of [1, -1]) for (const sz of [1, -1]) {
+    const n = V(sx / halfWidth, sy / halfHeight, sz / halfWidth).normalize();
+    faces.push({ n, verts: [V(sx * halfWidth, 0, 0), V(0, sy * halfHeight, 0), V(0, 0, sz * halfWidth)] });
+  }
+  // Every face plane is the same distance d from the centre, so shrinking inward by `radius`
+  // is a uniform scale about the centre.
+  const d = faces[0].verts[0].dot(faces[0].n);
+  const k = (d - radius) / d;
+  const inner = (v) => v.clone().multiplyScalar(k);
+
+  const pos = [];
+  const nor = [];
+  // Push a triangle given as [point, normal] pairs, wound to face outward.
+  const tri = (a, b, c) => {
+    const e1 = b[0].clone().sub(a[0]);
+    const e2 = c[0].clone().sub(a[0]);
+    const out = a[1].clone().add(b[1]).add(c[1]);
+    if (e1.cross(e2).dot(out) < 0) [b, c] = [c, b];
+    for (const [p, n] of [a, b, c]) { pos.push(p.x, p.y, p.z); nor.push(n.x, n.y, n.z); }
+  };
+  const at = (base, n) => [base.clone().addScaledVector(n, radius), n];
+  const slerp = (a, b, t) => {
+    const ang = Math.acos(Math.min(1, Math.max(-1, a.dot(b))));
+    if (ang < 1e-6) return a.clone();
+    return a.clone().multiplyScalar(Math.sin((1 - t) * ang)).addScaledVector(b, Math.sin(t * ang)).divideScalar(Math.sin(ang));
+  };
+
+  // Flat faces.
+  for (const f of faces) tri(...f.verts.map((v) => at(inner(v), f.n)));
+
+  // Rounded edges: each edge shared by two faces becomes a strip of cylinder.
+  const key = (v) => `${v.x.toFixed(4)},${v.y.toFixed(4)},${v.z.toFixed(4)}`;
+  const edges = new Map();
+  for (const f of faces) {
+    for (let e = 0; e < 3; e++) {
+      const a = f.verts[e], b = f.verts[(e + 1) % 3];
+      const id = [key(a), key(b)].sort().join('|');
+      if (!edges.has(id)) edges.set(id, { a, b, normals: [] });
+      edges.get(id).normals.push(f.n);
+    }
+  }
+  for (const { a, b, normals: [n1, n2] } of edges.values()) {
+    const ia = inner(a), ib = inner(b);
+    for (let s = 0; s < segments; s++) {
+      const na = slerp(n1, n2, s / segments), nb = slerp(n1, n2, (s + 1) / segments);
+      tri(at(ia, na), at(ib, na), at(ib, nb));
+      tri(at(ia, na), at(ib, nb), at(ia, nb));
+    }
+  }
+
+  // Rounded tips: at each vertex, a spherical patch spanning the normals of the faces that meet there.
+  const tips = new Map();
+  for (const f of faces) for (const v of f.verts) {
+    if (!tips.has(key(v))) tips.set(key(v), { v, normals: [] });
+    tips.get(key(v)).normals.push(f.n);
+  }
+  for (const { v, normals } of tips.values()) {
+    const iv = inner(v);
+    const axis = v.clone().normalize();
+    const centre = normals.reduce((acc, n) => acc.add(n), V(0, 0, 0)).normalize();
+    // Order the face normals around the vertex axis.
+    const ref = normals[0].clone().projectOnPlane(axis).normalize();
+    const angle = (n) => {
+      const q = n.clone().projectOnPlane(axis).normalize();
+      return Math.atan2(ref.clone().cross(q).dot(axis), ref.dot(q));
+    };
+    const ring = [...normals].sort((p, q) => angle(p) - angle(q));
+    for (let r = 0; r < ring.length; r++) {
+      const n1 = ring[r], n2 = ring[(r + 1) % ring.length];
+      // Fan from the centre normal to the arc between neighbouring face normals, subdivided.
+      for (let s = 0; s < segments; s++) {
+        const e1 = slerp(n1, n2, s / segments), e2 = slerp(n1, n2, (s + 1) / segments);
+        for (let t = 0; t < segments; t++) {
+          const a1 = slerp(centre, e1, t / segments), a2 = slerp(centre, e1, (t + 1) / segments);
+          const b1 = slerp(centre, e2, t / segments), b2 = slerp(centre, e2, (t + 1) / segments);
+          tri(at(iv, a1), at(iv, a2), at(iv, b2));
+          if (t > 0) tri(at(iv, a1), at(iv, b2), at(iv, b1));
+        }
+      }
+    }
+  }
+
+  const geo = new BufferGeometry();
+  geo.setAttribute('position', new Float32BufferAttribute(pos, 3));
+  geo.setAttribute('normal', new Float32BufferAttribute(nor, 3));
+  return geo;
+}
 
 export function createHeroScene(canvas) {
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
@@ -21,12 +117,11 @@ export function createHeroScene(canvas) {
 
   const scene = new Scene();
 
-  // Diamond: elongated octahedron, matte cream, flat-shaded so each face reads as its own shade.
+  // Diamond: elongated octahedron with softened edges, matte cream.
   const diamond = new Mesh(
-    new OctahedronGeometry(1, 0),
-    new MeshStandardMaterial({ color: 0xe6ddcf, roughness: 0.9, metalness: 0, flatShading: true }),
+    softOctahedron(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, EDGE_RADIUS),
+    new MeshStandardMaterial({ color: 0xe6ddcf, roughness: 0.9, metalness: 0 }),
   );
-  diamond.scale.set(DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT, DIAMOND_HALF_HEIGHT, DIAMOND_HALF_HEIGHT / DIAMOND_ASPECT);
   diamond.rotation.y = START_ANGLE;
   scene.add(diamond);
 
@@ -116,15 +211,12 @@ function start() {
   }
 
   // The diamond turns with the page instead of on its own: scrolling down turns it
-  // counterclockwise seen from above (front face moving left to right), one full turn from the
-  // top of the page to the bottom; scrolling back up turns it back. Frames are drawn only while
+  // counterclockwise seen from above (front face moving left to right), one full turn per
+  // 1200px scrolled; scrolling back up turns it back. Frames are drawn only while
   // it is catching up with the scroll position, so an idle page costs nothing.
   const SMOOTHING = 0.16; // share of the remaining angle closed per 60 Hz frame
-  const scrollAngle = () => {
-    const range = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-    const y = Math.min(Math.max(window.scrollY, 0), range);
-    return START_ANGLE + (y / range) * 2 * Math.PI;
-  };
+  const PX_PER_TURN = 1200; // scroll distance for one full turn, the same on every page length
+  const scrollAngle = () => START_ANGLE + (Math.max(window.scrollY, 0) / PX_PER_TURN) * 2 * Math.PI;
 
   let raf = 0;
   let last = null;

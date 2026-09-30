@@ -450,9 +450,9 @@ article.reading li { margin: 0.3rem 0; }
   font-size: 0.92rem;
 }
 .guide-nav-links a:last-child { text-align: right; }
-/* Guide pages: light, slightly softer body text so the section headings stand apart. */
+/* Guide pages: body text a touch lighter than regular, headings bold, so the headings stand apart. */
 article.guide p,
-article.guide li { font-weight: 300; color: #d9d9d9; }
+article.guide li { font-weight: 360; color: #ededed; }
 article.guide p.kicker,
 article.guide p.byline { font-weight: 400; }
 article.guide p.byline { color: var(--ink-soft); }
