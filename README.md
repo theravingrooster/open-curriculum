@@ -8,7 +8,7 @@ Live target: Vercel, linked to this repo.
 
 - `data/curriculum.json` — tracks, topics and books. The only place track membership, levels and publish status live.
 - `guides/<slug>.md` — guide text, one file per published book. Written to `GUIDE_SPEC.md`.
-- `pages/` — home and about page bodies.
+- `pages/` — home and mission page bodies.
 - `public/` — `styles.css` and favicon.
 - `assets/` — portraits, the home page's 3D background (`assets/js/hero-cube.js`, bundled from `src/hero-cube.js` with `npm run bundle:hero`; commit the bundle) and its static fallback `assets/hero-static.webp`.
 - `data/authors.json` — portrait and license credit per author. The author list itself comes from the books in `data/curriculum.json`.

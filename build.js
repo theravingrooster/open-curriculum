@@ -63,10 +63,9 @@ function bookItem(b, prefix) {
 }
 
 const NAV = [
-  ['home', 'Home', 'index.html'],
   ['library', 'Library', 'library.html'],
-  ['topics', 'Topics', 'topics.html'],
-  ['about', 'Why', 'about.html'],
+  ['tracks', 'Tracks', 'tracks/index.html'],
+  ['mission', 'Mission', 'mission.html'],
 ];
 
 function layout({ title, body, prefix = '', active = '', head = '', footer = '' }) {
@@ -208,7 +207,7 @@ const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (m, k) => {
 
 const STATIC_PAGES = [
   { src: 'index.html', title: `${SITE} — Real knowledge, no degree required`, active: 'home' },
-  { src: 'about.html', title: `Why this exists — ${SITE}`, active: 'about' },
+  { src: 'mission.html', title: `Mission — ${SITE}`, active: 'mission' },
 ];
 for (const p of STATIC_PAGES) {
   if (!fs.existsSync(path.join(ROOT, 'pages', p.src))) continue;
@@ -255,7 +254,7 @@ tracks.forEach((t, i) => {
   pages.set(`tracks/${t.id}.html`, layout({
     title: `${t.label} — ${t.name} — ${SITE}`,
     prefix: '../',
-    active: 'library',
+    active: 'tracks',
     body: `
   <div class="hero">
     <div class="wrap">
@@ -279,6 +278,26 @@ ${list.filter((b) => b.level === lv).map((b) => '          ' + bookItem(b, '../'
       ${next ? `<a href="${next.id}.html">Next: ${esc(next.name)} →</a>` : '<a href="../library.html">Back to the library</a>'}`,
   }));
 });
+
+// ---------- tracks index ----------
+
+pages.set('tracks/index.html', layout({
+  title: `Tracks — ${SITE}`,
+  prefix: '../',
+  active: 'tracks',
+  body: `
+  <div class="hero">
+    <div class="wrap">
+      <h1>Tracks</h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      ${trackCards.replace(/href="tracks\//g, 'href="')}
+    </div>
+  </section>`,
+}));
 
 // ---------- topics ----------
 
