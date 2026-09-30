@@ -8,7 +8,7 @@ import {
 
 const DIAMOND_HALF_HEIGHT = 1.1;
 const DIAMOND_ASPECT = 1.4;         // height / width
-const EDGE_RADIUS = 0.06;          // radius of the rounded edges and tips (0 = knife-sharp)
+const EDGE_RADIUS = 0.04;          // radius of the rounded edges and tips (0 = knife-sharp)
 const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
