@@ -136,8 +136,6 @@ const STATIC_PAGES = [
   { src: 'index.html', title: `${SITE} — Real knowledge, no degree required`, active: 'home',
     head: ['machiavelli', 'kahneman', 'taleb', 'munger'].map((n) => `\n  <link rel="stylesheet" href="portrait-${n}.css" />`).join('') },
   { src: 'about.html', title: `Why this exists — ${SITE}`, active: 'about' },
-  { src: 'how-to-read.html', title: `How to read — ${SITE}`, active: '' },
-  { src: 'how-to-read-faster.html', title: `How to read faster — ${SITE}`, active: '' },
 ];
 for (const p of STATIC_PAGES) {
   if (!fs.existsSync(path.join(ROOT, 'pages', p.src))) continue;
@@ -154,7 +152,7 @@ pages.set('library.html', layout({
     <div class="wrap">
       <p class="kicker">Table of contents</p>
       <h1>The library</h1>
-      <p class="lede">Every track, every book, in one vertical list. Use find-in-page. If the title is here, it belongs on the curriculum. Linked titles have a guide; the rest are listed so you can see the sequence.</p>
+      <p class="lede">Every track, every book, in one list. Linked titles have a guide; the rest are listed so you can see the sequence.</p>
       <p class="meta-line">${books.length} books · ${books.filter(isPublished).length} guides · Ctrl+F / ⌘F a title</p>
     </div>
   </div>
