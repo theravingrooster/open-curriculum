@@ -60,13 +60,29 @@
   
 
   <script>
-    // Load the 3D background after the page has rendered, and only on wide screens.
+    // Load the 3D background after the page has rendered, and only on wide screens with a
+    // hardware-accelerated GPU. Software WebGL (no GPU, or GPU blocked) gets the still image.
     (function () {
+      var art = document.querySelector('.hero-art');
       var wide = window.matchMedia('(min-width: 721px)');
+      var forceLive = /[?&]hero=live\b/.test(location.search) || /[?&]hero-export\b/.test(location.search);
       var loaded = false;
+      function softwareOnly() {
+        try {
+          var c = document.createElement('canvas');
+          var gl = c.getContext('webgl2') || c.getContext('webgl');
+          if (!gl) return true;
+          var info = gl.getExtension('WEBGL_debug_renderer_info');
+          var name = String(info ? gl.getParameter(info.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+          var lose = gl.getExtension('WEBGL_lose_context');
+          if (lose) lose.loseContext();
+          return /swiftshader|llvmpipe|softpipe|software|basic render/i.test(name);
+        } catch (e) { return true; }
+      }
       function load() {
         if (loaded || !wide.matches) return;
         loaded = true;
+        if (!forceLive && softwareOnly()) { art.classList.add('hero-art--static'); return; }
         var s = document.createElement('script');
         s.type = 'module';
         s.src = 'assets/js/hero-cube.js';

@@ -179,10 +179,25 @@ function start() {
   let last = null;
   let running = false;
   let onScreen = true;
+  // Frame-time guard: if the first 60 frames average slower than ~25 fps, the GPU can't keep
+  // this smooth, so stop and show the still image instead. ?hero=live disables the guard.
+  const guard = !params.has('hero') && !params.has('hero-export');
+  let sampled = 0;
+  let sampledTime = 0;
   const step = (now) => {
     if (!running) return;
     const dt = last === null ? 0 : (now - last) / 1000;
     last = now;
+    if (guard && dt > 0 && sampled < 60) {
+      sampled++;
+      sampledTime += dt;
+      if (sampled === 60 && sampledTime / 60 > 0.04) {
+        pause();
+        container.classList.remove('hero-art--ready');
+        container.classList.add('hero-art--static');
+        return;
+      }
+    }
     hero.setAngle(hero.angle + (dt * 2 * Math.PI) / TURN_SECONDS); // counterclockwise from above
     hero.render();
     raf = requestAnimationFrame(step);
