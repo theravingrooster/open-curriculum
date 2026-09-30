@@ -282,12 +282,19 @@ h2 {
   opacity: 0;
   transition: opacity 1.2s ease;
 }
-.hero-art canvas { display: block; width: 100%; height: 100%; }
+.hero-art canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  /* Dims as the page scrolls: set every frame from the scroll position, never animated, so it
+     tracks fast scrolling exactly. The 1.2s transition above is only for the first fade-in. */
+  opacity: var(--hero-scroll-fade, 1);
+}
 .hero-art { --hero-opacity: 0.75; }
-.hero-art--ready { opacity: calc(var(--hero-opacity) * var(--hero-scroll-fade, 1)); }
+.hero-art--ready { opacity: var(--hero-opacity); }
 .hero-art--static canvas { display: none; }
 .hero-art--static {
-  opacity: calc(var(--hero-opacity) * var(--hero-scroll-fade, 1));
+  opacity: var(--hero-opacity);
   /* Same size and position as the live scene: the still fills 90% of its square with the
      diamond, the live diamond fills 62% of the viewport height, centred at 50% / 55%. */
   background: url("assets/hero-static.webp") no-repeat;
