@@ -9,7 +9,7 @@ When writing or editing a book guide, follow GUIDE_SPEC.md exactly. Track member
 - `pages/` — hand-written page bodies (home, mission). `{{placeholders}}` are filled from the data file.
 - `public/` — CSS and favicon, copied as-is.
 - `assets/` — portraits, the home page's 3D background and its static fallback, copied to `dist/assets/`. `assets/js/hero-cube.js` is built from `src/hero-cube.js` with `npm run bundle:hero`; commit both.
-- `data/authors.json` — portrait path and license credit per author (Wikimedia Commons, public domain or CC BY / CC BY-SA only). Authors come from the books; missing portraits show initials.
+- `data/authors.json` — portrait path and optional credit per author. Authors come from the books, but the home strip shows only authors with a portrait. Optional `quote` and `quoteSource` show above the portrait on hover; use only quotes verified against the author's own text. Add portraits with `python3 scripts/portraits.py <folder>`: transparent cut-outs named after the author (e.g. `daniel-kahneman.png`), processed into `assets/portraits/`. A credit is required only for licensed photos (CC BY / CC BY-SA need attribution on the Credits page).
 - `build.js` — writes the site to `dist/`. `scripts/check-links.js` — fails on any broken internal link.
 
 ## Guide markdown
