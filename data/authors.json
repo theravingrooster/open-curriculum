@@ -1,0 +1,304 @@
+{
+  "authors": {
+    "Nassim Nicholas Taleb": {
+      "portrait": null,
+      "credit": null
+    },
+    "Daniel Kahneman": {
+      "portrait": null,
+      "credit": null
+    },
+    "Charlie Munger": {
+      "portrait": null,
+      "credit": null
+    },
+    "Shane Parrish": {
+      "portrait": null,
+      "credit": null
+    },
+    "Rhiannon Beaubien": {
+      "portrait": null,
+      "credit": null
+    },
+    "Robert B. Cialdini": {
+      "portrait": null,
+      "credit": null
+    },
+    "Gary Klein": {
+      "portrait": null,
+      "credit": null
+    },
+    "Olivier Sibony": {
+      "portrait": null,
+      "credit": null
+    },
+    "Cass R. Sunstein": {
+      "portrait": null,
+      "credit": null
+    },
+    "Timothy D. Wilson": {
+      "portrait": null,
+      "credit": null
+    },
+    "Thomas C. Schelling": {
+      "portrait": null,
+      "credit": null
+    },
+    "Karl Popper": {
+      "portrait": null,
+      "credit": null
+    },
+    "Thomas S. Kuhn": {
+      "portrait": null,
+      "credit": null
+    },
+    "David Deutsch": {
+      "portrait": null,
+      "credit": null
+    },
+    "Warren Buffett": {
+      "portrait": null,
+      "credit": null
+    },
+    "Benjamin Graham": {
+      "portrait": null,
+      "credit": null
+    },
+    "Andrew S. Grove": {
+      "portrait": null,
+      "credit": null
+    },
+    "Spencer B. Meredith": {
+      "portrait": null,
+      "credit": null
+    },
+    "Peter Lynch": {
+      "portrait": null,
+      "credit": null
+    },
+    "Ben Horowitz": {
+      "portrait": null,
+      "credit": null
+    },
+    "Peter Thiel": {
+      "portrait": null,
+      "credit": null
+    },
+    "Blake Masters": {
+      "portrait": null,
+      "credit": null
+    },
+    "Josh Waitzkin": {
+      "portrait": null,
+      "credit": null
+    },
+    "Joel Greenblatt": {
+      "portrait": null,
+      "credit": null
+    },
+    "Edwin Lefèvre": {
+      "portrait": null,
+      "credit": null
+    },
+    "Jack D. Schwager": {
+      "portrait": null,
+      "credit": null
+    },
+    "Edward Chancellor": {
+      "portrait": null,
+      "credit": null
+    },
+    "Clayton M. Christensen": {
+      "portrait": null,
+      "credit": null
+    },
+    "Jerome H. Grossman": {
+      "portrait": null,
+      "credit": null
+    },
+    "Jason Hwang": {
+      "portrait": null,
+      "credit": null
+    },
+    "Andrew Chen": {
+      "portrait": null,
+      "credit": null
+    },
+    "Mark Spitznagel": {
+      "portrait": null,
+      "credit": null
+    },
+    "Atul Gawande": {
+      "portrait": null,
+      "credit": null
+    },
+    "Paul Kalanithi": {
+      "portrait": null,
+      "credit": null
+    },
+    "Elisabeth Kübler-Ross": {
+      "portrait": null,
+      "credit": null
+    },
+    "Ted J. Kaptchuk": {
+      "portrait": null,
+      "credit": null
+    },
+    "Anna Lembke": {
+      "portrait": null,
+      "credit": null
+    },
+    "Valter Longo": {
+      "portrait": null,
+      "credit": null
+    },
+    "Eric Topol": {
+      "portrait": null,
+      "credit": null
+    },
+    "Daniel Keown": {
+      "portrait": null,
+      "credit": null
+    },
+    "Amir Raz": {
+      "portrait": null,
+      "credit": null
+    },
+    "Bessel van der Kolk": {
+      "portrait": null,
+      "credit": null
+    },
+    "Michael D. Yapko": {
+      "portrait": null,
+      "credit": null
+    },
+    "Thucydides": {
+      "portrait": null,
+      "credit": null
+    },
+    "Will Durant": {
+      "portrait": null,
+      "credit": null
+    },
+    "Ariel Durant": {
+      "portrait": null,
+      "credit": null
+    },
+    "Niccolò Machiavelli": {
+      "portrait": null,
+      "credit": null
+    },
+    "Bruce Bueno de Mesquita": {
+      "portrait": null,
+      "credit": null
+    },
+    "Alastair Smith": {
+      "portrait": null,
+      "credit": null
+    },
+    "Chris Miller": {
+      "portrait": null,
+      "credit": null
+    },
+    "Gustave Le Bon": {
+      "portrait": null,
+      "credit": null
+    },
+    "Barbara Demick": {
+      "portrait": null,
+      "credit": null
+    },
+    "Robert A. Caro": {
+      "portrait": null,
+      "credit": null
+    },
+    "Alexis de Tocqueville": {
+      "portrait": null,
+      "credit": null
+    },
+    "Daniel Yergin": {
+      "portrait": null,
+      "credit": null
+    },
+    "Seymour M. Hersh": {
+      "portrait": null,
+      "credit": null
+    },
+    "Robert Jay Lifton": {
+      "portrait": null,
+      "credit": null
+    },
+    "Tim Reiterman": {
+      "portrait": null,
+      "credit": null
+    },
+    "John Jacobs": {
+      "portrait": null,
+      "credit": null
+    },
+    "Edward S. Herman": {
+      "portrait": null,
+      "credit": null
+    },
+    "Noam Chomsky": {
+      "portrait": null,
+      "credit": null
+    },
+    "Hannah Arendt": {
+      "portrait": null,
+      "credit": null
+    },
+    "Marcus Aurelius": {
+      "portrait": null,
+      "credit": null
+    },
+    "Seneca": {
+      "portrait": null,
+      "credit": null
+    },
+    "Viktor E. Frankl": {
+      "portrait": null,
+      "credit": null
+    },
+    "Baltasar Gracián": {
+      "portrait": null,
+      "credit": null
+    },
+    "Adele Faber": {
+      "portrait": null,
+      "credit": null
+    },
+    "Elaine Mazlish": {
+      "portrait": null,
+      "credit": null
+    },
+    "Sebastian Junger": {
+      "portrait": null,
+      "credit": null
+    },
+    "Erich Fromm": {
+      "portrait": null,
+      "credit": null
+    },
+    "Amir Levine": {
+      "portrait": null,
+      "credit": null
+    },
+    "Rachel Heller": {
+      "portrait": null,
+      "credit": null
+    },
+    "Miyamoto Musashi": {
+      "portrait": null,
+      "credit": null
+    },
+    "Confucius": {
+      "portrait": null,
+      "credit": null
+    },
+    "Tom Holland": {
+      "portrait": null,
+      "credit": null
+    }
+  }
+}

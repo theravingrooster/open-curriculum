@@ -102,6 +102,7 @@ ${body.trim()}
       ${footer || `<span>The Open Curriculum · not a school · not accredited · on purpose</span>
       <a href="${prefix}library.html">Back to the library</a>`}
     </div>
+    <div class="wrap footer-meta"><a href="${prefix}credits.html">Credits</a></div>
   </footer>
 </body>
 </html>
@@ -121,7 +122,80 @@ ${tracks.map((t) => `        <a class="track" href="${trackHref(t, '')}">
         </a>`).join('\n')}
       </div>`;
 
+// ---------- authors ----------
+
+// One entry per person named in a book's author field, in reading order (track order, then level).
+// "(ed. …)" editors are not authors. "Will and Ariel Durant" gives Will Durant and Ariel Durant.
+function splitAuthors(field) {
+  const parts = field.replace(/\s*\(ed\.[^)]*\)/g, '').split(/,\s*|\s+and\s+|\s+with\s+|\s*&\s*/).map((p) => p.trim()).filter(Boolean);
+  return parts.map((p, i) => {
+    if (!/\s/.test(p) && parts.length > 1 && i < parts.length - 1) {
+      const surname = parts[parts.length - 1].split(/\s+/).pop();
+      return `${p} ${surname}`;
+    }
+    return p;
+  });
+}
+
+const authorData = JSON.parse(read('data/authors.json')).authors;
+const authors = [];
+const authorByName = new Map();
+for (const t of tracks) {
+  for (const b of booksInTrack(t.id)) {
+    for (const name of splitAuthors(b.author)) {
+      if (!authorByName.has(name)) {
+        const a = { name, books: [] };
+        authorByName.set(name, a);
+        authors.push(a);
+      }
+      const a = authorByName.get(name);
+      if (!a.books.includes(b)) a.books.push(b);
+    }
+  }
+}
+for (const a of authors) {
+  const d = authorData[a.name] || {};
+  a.guide = a.books.find(isPublished) || null;
+  a.portrait = d.portrait || null;
+  a.credit = d.credit || null;
+  if (a.portrait) {
+    if (!fs.existsSync(path.join(ROOT, a.portrait))) errors.push(`data/authors.json: ${a.name}: ${a.portrait} does not exist`);
+    const c = a.credit || {};
+    for (const k of ['creator', 'license', 'licenseUrl', 'source']) if (!c[k]) errors.push(`data/authors.json: ${a.name}: portrait needs credit.${k}`);
+  }
+}
+for (const name of Object.keys(authorData)) {
+  if (!authorByName.has(name)) warnings.push(`data/authors.json: "${name}" is not an author of any book`);
+}
+
+function initials(name) {
+  const words = name.split(/\s+/).filter((w) => /^\p{Lu}/u.test(w));
+  if (words.length === 0) return name[0].toUpperCase();
+  return words.length === 1 ? words[0][0] : words[0][0] + words[words.length - 1][0];
+}
+
+function authorItem(a, prefix, copy) {
+  const face = a.portrait
+    ? `<img src="${prefix}${a.portrait}" alt="" width="104" height="104" loading="lazy" decoding="async" />`
+    : `<span class="initials" aria-hidden="true">${esc(initials(a.name))}</span>`;
+  const inner = `${face}<span class="name">${esc(a.name)}</span>`;
+  if (!a.guide) return `<li class="author">${inner}</li>`;
+  return `<li class="author"><a href="${guideHref(a.guide, prefix)}"${copy ? ' tabindex="-1"' : ''}>${inner}</a></li>`;
+}
+
+const authorCarousel = `<div class="marquee" style="--marquee-duration: ${Math.round(authors.length * 4.5)}s">
+        <div class="marquee-track">
+          <ul class="marquee-set" aria-label="Authors">
+${authors.map((a) => '            ' + authorItem(a, '', false)).join('\n')}
+          </ul>
+          <ul class="marquee-set" aria-hidden="true" inert>
+${authors.map((a) => '            ' + authorItem(a, '', true)).join('\n')}
+          </ul>
+        </div>
+      </div>`;
+
 const vars = {
+  author_carousel: authorCarousel,
   track_cards: trackCards,
   track_count: String(tracks.length),
   book_count: String(books.length),
@@ -133,8 +207,7 @@ const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (m, k) => {
 });
 
 const STATIC_PAGES = [
-  { src: 'index.html', title: `${SITE} — Real knowledge, no degree required`, active: 'home',
-    head: ['machiavelli', 'kahneman', 'taleb', 'munger'].map((n) => `\n  <link rel="stylesheet" href="portrait-${n}.css" />`).join('') },
+  { src: 'index.html', title: `${SITE} — Real knowledge, no degree required`, active: 'home' },
   { src: 'about.html', title: `Why this exists — ${SITE}`, active: 'about' },
 ];
 for (const p of STATIC_PAGES) {
@@ -232,6 +305,31 @@ ${books.filter((b) => (b.topics || []).includes(tp.id)).map((b) => '          ' 
       </div>`).join('\n')}
     </div>
   </section>`,
+}));
+
+// ---------- credits ----------
+
+const credited = authors.filter((a) => a.portrait);
+const placeholders = authors.filter((a) => !a.portrait);
+pages.set('credits.html', layout({
+  title: `Credits — ${SITE}`,
+  body: `
+  <article class="reading wrap">
+    <p class="kicker">Credits</p>
+    <h1>Credits</h1>
+
+    <h2>Author portraits</h2>
+${credited.length ? `    <ul class="credits">
+${credited.map((a) => `      <li><span class="title">${esc(a.name)}</span>: ${esc(a.credit.title || 'portrait')} by ${esc(a.credit.creator)}, <a href="${esc(a.credit.licenseUrl)}" rel="license noopener">${esc(a.credit.license)}</a>, via <a href="${esc(a.credit.source)}" rel="noopener">Wikimedia Commons</a>.${a.credit.modified === false ? '' : ' Cropped and resized.'}</li>`).join('\n')}
+    </ul>` : '    <p>No photographs are in use yet.</p>'}
+${placeholders.length ? `    <p>Shown with initials until a properly licensed portrait is found: ${placeholders.map((a) => esc(a.name)).join(', ')}.</p>` : ''}
+
+    <h2>Software</h2>
+    <ul class="credits">
+      <li>The home page background is rendered with <a href="https://threejs.org/" rel="noopener">Three.js</a>, © Three.js Authors, <a href="https://github.com/mrdoob/three.js/blob/dev/LICENSE" rel="license noopener">MIT License</a>.</li>
+      <li>Type is Source Serif 4 and Source Sans 3 by Adobe, <a href="https://openfontlicense.org/" rel="license noopener">SIL Open Font License</a>, served by Google Fonts.</li>
+    </ul>
+  </article>`,
 }));
 
 // ---------- guides ----------
@@ -372,6 +470,10 @@ if (errors.length) {
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'public'), OUT, { recursive: true });
+fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), {
+  recursive: true,
+  filter: (src) => path.basename(src) !== 'hero-reference.png',
+});
 for (const [file, html] of pages) {
   const dest = path.join(OUT, file);
   fs.mkdirSync(path.dirname(dest), { recursive: true });

@@ -9,7 +9,9 @@ Live target: Vercel, linked to this repo.
 - `data/curriculum.json` — tracks, topics and books. The only place track membership, levels and publish status live.
 - `guides/<slug>.md` — guide text, one file per published book. Written to `GUIDE_SPEC.md`.
 - `pages/` — home and about page bodies.
-- `public/` — `styles.css`, favicon, portrait stylesheets.
+- `public/` — `styles.css` and favicon.
+- `assets/` — portraits, the home page's 3D background (`assets/js/hero-cube.js`, bundled from `src/hero-cube.js` with `npm run bundle:hero`; commit the bundle) and its static fallback `assets/hero-static.webp`.
+- `data/authors.json` — portrait and license credit per author. The author list itself comes from the books in `data/curriculum.json`.
 - `build.js` — generates the library, track pages, topics, home track cards and guide pages into `dist/`.
 - `scripts/check-links.js` — fails if any internal link in `dist/` is broken.
 - `vercel.json` — Vercel runs `npm test` (build, then link check) and serves `dist/` with clean URLs.
@@ -31,6 +33,9 @@ All of these are edits to `data/curriculum.json`, then `npm test`.
 - Remove a track: delete it from `tracks` and remove its `id` from every book’s `tracks`. The build fails if a book still names it or is left with no track.
 - Reorder tracks: change `order`. Numbering (Track I, II, …) follows.
 - Books within a track are ordered by `level`, then by their position in `books`.
+- Add an author portrait: only Wikimedia Commons images that are public domain, CC BY or CC BY-SA. Save a square WebP at 208×208 (under ~30 KB) in `assets/portraits/`, then fill in the author's entry in `data/authors.json`:
+  `"portrait": "assets/portraits/<name>.webp", "credit": { "title": "…", "creator": "…", "license": "CC BY-SA 4.0", "licenseUrl": "…", "source": "<Commons file page URL>" }`.
+  The home carousel and the Credits page pick it up; authors without one show their initials.
 
 ## License note
 
