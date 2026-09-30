@@ -2,7 +2,7 @@
 
 People systematically mistake luck for skill and noise for information, and in markets and careers the damage comes from rare events that a record of past success cannot reveal.
 
-## The book in brief
+## The main ideas
 
 - Judge a result by the full set of outcomes that could have happened, not the one that did. Most of those alternative histories are invisible.
 - A large enough population of people taking random bets will produce a few spectacular records by chance alone. Survivors are what gets seen.

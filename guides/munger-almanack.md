@@ -2,7 +2,7 @@
 
 Good judgment in business and life comes less from brilliance than from carrying the few big ideas of every basic discipline, checking decisions against the predictable ways human psychology misfires, and acting heavily on the rare occasions when the odds are clearly favorable.
 
-## The book in brief
+## The main ideas
 
 - Hold a latticework of mental models from many disciplines. Eighty or ninety models do most of the work, and a thinker with one model distorts every problem to fit it.
 - Analyze every decision twice: first for the rational interests involved, then for the subconscious psychological tendencies that push people to misjudge.

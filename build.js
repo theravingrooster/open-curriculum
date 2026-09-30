@@ -82,7 +82,7 @@ function layout({ title, body, prefix = '', active = '', head = '', footer = '' 
   <title>${esc(title)}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="${prefix}styles.css" />${head}
 </head>
 <body>
@@ -394,15 +394,15 @@ function lintGuide(b, src) {
   });
   const names = sections.map((s) => s.heading);
   if (names[0] !== 'Thesis') err('first section must be "## Thesis"');
-  if (names[1] !== 'The book in brief') err('second section must be "## The book in brief"');
+  if (names[1] !== 'The main ideas') err('second section must be "## The main ideas"');
   if (names[names.length - 2] !== 'Limits') err('second-to-last section must be "## Limits"');
   if (names[names.length - 1] !== 'Related') err('last section must be "## Related"');
   const ideas = sections.slice(2, -2);
   if (ideas.length < 4 || ideas.length > 8) err(`${ideas.length} idea sections; spec asks for 4–8`);
   const brief = sections[1] ? sections[1].body : '';
   const bullets = brief.split('\n').filter((l) => /^- /.test(l)).length;
-  if (bullets < 5 || bullets > 7) err(`book in brief has ${bullets} bullets; spec asks for 5–7`);
-  if (words(brief) >= 200) err(`book in brief is ${words(brief)} words; spec asks for under 200`);
+  if (bullets < 5 || bullets > 7) err(`main ideas has ${bullets} bullets; spec asks for 5–7`);
+  if (words(brief) >= 200) err(`main ideas is ${words(brief)} words; spec asks for under 200`);
   for (const s of ideas) {
     const n = words(s.body);
     if (n < 100 || n > 250) warn(`idea "${s.heading}" is ${n} words; spec asks for 100–250`);
