@@ -216,7 +216,7 @@ const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (m, k) => {
 
 const STATIC_PAGES = [
   { src: 'index.html', title: `${SITE} — Real knowledge, no diploma required`, active: 'home',
-    head: '\n  <script src="tracks.js" defer></script>' },
+    head: '\n  <script src="tracks.js" defer></script>\n  <script src="marquee.js" defer></script>' },
   { src: 'mission.html', title: `Mission — ${SITE}`, active: 'mission' },
 ];
 for (const p of STATIC_PAGES) {
