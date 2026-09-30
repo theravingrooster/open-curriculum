@@ -372,6 +372,10 @@ if (errors.length) {
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.cpSync(path.join(ROOT, 'public'), OUT, { recursive: true });
+fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), {
+  recursive: true,
+  filter: (src) => path.basename(src) !== 'hero-reference.png',
+});
 for (const [file, html] of pages) {
   const dest = path.join(OUT, file);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
