@@ -5,9 +5,14 @@
   "scripts": {
     "build": "node build.js",
     "check": "node scripts/check-links.js",
-    "test": "node build.js && node scripts/check-links.js"
+    "test": "node build.js && node scripts/check-links.js",
+    "bundle:hero": "esbuild src/hero-cube.js --bundle --minify --format=esm --target=es2020 --legal-comments=eof --outfile=assets/js/hero-cube.js"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0",
+    "three": "0.186.1"
   }
 }
