@@ -1,0 +1,13 @@
+{
+  "name": "open-curriculum",
+  "private": true,
+  "description": "The Open Curriculum: static site built from data/curriculum.json",
+  "scripts": {
+    "build": "node build.js",
+    "check": "node scripts/check-links.js",
+    "test": "node build.js && node scripts/check-links.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

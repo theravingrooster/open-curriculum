@@ -1,6 +1,33 @@
 {
+  "buildCommand": "npm test",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/favicon.ico", "destination": "/favicon.svg" }
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.svg"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/how-to-read",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-read-faster",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-read.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-read-faster.html",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }
