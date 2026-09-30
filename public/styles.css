@@ -205,13 +205,16 @@ h2 {
   max-width: 40rem;
 }
 
+.home-instructors .section-head { text-align: center; }
+.home-instructors .section-head h2 { margin-left: auto; margin-right: auto; }
+
 /* Author carousel: two identical sets, the track slides by exactly one set width. */
 .marquee {
   --dock-scale: 1.55; /* how much a hovered portrait grows */
   overflow: hidden;
   /* The extra top padding above is headroom for hovered portraits; pull the strip up by the
      same amount so its position on the page doesn't change. */
-  margin-top: -40px;
+  margin-top: -72px;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
@@ -228,22 +231,22 @@ h2 {
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-100% / var(--marquee-copies, 2))); } }
 .marquee-set {
   display: flex;
-  gap: 34px;
+  gap: 41px;
   list-style: none;
   margin: 0;
   /* Trailing space equals the gap, and every size is a whole pixel, so one set is exactly
      half the track and the -50% loop point lands on a pixel boundary: no visible jump. */
-  padding: 256px 34px 30px 0; /* headroom for the hover magnification, glow and quote */
+  padding: 304px 41px 30px 0; /* headroom for the hover magnification, glow and quote */
 }
-.marquee .author { flex: 0 0 auto; width: 144px; text-align: center; }
+.marquee .author { flex: 0 0 auto; width: 173px; text-align: center; }
 .marquee .author a { display: block; color: inherit; text-decoration: none; border-radius: 4px; }
 .marquee .author a:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
 /* Portraits are transparent cut-outs that float on the page: no frame, no background. */
 .marquee .author img,
 .marquee .initials {
   display: block;
-  width: 144px;
-  height: 144px;
+  width: 173px;
+  height: 173px;
   object-fit: contain;
   object-position: center bottom;
 }
@@ -254,7 +257,7 @@ h2 {
   align-items: center;
   justify-content: center;
   font-family: var(--serif);
-  font-size: 2.3rem;
+  font-size: 2.75rem;
   letter-spacing: 0.02em;
   color: var(--ink-soft);
 }
@@ -312,13 +315,13 @@ h2 {
 .marquee .author:focus-within { transform: scale(var(--dock-scale)); z-index: 1; }
 /* Neighbours grow less and slide outward so the enlarged portrait never overlaps them. */
 .marquee .author:has(+ .author:hover),
-.marquee .author:has(+ .author:focus-within) { transform: translateX(-41px) scale(1.2); }
+.marquee .author:has(+ .author:focus-within) { transform: translateX(-49px) scale(1.2); }
 .marquee .author:hover + .author,
-.marquee .author:focus-within + .author { transform: translateX(41px) scale(1.2); }
+.marquee .author:focus-within + .author { transform: translateX(49px) scale(1.2); }
 .marquee .author:has(+ .author + .author:hover),
-.marquee .author:has(+ .author + .author:focus-within) { transform: translateX(-19px) scale(1.07); }
+.marquee .author:has(+ .author + .author:focus-within) { transform: translateX(-23px) scale(1.07); }
 .marquee .author:hover + .author + .author,
-.marquee .author:focus-within + .author + .author { transform: translateX(19px) scale(1.07); }
+.marquee .author:focus-within + .author + .author { transform: translateX(23px) scale(1.07); }
 .marquee .author:hover img,
 .marquee .author:hover .initials,
 .marquee .author:focus-within img,

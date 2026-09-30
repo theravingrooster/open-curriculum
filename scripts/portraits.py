@@ -6,7 +6,7 @@ e.g. `daniel-kahneman.png`, `niccolo-machiavelli.webp`, and for each one:
   - trims the empty margin and scales the figure to a fixed height, centred and sitting on the
     bottom edge, so every portrait in the strip lines up;
   - fades the bottom edge out, so the shoulders melt into the page instead of ending in a line;
-  - writes a 288x288 WebP (2x the 144px display size) to assets/portraits/<name>.webp;
+  - writes a 346x346 WebP (2x the 173px display size) to assets/portraits/<name>.webp;
   - records it in data/authors.json.
 
 Usage: python3 scripts/portraits.py <folder-or-files...>      (needs Pillow: pip install pillow)
@@ -16,10 +16,10 @@ from pathlib import Path
 from PIL import Image, ImageChops
 
 ROOT = Path(__file__).resolve().parent.parent
-SIZE = 288          # output square, px (2x the 144px display size)
+SIZE = 346          # output square, px (2x the 173px display size)
 FIGURE = 0.96       # figure height as a share of the square
 FADE = 0.24         # bottom share of the figure that fades out
-MAX_BYTES = 30_000
+MAX_BYTES = 40_000
 
 def slug(name):
     s = unicodedata.normalize('NFKD', name).encode('ascii', 'ignore').decode()
