@@ -1,4 +1,4 @@
-// Home page background: a still glass cube with a cream octahedron turning inside it.
+// Home page background: a still glass cube with a cream octahedron inside it that turns as the page scrolls.
 // Bundled to assets/js/hero-cube.js with `npm run bundle:hero`. Loaded by pages/index.html
 // after the page's load event, and only on wide screens.
 import {
@@ -10,11 +10,10 @@ import {
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js';
 
-const TURN_SECONDS = 24;            // one full turn, constant speed
 const CUBE = 1.85;                  // block width and depth (world units)
 const CUBE_HEIGHT = 2.25;           // the reference block reads taller than wide
-const DIAMOND_HALF_HEIGHT = 1.07;   // apexes nearly touch the top and bottom faces
-const DIAMOND_ASPECT = 1.55;        // height / width; the reference measures about 1.55 on screen
+const DIAMOND_HALF_HEIGHT = 1.1;    // apexes nearly touch the top and bottom faces (block half-height 1.125)
+const DIAMOND_ASPECT = 1.4;         // height / width
 const START_ANGLE = Math.PI / 4;    // a vertex facing the cube's front corner, as in the reference
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;   // near corner-on, slightly toward the left face
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
@@ -175,16 +174,28 @@ function start() {
     };
   }
 
+  // The diamond turns with the page instead of on its own: scrolling down turns it
+  // counterclockwise seen from above (front face moving left to right), one full turn from the
+  // top of the page to the bottom; scrolling back up turns it back. Frames are drawn only while
+  // it is catching up with the scroll position, so an idle page costs nothing.
+  const SMOOTHING = 0.16; // share of the remaining angle closed per 60 Hz frame
+  const scrollAngle = () => {
+    const range = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const y = Math.min(Math.max(window.scrollY, 0), range);
+    return START_ANGLE + (y / range) * 2 * Math.PI;
+  };
+
   let raf = 0;
   let last = null;
   let running = false;
   let onScreen = true;
-  // Frame-time guard: if the first 60 frames average slower than ~25 fps, the GPU can't keep
-  // this smooth, so stop and show the still image instead. ?hero=live disables the guard.
+  // Frame-time guard: if 60 consecutive-frame samples average slower than ~25 fps, the GPU can't
+  // keep this smooth, so stop and show the still image instead. ?hero=live disables the guard.
   const guard = !params.has('hero') && !params.has('hero-export');
   let sampled = 0;
   let sampledTime = 0;
   const step = (now) => {
+    raf = 0;
     if (!running) return;
     const dt = last === null ? 0 : (now - last) / 1000;
     last = now;
@@ -192,44 +203,53 @@ function start() {
       sampled++;
       sampledTime += dt;
       if (sampled === 60 && sampledTime / 60 > 0.04) {
-        pause();
+        running = false;
         container.classList.remove('hero-art--ready');
         container.classList.add('hero-art--static');
         return;
       }
     }
-    hero.setAngle(hero.angle + (dt * 2 * Math.PI) / TURN_SECONDS); // counterclockwise from above
+    const target = scrollAngle();
+    const diff = target - hero.angle;
+    const settled = Math.abs(diff) < 0.0005;
+    const k = 1 - Math.pow(1 - SMOOTHING, dt > 0 ? dt * 60 : 1);
+    hero.setAngle(settled ? target : hero.angle + diff * k);
     hero.render();
-    raf = requestAnimationFrame(step);
+    if (settled) { running = false; last = null; } else raf = requestAnimationFrame(step);
   };
-  const play = () => {
+  // Under prefers-reduced-motion the diamond stays still at its starting angle.
+  const follow = () => {
     if (running || reduceMotion.matches || document.hidden || !onScreen) return;
     running = true;
     last = null;
     raf = requestAnimationFrame(step);
   };
-  const pause = () => { running = false; cancelAnimationFrame(raf); };
+  const stop = () => { running = false; last = null; cancelAnimationFrame(raf); };
 
-  document.addEventListener('visibilitychange', () => (document.hidden ? pause() : play()));
-  reduceMotion.addEventListener('change', () => { if (reduceMotion.matches) { pause(); hero.render(); } else play(); });
-  new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; onScreen ? play() : pause(); }).observe(canvas);
+  if (!reduceMotion.matches) { hero.setAngle(scrollAngle()); hero.render(); }
+  document.addEventListener('visibilitychange', () => (document.hidden ? stop() : follow()));
+  reduceMotion.addEventListener('change', () => {
+    stop();
+    hero.setAngle(reduceMotion.matches ? START_ANGLE : scrollAngle());
+    hero.render();
+  });
+  new IntersectionObserver(([entry]) => { onScreen = entry.isIntersecting; onScreen ? follow() : stop(); }).observe(canvas);
   let resizeQueued = false;
   window.addEventListener('resize', () => {
     if (resizeQueued) return;
     resizeQueued = true;
-    requestAnimationFrame(() => { resizeQueued = false; size(); hero.render(); });
+    requestAnimationFrame(() => { resizeQueued = false; size(); hero.render(); follow(); });
   });
-  // Fade the object as the page scrolls past the hero, so text further down stays easy to read.
-  let fadeQueued = false;
-  const fade = () => {
-    fadeQueued = false;
+
+  // Fade the object partly as the page scrolls past the hero, so text further down stays readable.
+  let scrollQueued = false;
+  const onScroll = () => {
+    scrollQueued = false;
     const t = Math.min(window.scrollY / (window.innerHeight * 0.5), 1);
-    container.style.setProperty('--hero-scroll-fade', String(1 - 0.78 * t));
+    container.style.setProperty('--hero-scroll-fade', String(1 - 0.45 * t));
+    follow();
   };
-  window.addEventListener('scroll', () => { if (!fadeQueued) { fadeQueued = true; requestAnimationFrame(fade); } }, { passive: true });
-  fade();
-
-  play();
+  window.addEventListener('scroll', () => { if (!scrollQueued) { scrollQueued = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
 }
-
 start();
