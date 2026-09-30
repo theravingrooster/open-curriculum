@@ -208,6 +208,9 @@ h2 {
 /* Author carousel: two identical sets, the track slides by exactly one set width. */
 .marquee {
   overflow: hidden;
+  /* The extra top padding above is headroom for hovered portraits; pull the strip up by the
+     same amount so its position on the page doesn't change. */
+  margin-top: -42px;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
@@ -226,7 +229,7 @@ h2 {
   margin: 0;
   /* Trailing space equals the gap, and every size is a whole pixel, so one set is exactly
      half the track and the -50% loop point lands on a pixel boundary: no visible jump. */
-  padding: 42px 28px 10px 0; /* headroom for the hover magnification */
+  padding: 84px 28px 24px 0; /* headroom for the hover magnification and its glow */
 }
 .marquee .author { flex: 0 0 auto; width: 120px; text-align: center; }
 .marquee .author a { display: block; color: inherit; text-decoration: none; border-radius: 4px; }

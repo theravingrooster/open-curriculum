@@ -37,11 +37,11 @@
       "credit": null
     },
     "Timothy D. Wilson": {
-      "portrait": null,
+      "portrait": "assets/portraits/timothy-d-wilson.webp",
       "credit": null
     },
     "Thomas C. Schelling": {
-      "portrait": null,
+      "portrait": "assets/portraits/thomas-c-schelling.webp",
       "credit": null
     },
     "Karl Popper": {
@@ -81,7 +81,7 @@
       "credit": null
     },
     "Peter Thiel": {
-      "portrait": null,
+      "portrait": "assets/portraits/peter-thiel.webp",
       "credit": null
     },
     "Blake Masters": {
@@ -173,7 +173,7 @@
       "credit": null
     },
     "Thucydides": {
-      "portrait": null,
+      "portrait": "assets/portraits/thucydides.webp",
       "credit": null
     },
     "Will Durant": {
@@ -253,7 +253,7 @@
       "credit": null
     },
     "Seneca": {
-      "portrait": null,
+      "portrait": "assets/portraits/seneca.webp",
       "credit": null
     },
     "Viktor E. Frankl": {
