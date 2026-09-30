@@ -118,7 +118,7 @@
       ],
       "level": 2,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "cialdini-influence",
@@ -133,7 +133,7 @@
       "topics": [
         "influence"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "klein-sources-of-power",
@@ -145,7 +145,7 @@
       ],
       "level": 3,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "noise",
