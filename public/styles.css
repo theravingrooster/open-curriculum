@@ -211,7 +211,7 @@ h2 {
   overflow: hidden;
   /* The extra top padding above is headroom for hovered portraits; pull the strip up by the
      same amount so its position on the page doesn't change. */
-  margin-top: -2px;
+  margin-top: -40px;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
@@ -228,22 +228,22 @@ h2 {
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(calc(-100% / var(--marquee-copies, 2))); } }
 .marquee-set {
   display: flex;
-  gap: 28px;
+  gap: 34px;
   list-style: none;
   margin: 0;
   /* Trailing space equals the gap, and every size is a whole pixel, so one set is exactly
      half the track and the -50% loop point lands on a pixel boundary: no visible jump. */
-  padding: 216px 28px 30px 0; /* headroom for the hover magnification, glow and quote */
+  padding: 256px 34px 30px 0; /* headroom for the hover magnification, glow and quote */
 }
-.marquee .author { flex: 0 0 auto; width: 120px; text-align: center; }
+.marquee .author { flex: 0 0 auto; width: 144px; text-align: center; }
 .marquee .author a { display: block; color: inherit; text-decoration: none; border-radius: 4px; }
 .marquee .author a:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
 /* Portraits are transparent cut-outs that float on the page: no frame, no background. */
 .marquee .author img,
 .marquee .initials {
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 144px;
+  height: 144px;
   object-fit: contain;
   object-position: center bottom;
 }
@@ -312,13 +312,13 @@ h2 {
 .marquee .author:focus-within { transform: scale(var(--dock-scale)); z-index: 1; }
 /* Neighbours grow less and slide outward so the enlarged portrait never overlaps them. */
 .marquee .author:has(+ .author:hover),
-.marquee .author:has(+ .author:focus-within) { transform: translateX(-34px) scale(1.2); }
+.marquee .author:has(+ .author:focus-within) { transform: translateX(-41px) scale(1.2); }
 .marquee .author:hover + .author,
-.marquee .author:focus-within + .author { transform: translateX(34px) scale(1.2); }
+.marquee .author:focus-within + .author { transform: translateX(41px) scale(1.2); }
 .marquee .author:has(+ .author + .author:hover),
-.marquee .author:has(+ .author + .author:focus-within) { transform: translateX(-16px) scale(1.07); }
+.marquee .author:has(+ .author + .author:focus-within) { transform: translateX(-19px) scale(1.07); }
 .marquee .author:hover + .author + .author,
-.marquee .author:focus-within + .author + .author { transform: translateX(16px) scale(1.07); }
+.marquee .author:focus-within + .author + .author { transform: translateX(19px) scale(1.07); }
 .marquee .author:hover img,
 .marquee .author:hover .initials,
 .marquee .author:focus-within img,
