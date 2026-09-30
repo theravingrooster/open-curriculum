@@ -98,10 +98,9 @@ ${body.trim()}
 
   <footer class="site">
     <div class="wrap">
-      ${footer || `<span>The Open Curriculum · not a school · not accredited · on purpose</span>
+      ${footer || `<span>The Open Curriculum</span>
       <a href="${prefix}library.html">Back to the library</a>`}
     </div>
-    <div class="wrap footer-meta"><a href="${prefix}credits.html">Credits</a></div>
   </footer>
 </body>
 </html>
@@ -206,7 +205,8 @@ const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (m, k) => {
 });
 
 const STATIC_PAGES = [
-  { src: 'index.html', title: `${SITE} — Real knowledge, no diploma required`, active: 'home' },
+  { src: 'index.html', title: `${SITE} — Real knowledge, no diploma required`, active: 'home',
+    head: '\n  <script src="tracks.js" defer></script>' },
   { src: 'mission.html', title: `Mission — ${SITE}`, active: 'mission' },
 ];
 for (const p of STATIC_PAGES) {
@@ -285,6 +285,7 @@ pages.set('tracks/index.html', layout({
   title: `Tracks — ${SITE}`,
   prefix: '../',
   active: 'tracks',
+  head: '\n  <script src="../tracks.js" defer></script>',
   body: `
   <div class="hero">
     <div class="wrap">

@@ -319,18 +319,20 @@ h2 {
 /* No rule under the home hero: it cut straight across the diamond. */
 .hero-art ~ .hero { border-bottom: 0; }
 
-footer.site .footer-meta { margin-top: 0.6rem; }
-footer.site .footer-meta a { color: var(--ink-soft); }
 ul.credits { padding-left: 1.2rem; }
 ul.credits .title { font-weight: 600; }
 
+/* Track cards: rows of three, the last row centred (5 tracks = three on top, two below). */
 .tracks {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 0.9rem;
+  --track-gap: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--track-gap);
 }
 
 .track {
+  flex: 0 1 calc((100% - 2 * var(--track-gap)) / 3);
   background: var(--card);
   border: 1px solid var(--rule);
   padding: 1.15rem 1.15rem 1.05rem;
@@ -338,11 +340,32 @@ ul.credits .title { font-weight: 600; }
   color: inherit;
   display: block;
   box-shadow: var(--shadow);
+  /* --px / --py: the small cursor drift set by public/tracks.js */
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease, background-color 0.35s ease;
+  will-change: transform;
 }
 
-.track:hover {
-  border-color: var(--accent);
+.track:hover,
+.track:focus-visible {
   background: var(--card-hover);
+  transform: translate3d(var(--px, 0px), calc(var(--py, 0px) - 6px), 0) scale(1.03);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 0 22px rgba(255, 255, 255, 0.3),
+    0 0 64px rgba(255, 255, 255, 0.14),
+    0 18px 40px rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+@media (max-width: 900px) {
+  .track { flex-basis: calc((100% - var(--track-gap)) / 2); }
+}
+@media (max-width: 720px) {
+  .track { flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track, .track:hover, .track:focus-visible { transform: none; transition: box-shadow 0.35s ease, background-color 0.35s ease; }
 }
 
 .track .n {
