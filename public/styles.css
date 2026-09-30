@@ -279,10 +279,10 @@ h2 {
 .hero-art--static {
   opacity: calc(var(--hero-opacity, 0.9) * var(--hero-scroll-fade, 1));
   /* Same size and position as the live scene: the still fills 90% of its square with the
-     object, the live object fills 64% of the viewport height, centred at 76% / 55%. */
+     object, the live object fills 64% of the viewport height, centred at 78% / 55%. */
   background: url("assets/hero-static.webp") no-repeat;
   background-size: 71.1vh 71.1vh;
-  background-position: calc(76vw - 35.55vh) calc(55vh - 35.55vh);
+  background-position: calc(78vw - 35.55vh) calc(55vh - 35.55vh);
 }
 @media (min-width: 721px) and (max-width: 1099px) {
   .hero-art { --hero-opacity: 0.7; }
@@ -294,7 +294,7 @@ h2 {
 @media (max-width: 720px) {
   .hero-art canvas { display: none; }
   .hero-art, .hero-art--static {
-    --hero-opacity: 0.2; /* keeps #9c9c9c body text at 4.5:1 or better over the diamond */
+    --hero-opacity: 0.13; /* keeps #9c9c9c body text at 4.5:1 or better over the diamond */
     opacity: var(--hero-opacity);
     background: url("assets/hero-static.webp") no-repeat 50% 62% / min(118vw, 70vh) auto;
   }

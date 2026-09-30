@@ -157,7 +157,7 @@ function start() {
     const w = window.innerWidth;
     const h = window.innerHeight;
     const wide = w >= 1100;
-    hero.layout(w, h, { heightFraction: wide ? 0.64 : 0.52, centerX: wide ? 0.76 : 0.74, centerY: 0.55 });
+    hero.layout(w, h, { heightFraction: wide ? 0.64 : 0.52, centerX: wide ? 0.78 : 0.74, centerY: 0.55 });
   };
   size();
   hero.render();
