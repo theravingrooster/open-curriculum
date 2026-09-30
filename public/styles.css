@@ -114,8 +114,8 @@ h1 {
 .tagline {
   font-size: clamp(1.25rem, 2.2vw, 1.6rem);
   line-height: 1.3;
-  color: var(--ink);
-  margin: -0.2rem 0 1rem;
+  color: #bdbdbd;
+  margin: -0.2rem 0 1.6rem;
 }
 
 .lede {
