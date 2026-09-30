@@ -309,6 +309,8 @@ h2 {
   text-shadow: 0 0 2px #080808, 0 0 6px #080808, 0 0 14px rgba(8, 8, 8, 0.9), 0 0 28px rgba(8, 8, 8, 0.7);
 }
 .hero-art ~ .hero .btn:not(.ghost) { text-shadow: none; }
+/* No rule under the home hero: it cut straight across the diamond. */
+.hero-art ~ .hero { border-bottom: 0; }
 
 footer.site .footer-meta { margin-top: 0.6rem; }
 footer.site .footer-meta a { color: var(--ink-soft); }
