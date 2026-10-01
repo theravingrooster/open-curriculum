@@ -157,7 +157,7 @@
       ],
       "level": 3,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "wilson-strangers-redirect",
@@ -169,7 +169,7 @@
       ],
       "level": 3,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "taleb-incerto",
@@ -181,7 +181,7 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "schelling-strategy-of-conflict",
@@ -193,7 +193,7 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "popper-conjectures",
@@ -205,7 +205,7 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "kuhn-structure",
