@@ -1,6 +1,7 @@
 // Author strip: hovering an author eases the scroll to a stop instead of halting it at once,
 // and it eases back up to speed when the pointer leaves the authors. Only the authors
-// themselves count, not the empty space above them. Keyboard focus still pauses via CSS.
+// themselves count, not the empty space above them. Keyboard focus (and the focus a click
+// gives a link) stops it the same way.
 (function () {
   var marquee = document.querySelector('.marquee');
   var track = marquee && marquee.querySelector('.marquee-track');
@@ -29,11 +30,19 @@
     target = to;
     if (!raf) raf = requestAnimationFrame(step);
   }
+  var hovering = false;
+  var focused = false;
   marquee.addEventListener('pointerover', function (e) {
-    if (e.target.closest && e.target.closest('.author')) go(0);
+    if (e.target.closest && e.target.closest('.author')) { hovering = true; go(0); }
   });
   marquee.addEventListener('pointerout', function (e) {
     var to = e.relatedTarget;
-    if (!to || !to.closest || !to.closest('.marquee .author')) go(1);
+    if (!to || !to.closest || !to.closest('.marquee .author')) { hovering = false; if (!focused) go(1); }
+  });
+  marquee.addEventListener('focusin', function () { focused = true; go(0); });
+  marquee.addEventListener('focusout', function (e) {
+    if (e.relatedTarget && marquee.contains(e.relatedTarget)) return;
+    focused = false;
+    if (!hovering) go(1);
   });
 })();

@@ -226,7 +226,10 @@ h2 {
   width: max-content;
   animation: marquee var(--marquee-duration, 300s) linear infinite;
 }
-.marquee:focus-within .marquee-track { animation-play-state: paused; }
+/* Without JavaScript, keyboard focus pauses the strip here. With it, public/marquee.js eases
+   it to a stop instead: pausing in CSS on top of the script's rate change resets the strip's
+   position in Chrome, which made a clicked portrait jump sideways. */
+.marquee:not(.js-marquee):focus-within .marquee-track { animation-play-state: paused; }
 /* Pointer hover slows the strip to a stop smoothly (public/marquee.js) and only over an
    author, not the empty room above the portraits. Without JavaScript, hovering an author
    pauses it outright. */
