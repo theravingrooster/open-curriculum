@@ -136,6 +136,19 @@
       "status": "published"
     },
     {
+      "slug": "greene-human-nature",
+      "title": "The Laws of Human Nature",
+      "author": "Robert Greene",
+      "year": 2018,
+      "tracks": [
+        "judgment",
+        "power"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
       "slug": "klein-sources-of-power",
       "title": "Sources of Power",
       "author": "Gary Klein",
@@ -696,6 +709,20 @@
       "status": "draft"
     },
     {
+      "slug": "greene-48-laws",
+      "title": "The 48 Laws of Power",
+      "author": "Robert Greene",
+      "year": 1998,
+      "tracks": [
+        "power"
+      ],
+      "level": 2,
+      "topics": [
+        "influence"
+      ],
+      "status": "draft"
+    },
+    {
       "slug": "demick-nothing-to-envy",
       "title": "Nothing to Envy",
       "author": "Barbara Demick",
@@ -767,6 +794,34 @@
       ],
       "level": 3,
       "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "greene-art-of-seduction",
+      "title": "The Art of Seduction",
+      "author": "Robert Greene",
+      "year": 2001,
+      "tracks": [
+        "power"
+      ],
+      "level": 3,
+      "topics": [
+        "influence"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "greene-33-strategies",
+      "title": "The 33 Strategies of War",
+      "author": "Robert Greene",
+      "year": 2006,
+      "tracks": [
+        "power"
+      ],
+      "level": 3,
+      "topics": [
+        "states"
+      ],
       "status": "draft"
     },
     {
@@ -888,6 +943,30 @@
       "title": "The Art of Loving",
       "author": "Erich Fromm",
       "year": 1956,
+      "tracks": [
+        "character"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "greene-mastery",
+      "title": "Mastery",
+      "author": "Robert Greene",
+      "year": 2012,
+      "tracks": [
+        "character"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "greene-50th-law",
+      "title": "The 50th Law",
+      "author": "Robert Greene and 50 Cent",
+      "year": 2009,
       "tracks": [
         "character"
       ],

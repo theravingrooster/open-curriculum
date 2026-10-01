@@ -151,7 +151,17 @@ for (const t of tracks) {
 }
 for (const a of authors) {
   const d = authorData[a.name] || {};
-  a.guide = a.books.find(isPublished) || null;
+  // A portrait links to the guide for the book its quote comes from (quoteBook), once that
+  // guide is published. Without a quoteBook, it links to the author's first published guide.
+  a.quoteBook = d.quoteBook || null;
+  if (a.quoteBook) {
+    const qb = books.find((x) => x.slug === a.quoteBook);
+    if (!qb) errors.push(`data/authors.json: ${a.name}: quoteBook "${a.quoteBook}" is not a book`);
+    else if (!a.books.includes(qb)) errors.push(`data/authors.json: ${a.name}: quoteBook "${a.quoteBook}" is not one of their books`);
+    a.guide = qb && isPublished(qb) ? qb : null;
+  } else {
+    a.guide = a.books.find(isPublished) || null;
+  }
   a.portrait = d.portrait || null;
   a.credit = d.credit || null;
   a.quote = d.quote || null;

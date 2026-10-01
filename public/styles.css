@@ -207,27 +207,17 @@ h2 {
 
 .home-instructors .section-head { text-align: center; }
 .home-instructors .section-head h2 { margin-left: auto; margin-right: auto; }
-/* The strip reserves tall empty room above the portraits for the hover quotes. Rather than
-   leave the heading floating above that room, sit it just above the portraits, over the
-   room, and fade it out while a quote is showing so the two never overlap. */
-.home-instructors .section-head {
-  --heading-drop: 207px;
-  position: relative;
-  z-index: 2;
-  transform: translateY(var(--heading-drop)); /* moves the heading only; layout is unchanged */
-  pointer-events: none;
-}
-.home-instructors .section-head h2 { transition: opacity 0.25s ease; }
-.home-instructors:has(.marquee .author:hover) .section-head h2,
-.home-instructors:has(.marquee .author:focus-within) .section-head h2 { opacity: 0; }
+/* The heading sits below the portraits, clear of the hero art and the hover quotes. */
+.home-instructors .section-head { margin-top: 0.6rem; }
+.home-instructors .section-head h2 { margin-bottom: 0; }
 
 /* Author carousel: two identical sets, the track slides by exactly one set width. */
 .marquee {
   --dock-scale: 1.55; /* how much a hovered portrait grows */
   overflow: hidden;
-  /* The extra top padding above is headroom for hovered portraits; pull the strip up by the
-     same amount so its position on the page doesn't change. */
-  margin-top: -72px;
+  /* The extra top padding above is headroom for hovered portraits; pull the strip up partly
+     into it so the portraits sit where they did when the heading was above them. */
+  margin-top: -22px;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
           mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
 }
