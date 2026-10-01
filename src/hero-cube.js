@@ -1,10 +1,12 @@
 // Home page background: a cream octahedron, centred on the page, that turns as the page scrolls
 // and breaks apart into fragments as you scroll down (and reassembles as you scroll back up).
+// Thin grey strings join each fragment to its nearest neighbours, like a network of nodes; they
+// stretch as the pieces drift apart and shorten again as they come back together.
 // Bundled to assets/js/hero-cube.js with `npm run bundle:hero`. Loaded by pages/index.html
 // after the page's load event, and only on wide screens.
 import {
   WebGLRenderer, Scene, PerspectiveCamera, Mesh, Group, MeshStandardMaterial, BufferGeometry, Float32BufferAttribute,
-  DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3,
+  DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3, LineSegments, LineBasicMaterial,
 } from 'three';
 
 const DIAMOND_HALF_HEIGHT = 1.1;
@@ -12,6 +14,10 @@ const DIAMOND_ASPECT = 1.4;         // height / width
 const EDGE_RADIUS = 0.04;          // radius of the rounded edges and tips (0 = knife-sharp)
 const FRAGMENTS = 56;             // number of pieces the diamond breaks into
 const FRAGMENT_SEED = 7;           // fixed, so the pieces are the same on every visit
+const STRING_NEIGHBOURS = 3;       // each piece is strung to this many of its nearest pieces
+// Grey, not black: black strings would vanish against the near-black page.
+const STRING_COLOR = 0x9a9893;
+const STRING_OPACITY = 0.75;
 const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
@@ -344,7 +350,26 @@ export function createHeroScene(canvas) {
         shards.add(mesh);
         return { mesh, centre: p.centre, offset: p.offset };
       });
+    // Strings run between piece centres, so while the diamond is whole they are buried inside
+    // the solid pieces; they come into view in the gaps as the pieces separate.
+    const pairs = new Set();
+    pieces.forEach((p, i) => {
+      pieces.map((q, j) => ({ j, d: p.centre.distanceToSquared(q.centre) }))
+        .filter(({ j }) => j !== i)
+        .sort((x, y) => x.d - y.d)
+        .slice(0, STRING_NEIGHBOURS)
+        .forEach(({ j }) => pairs.add(i < j ? `${i},${j}` : `${j},${i}`));
+    });
+    links = [...pairs].map((k) => k.split(',').map(Number));
+    const geo = new BufferGeometry();
+    geo.setAttribute('position', new Float32BufferAttribute(new Float32Array(links.length * 6), 3));
+    strings = new LineSegments(geo, stringMaterial);
+    strings.frustumCulled = false; // its bounds change every frame
+    shards.add(strings);
   };
+  const stringMaterial = new LineBasicMaterial({ color: STRING_COLOR, transparent: true, opacity: 0, depthWrite: false });
+  let links = [];
+  let strings = null;
   let explosion = 0;
   // e: 0 = intact, 1 = fully apart.
   const setExplode = (e) => {
@@ -356,6 +381,15 @@ export function createHeroScene(canvas) {
     whole.scale.setScalar(Math.max(0.7, 1 - 4 * e));
     if (!broken) return;
     for (const p of pieces) p.mesh.position.copy(p.centre).addScaledVector(p.offset, e);
+    const attr = strings.geometry.attributes.position;
+    links.forEach(([i, j], k) => {
+      const a = pieces[i].mesh.position, b = pieces[j].mesh.position;
+      attr.setXYZ(2 * k, a.x, a.y, a.z);
+      attr.setXYZ(2 * k + 1, b.x, b.y, b.z);
+    });
+    attr.needsUpdate = true;
+    // Fade the strings in over the first part of the break so they don't pop on.
+    stringMaterial.opacity = STRING_OPACITY * Math.min(1, e / 0.25);
   };
 
   const camera = new PerspectiveCamera(30, 1, 0.1, 100);
