@@ -6,8 +6,11 @@
 // after the page's load event, and only on wide screens.
 import {
   WebGLRenderer, Scene, PerspectiveCamera, Mesh, Group, MeshStandardMaterial, BufferGeometry, Float32BufferAttribute,
-  DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3, LineSegments, LineBasicMaterial,
+  DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3,
 } from 'three';
+import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js';
+import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js';
+import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
 
 const DIAMOND_HALF_HEIGHT = 1.1;
 const DIAMOND_ASPECT = 1.4;         // height / width
@@ -18,6 +21,9 @@ const STRING_NEIGHBOURS = 3;       // each piece is strung to this many of its n
 // Grey, not black: black strings would vanish against the near-black page.
 const STRING_COLOR = 0x9a9893;
 const STRING_OPACITY = 0.75;
+// Width in device pixels. Plain WebGL lines are always 1 device pixel, so these are drawn as
+// screen-space quads (three's LineSegments2) to make them thicker.
+const STRING_WIDTH = 2;
 const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
@@ -361,13 +367,14 @@ export function createHeroScene(canvas) {
         .forEach(({ j }) => pairs.add(i < j ? `${i},${j}` : `${j},${i}`));
     });
     links = [...pairs].map((k) => k.split(',').map(Number));
-    const geo = new BufferGeometry();
-    geo.setAttribute('position', new Float32BufferAttribute(new Float32Array(links.length * 6), 3));
-    strings = new LineSegments(geo, stringMaterial);
+    const geo = new LineSegmentsGeometry();
+    geo.setPositions(new Float32Array(links.length * 6));
+    strings = new LineSegments2(geo, stringMaterial);
     strings.frustumCulled = false; // its bounds change every frame
     shards.add(strings);
   };
-  const stringMaterial = new LineBasicMaterial({ color: STRING_COLOR, transparent: true, opacity: 0, depthWrite: false });
+  // linewidth is in CSS pixels; layout() divides by the pixel ratio to get STRING_WIDTH device pixels.
+  const stringMaterial = new LineMaterial({ color: STRING_COLOR, linewidth: STRING_WIDTH, transparent: true, opacity: 0, depthWrite: false });
   let links = [];
   let strings = null;
   let explosion = 0;
@@ -381,13 +388,14 @@ export function createHeroScene(canvas) {
     whole.scale.setScalar(Math.max(0.7, 1 - 4 * e));
     if (!broken) return;
     for (const p of pieces) p.mesh.position.copy(p.centre).addScaledVector(p.offset, e);
-    const attr = strings.geometry.attributes.position;
+    // Write the endpoints straight into the line geometry's buffer (start and end of each
+    // segment, interleaved), instead of rebuilding it every frame.
+    const buf = strings.geometry.attributes.instanceStart.data;
     links.forEach(([i, j], k) => {
       const a = pieces[i].mesh.position, b = pieces[j].mesh.position;
-      attr.setXYZ(2 * k, a.x, a.y, a.z);
-      attr.setXYZ(2 * k + 1, b.x, b.y, b.z);
+      buf.array.set([a.x, a.y, a.z, b.x, b.y, b.z], 6 * k);
     });
-    attr.needsUpdate = true;
+    buf.needsUpdate = true;
     // Fade the strings in over the first part of the break so they don't pop on.
     stringMaterial.opacity = STRING_OPACITY * Math.min(1, e / 0.25);
   };
@@ -418,6 +426,7 @@ export function createHeroScene(canvas) {
   function layout(width, height, { heightFraction = 0.7, centerX = 0.5, centerY = 0.5 } = {}) {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     renderer.setPixelRatio(dpr);
+    stringMaterial.linewidth = STRING_WIDTH / dpr;
     renderer.setSize(width, height, false);
     const projected = 2.3; // approx. screen height of the diamond, in world units
     camera.fov = (2 * Math.atan(projected / (2 * heightFraction * CAMERA_DISTANCE)) * 180) / Math.PI;
