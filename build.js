@@ -201,12 +201,15 @@ const shownAuthors = authors.filter((a) => a.portrait);
 // Three identical sets so a single set is always wider than the screen, even on very wide
 // displays; the track slides by exactly one set, so the loop has no visible jump.
 const MARQUEE_COPIES = 3;
+// The repeat sets are hidden from screen readers (aria-hidden) and their links from the Tab
+// order (tabindex="-1"), but not inert: inert also blocks hover and clicks, so the quotes and
+// magnification stopped working once the first set had scrolled past.
 const authorCarousel = `<div class="marquee" style="--marquee-duration: ${Math.round(shownAuthors.length * 4.5)}s; --marquee-copies: ${MARQUEE_COPIES}">
         <div class="marquee-track">
           <ul class="marquee-set" aria-label="Authors">
 ${shownAuthors.map((a) => '            ' + authorItem(a, '', false)).join('\n')}
           </ul>
-${Array.from({ length: MARQUEE_COPIES - 1 }, () => `          <ul class="marquee-set" aria-hidden="true" inert>
+${Array.from({ length: MARQUEE_COPIES - 1 }, () => `          <ul class="marquee-set" aria-hidden="true">
 ${shownAuthors.map((a) => '            ' + authorItem(a, '', true)).join('\n')}
           </ul>`).join('\n')}
         </div>
