@@ -23,7 +23,7 @@ const STRING_COLOR = 0x9a9893;
 const STRING_OPACITY = 0.75;
 // Width in device pixels. Plain WebGL lines are always 1 device pixel, so these are drawn as
 // screen-space quads (three's LineSegments2) to make them thicker.
-const STRING_WIDTH = 2;
+const STRING_WIDTH = 4;
 const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
