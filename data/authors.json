@@ -4,13 +4,15 @@
       "portrait": "assets/portraits/nassim-nicholas-taleb.webp",
       "credit": null,
       "quote": "Wind extinguishes a candle and energizes fire.",
-      "quoteSource": "Antifragile"
+      "quoteSource": "Antifragile",
+      "quoteBook": "taleb-incerto"
     },
     "Daniel Kahneman": {
       "portrait": "assets/portraits/daniel-kahneman.webp",
       "credit": null,
       "quote": "Nothing in life is as important as you think it is when you are thinking about it.",
-      "quoteSource": "Thinking, Fast and Slow"
+      "quoteSource": "Thinking, Fast and Slow",
+      "quoteBook": "kahneman-thinking"
     },
     "Timothy D. Wilson": {
       "portrait": "assets/portraits/timothy-d-wilson.webp",
@@ -28,37 +30,43 @@
       "portrait": "assets/portraits/karl-popper.webp",
       "credit": null,
       "quote": "Our knowledge can be only finite, while our ignorance must necessarily be infinite.",
-      "quoteSource": "Conjectures and Refutations"
+      "quoteSource": "Conjectures and Refutations",
+      "quoteBook": "popper-conjectures"
     },
     "Warren Buffett": {
       "portrait": "assets/portraits/warren-buffett.webp",
       "credit": null,
       "quote": "Our goal is more modest: we simply attempt to be fearful when others are greedy and to be greedy only when others are fearful.",
-      "quoteSource": "Berkshire Hathaway shareholder letter, 1986"
+      "quoteSource": "Berkshire Hathaway shareholder letter, 1986",
+      "quoteBook": "buffett-letters"
     },
     "Benjamin Graham": {
       "portrait": "assets/portraits/benjamin-graham.webp",
       "credit": null,
       "quote": "The investor’s chief problem—and even his worst enemy—is likely to be himself.",
-      "quoteSource": "The Intelligent Investor"
+      "quoteSource": "The Intelligent Investor",
+      "quoteBook": "graham-intelligent-investor"
     },
     "Peter Thiel": {
       "portrait": "assets/portraits/peter-thiel.webp",
       "credit": null,
       "quote": "What important truth do very few people agree with you on?",
-      "quoteSource": "Zero to One"
+      "quoteSource": "Zero to One",
+      "quoteBook": "thiel-zero-to-one"
     },
     "Josh Waitzkin": {
       "portrait": "assets/portraits/josh-waitzkin.webp",
       "credit": null,
       "quote": "The moment we believe that success is determined by an ingrained level of ability as opposed to resilience and hard work, we will be brittle in the face of adversity.",
-      "quoteSource": "The Art of Learning"
+      "quoteSource": "The Art of Learning",
+      "quoteBook": "waitzkin-art-of-learning"
     },
     "Jack D. Schwager": {
       "portrait": "assets/portraits/jack-d-schwager.webp",
       "credit": null,
       "quote": "There is no single market secret to discover, no single correct way to trade the markets.",
-      "quoteSource": "The Market Wizards series"
+      "quoteSource": "The Market Wizards series",
+      "quoteBook": "schwager-market-wizards"
     },
     "Mark Spitznagel": {
       "portrait": "assets/portraits/mark-spitznagel.webp",
@@ -70,31 +78,36 @@
       "portrait": "assets/portraits/thucydides.webp",
       "credit": null,
       "quote": "The strong do what they can and the weak suffer what they must.",
-      "quoteSource": "History of the Peloponnesian War, 5.89 (tr. Richard Crawley)"
+      "quoteSource": "History of the Peloponnesian War, 5.89 (tr. Richard Crawley)",
+      "quoteBook": "thucydides"
     },
     "Niccolò Machiavelli": {
       "portrait": "assets/portraits/niccolo-machiavelli.webp",
       "credit": null,
       "quote": "It is much safer to be feared than loved, when, of the two, either must be dispensed with.",
-      "quoteSource": "The Prince, ch. 17 (tr. W. K. Marriott)"
+      "quoteSource": "The Prince, ch. 17 (tr. W. K. Marriott)",
+      "quoteBook": "machiavelli-prince-discourses"
     },
     "Marcus Aurelius": {
       "portrait": "assets/portraits/marcus-aurelius.webp",
       "credit": null,
       "quote": "The impediment to action advances action. What stands in the way becomes the way.",
-      "quoteSource": "Meditations, 5.20 (tr. Gregory Hays)"
+      "quoteSource": "Meditations, 5.20 (tr. Gregory Hays)",
+      "quoteBook": "meditations"
     },
     "Seneca": {
       "portrait": "assets/portraits/seneca.webp",
       "credit": null,
       "quote": "There are more things, Lucilius, likely to frighten us than there are to crush us; we suffer more often in imagination than in reality.",
-      "quoteSource": "Letters, 13 (tr. Richard M. Gummere)"
+      "quoteSource": "Letters, 13 (tr. Richard M. Gummere)",
+      "quoteBook": "seneca-letters"
     },
     "Miyamoto Musashi": {
       "portrait": "assets/portraits/miyamoto-musashi.webp",
       "credit": null,
       "quote": "Do nothing which is of no use.",
-      "quoteSource": "The Book of Five Rings"
+      "quoteSource": "The Book of Five Rings",
+      "quoteBook": "musashi-five-rings"
     }
   }
 }
