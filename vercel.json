@@ -53,6 +53,46 @@
       "source": "/tracks/index.html",
       "destination": "/library",
       "permanent": true
+    },
+    {
+      "source": "/tracks/judgment",
+      "destination": "/tracks/mind",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/judgment.html",
+      "destination": "/tracks/mind",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/capital",
+      "destination": "/tracks/market",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/capital.html",
+      "destination": "/tracks/market",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/power",
+      "destination": "/tracks/state",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/power.html",
+      "destination": "/tracks/state",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/character",
+      "destination": "/tracks/self",
+      "permanent": true
+    },
+    {
+      "source": "/tracks/character.html",
+      "destination": "/tracks/self",
+      "permanent": true
     }
   ]
 }
