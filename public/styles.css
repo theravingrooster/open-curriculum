@@ -207,6 +207,19 @@ h2 {
 
 .home-instructors .section-head { text-align: center; }
 .home-instructors .section-head h2 { margin-left: auto; margin-right: auto; }
+/* The strip reserves tall empty room above the portraits for the hover quotes. Rather than
+   leave the heading floating above that room, sit it just above the portraits, over the
+   room, and fade it out while a quote is showing so the two never overlap. */
+.home-instructors .section-head {
+  --heading-drop: 207px;
+  position: relative;
+  z-index: 2;
+  transform: translateY(var(--heading-drop)); /* moves the heading only; layout is unchanged */
+  pointer-events: none;
+}
+.home-instructors .section-head h2 { transition: opacity 0.25s ease; }
+.home-instructors:has(.marquee .author:hover) .section-head h2,
+.home-instructors:has(.marquee .author:focus-within) .section-head h2 { opacity: 0; }
 
 /* Author carousel: two identical sets, the track slides by exactly one set width. */
 .marquee {
