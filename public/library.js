@@ -1,6 +1,7 @@
 // Library track filter: one box per track (plus All). Clicking a box shows only that track's
-// books in the list below. The choice is kept in the URL (?track=judgment) so it can be linked;
-// old #judgment links work too. Without JavaScript every track is listed.
+// books in the list below. The choice is kept in the URL (?track=mind) so it can be linked;
+// #mind links and the tracks' former ids (?track=judgment) work too. Without JavaScript every
+// track is listed.
 (function () {
   var boxes = Array.prototype.slice.call(document.querySelectorAll('.filter-box'));
   var sections = Array.prototype.slice.call(document.querySelectorAll('.toc-track'));
@@ -22,7 +23,10 @@
   boxes.forEach(function (b) {
     b.addEventListener('click', function () { show(b.getAttribute('data-track'), true); });
   });
+  // Former track ids, from before the tracks were renamed.
+  var renamed = { judgment: 'mind', capital: 'market', power: 'state', character: 'self' };
   var fromQuery = (location.search.match(/[?&]track=([a-z0-9-]+)/) || [])[1];
   var fromHash = location.hash.replace('#', '');
-  show(fromQuery || fromHash || 'all', false);
+  var id = fromQuery || fromHash || 'all';
+  show(renamed[id] || id, renamed[id] !== undefined);
 })();

@@ -1,14 +1,14 @@
 {
   "tracks": [
     {
-      "id": "judgment",
-      "name": "Judgment",
+      "id": "mind",
+      "name": "The Mind",
       "description": "How to think under uncertainty: mental models, bias, and the difference between a story and a forecast.",
       "order": 1
     },
     {
-      "id": "capital",
-      "name": "Capital",
+      "id": "market",
+      "name": "The Market",
       "description": "How value is created, priced, and destroyed, from the investor's chair and the operator's.",
       "order": 2
     },
@@ -19,14 +19,14 @@
       "order": 3
     },
     {
-      "id": "power",
-      "name": "Power",
+      "id": "state",
+      "name": "The State",
       "description": "States, elites, war, capture, and the stories institutions tell after they have already decided.",
       "order": 4
     },
     {
-      "id": "character",
-      "name": "Character",
+      "id": "self",
+      "name": "The Self",
       "description": "How to live: philosophy that survives contact with work, family, risk, and time.",
       "order": 5
     }
@@ -75,7 +75,7 @@
       "author": "Nassim Nicholas Taleb",
       "year": 2001,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 1,
       "topics": [],
@@ -87,7 +87,7 @@
       "author": "Daniel Kahneman",
       "year": 2011,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 2,
       "topics": [],
@@ -99,8 +99,8 @@
       "author": "Charlie Munger (ed. Peter D. Kaufman)",
       "year": 2005,
       "tracks": [
-        "judgment",
-        "capital"
+        "mind",
+        "market"
       ],
       "level": 2,
       "topics": [
@@ -114,7 +114,7 @@
       "author": "Shane Parrish and Rhiannon Beaubien",
       "year": 2019,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 2,
       "topics": [],
@@ -126,8 +126,8 @@
       "author": "Robert B. Cialdini",
       "year": 1984,
       "tracks": [
-        "judgment",
-        "power"
+        "mind",
+        "state"
       ],
       "level": 2,
       "topics": [
@@ -141,8 +141,8 @@
       "author": "Robert Greene",
       "year": 2018,
       "tracks": [
-        "judgment",
-        "power"
+        "mind",
+        "state"
       ],
       "level": 3,
       "topics": [],
@@ -154,7 +154,7 @@
       "author": "Gary Klein",
       "year": 1998,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 3,
       "topics": [],
@@ -166,7 +166,7 @@
       "author": "Daniel Kahneman, Olivier Sibony, Cass R. Sunstein",
       "year": 2021,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 3,
       "topics": [],
@@ -178,7 +178,7 @@
       "author": "Timothy D. Wilson",
       "year": "2002–2011",
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 3,
       "topics": [],
@@ -190,7 +190,7 @@
       "author": "Nassim Nicholas Taleb",
       "year": "2007–2018",
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 4,
       "topics": [],
@@ -202,7 +202,7 @@
       "author": "Thomas C. Schelling",
       "year": 1960,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 4,
       "topics": [],
@@ -214,7 +214,7 @@
       "author": "Karl Popper",
       "year": 1963,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 4,
       "topics": [],
@@ -226,7 +226,7 @@
       "author": "Thomas S. Kuhn",
       "year": 1962,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 4,
       "topics": [],
@@ -238,7 +238,7 @@
       "author": "David Deutsch",
       "year": 2011,
       "tracks": [
-        "judgment"
+        "mind"
       ],
       "level": 4,
       "topics": [],
@@ -250,7 +250,7 @@
       "author": "Warren Buffett",
       "year": "1965–present",
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 1,
       "topics": [
@@ -264,7 +264,7 @@
       "author": "Benjamin Graham",
       "year": 1949,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 1,
       "topics": [
@@ -278,7 +278,7 @@
       "author": "Andrew S. Grove",
       "year": 1983,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 1,
       "topics": [
@@ -292,7 +292,7 @@
       "author": "Benjamin Graham and Spencer B. Meredith",
       "year": 1937,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 2,
       "topics": [],
@@ -304,7 +304,7 @@
       "author": "Peter Lynch",
       "year": 1989,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 2,
       "topics": [
@@ -318,7 +318,7 @@
       "author": "Warren Buffett (ed. Lawrence A. Cunningham)",
       "year": 1997,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 2,
       "topics": [],
@@ -330,7 +330,7 @@
       "author": "Andrew S. Grove",
       "year": 1996,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 2,
       "topics": [],
@@ -342,7 +342,7 @@
       "author": "Ben Horowitz",
       "year": 2014,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 2,
       "topics": [
@@ -356,7 +356,7 @@
       "author": "Peter Thiel with Blake Masters",
       "year": 2014,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 2,
       "topics": [
@@ -370,7 +370,7 @@
       "author": "Josh Waitzkin",
       "year": 2007,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 2,
       "topics": [],
@@ -382,7 +382,7 @@
       "author": "Joel Greenblatt",
       "year": 1997,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 3,
       "topics": [
@@ -396,7 +396,7 @@
       "author": "Edwin Lefèvre",
       "year": 1923,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 3,
       "topics": [
@@ -410,7 +410,7 @@
       "author": "Jack D. Schwager",
       "year": 1989,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 3,
       "topics": [
@@ -424,7 +424,7 @@
       "author": "Edward Chancellor",
       "year": 1999,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 3,
       "topics": [],
@@ -436,7 +436,7 @@
       "author": "Clayton M. Christensen, Jerome H. Grossman, Jason Hwang",
       "year": 2009,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 3,
       "topics": [],
@@ -448,7 +448,7 @@
       "author": "Andrew Chen",
       "year": 2021,
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 3,
       "topics": [],
@@ -460,7 +460,7 @@
       "author": "Mark Spitznagel",
       "year": "2013–2021",
       "tracks": [
-        "capital"
+        "market"
       ],
       "level": 4,
       "topics": [],
@@ -638,7 +638,7 @@
       "author": "Thucydides",
       "year": "c. 400 BCE",
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 1,
       "topics": [
@@ -652,7 +652,7 @@
       "author": "Will and Ariel Durant",
       "year": 1968,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 1,
       "topics": [],
@@ -664,7 +664,7 @@
       "author": "Niccolò Machiavelli",
       "year": "1531–1532",
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 2,
       "topics": [
@@ -678,7 +678,7 @@
       "author": "Bruce Bueno de Mesquita and Alastair Smith",
       "year": 2011,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 2,
       "topics": [],
@@ -690,7 +690,7 @@
       "author": "Chris Miller",
       "year": 2022,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 2,
       "topics": [],
@@ -702,7 +702,7 @@
       "author": "Gustave Le Bon",
       "year": 1895,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 2,
       "topics": [],
@@ -714,7 +714,7 @@
       "author": "Robert Greene",
       "year": 1998,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 2,
       "topics": [
@@ -728,7 +728,7 @@
       "author": "Barbara Demick",
       "year": 2009,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 2,
       "topics": [],
@@ -740,7 +740,7 @@
       "author": "Robert A. Caro",
       "year": 1974,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [
@@ -754,7 +754,7 @@
       "author": "Alexis de Tocqueville",
       "year": "1835–1840",
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [],
@@ -766,7 +766,7 @@
       "author": "Daniel Yergin",
       "year": 1990,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [],
@@ -778,7 +778,7 @@
       "author": "Seymour M. Hersh",
       "year": 2018,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [],
@@ -790,7 +790,7 @@
       "author": "Robert Jay Lifton",
       "year": 1961,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [],
@@ -802,7 +802,7 @@
       "author": "Robert Greene",
       "year": 2001,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [
@@ -816,7 +816,7 @@
       "author": "Robert Greene",
       "year": 2006,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [
@@ -830,7 +830,7 @@
       "author": "Tim Reiterman with John Jacobs",
       "year": 1982,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [],
@@ -842,7 +842,7 @@
       "author": "Edward S. Herman and Noam Chomsky",
       "year": 1988,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 3,
       "topics": [
@@ -856,7 +856,7 @@
       "author": "Hannah Arendt",
       "year": 1951,
       "tracks": [
-        "power"
+        "state"
       ],
       "level": 4,
       "topics": [],
@@ -868,7 +868,7 @@
       "author": "Marcus Aurelius",
       "year": "c. 170–180",
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 1,
       "topics": [
@@ -882,7 +882,7 @@
       "author": "Seneca",
       "year": "c. 65",
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 1,
       "topics": [],
@@ -894,7 +894,7 @@
       "author": "Viktor E. Frankl",
       "year": 1946,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [
@@ -908,7 +908,7 @@
       "author": "Baltasar Gracián",
       "year": 1647,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [],
@@ -920,7 +920,7 @@
       "author": "Adele Faber and Elaine Mazlish",
       "year": 1980,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [],
@@ -932,7 +932,7 @@
       "author": "Sebastian Junger",
       "year": 2016,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [],
@@ -944,7 +944,7 @@
       "author": "Erich Fromm",
       "year": 1956,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [],
@@ -956,7 +956,7 @@
       "author": "Robert Greene",
       "year": 2012,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [],
@@ -968,7 +968,7 @@
       "author": "Robert Greene and 50 Cent",
       "year": 2009,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [],
@@ -980,7 +980,7 @@
       "author": "Amir Levine and Rachel Heller",
       "year": 2010,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 2,
       "topics": [],
@@ -992,7 +992,7 @@
       "author": "Miyamoto Musashi",
       "year": "c. 1645",
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 3,
       "topics": [],
@@ -1004,7 +1004,7 @@
       "author": "Confucius",
       "year": "c. 5th century BCE",
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 3,
       "topics": [],
@@ -1016,7 +1016,7 @@
       "author": "Tom Holland",
       "year": 2019,
       "tracks": [
-        "character"
+        "self"
       ],
       "level": 3,
       "topics": [],

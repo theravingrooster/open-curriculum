@@ -1,6 +1,6 @@
 # The Open Curriculum
 
-A static site for a free “real knowledge” library — tracks, topics, and guides that distill each book to the ideas that matter. Modeled on the shape of a curriculum, not a catalog. Aimed at judgment, capital, the body, power, and character.
+A static site for a free “real knowledge” library — tracks, topics, and guides that distill each book to the ideas that matter. Modeled on the shape of a curriculum, not a catalog. Organized in five tracks: The Mind, The Market, The Body, The State, and The Self.
 
 Live target: Vercel, linked to this repo.
 
