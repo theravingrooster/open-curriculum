@@ -256,7 +256,7 @@ pages.set('library.html', layout({
       <div class="tracks track-filter" role="group" aria-label="Show books from">
         <button type="button" class="track filter-box is-active" data-track="all" aria-pressed="true">
           <span class="n">All</span>
-          <span class="name">Every track</span>
+          <span class="name">All tracks</span>
         </button>
 ${tracks.map((t) => `        <button type="button" class="track filter-box" data-track="${t.id}" aria-pressed="false">
           <span class="n">${t.label}</span>
