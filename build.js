@@ -205,7 +205,42 @@ function authorItem(a, prefix, copy) {
 }
 
 // The home strip shows only authors who have a portrait (data/authors.json).
-const shownAuthors = authors.filter((a) => a.portrait);
+// Mixed so authors from the same track are spread out instead of bunched together: each
+// track's authors (in reading order) are placed at evenly spaced points along the strip.
+const shownAuthors = (() => {
+  const withPortrait = authors.filter((a) => a.portrait);
+  const trackOf = (a) => a.books[0].tracks[0];
+  const groups = new Map();
+  for (const a of withPortrait) {
+    if (!groups.has(trackOf(a))) groups.set(trackOf(a), []);
+    groups.get(trackOf(a)).push(a);
+  }
+  const order = tracks.map((t) => t.id);
+  const placed = [...groups.entries()].flatMap(([id, list]) =>
+    list.map((a, i) => ({ a, pos: (i + 0.5) / list.length, rank: order.indexOf(id) })));
+  placed.sort((x, y) => x.pos - y.pos || x.rank - y.rank);
+  const mixed = placed.map((p) => p.a);
+  // The strip loops, so the last author also neighbours the first. Where two neighbours share
+  // a track, swap the second with the first author elsewhere whose move clashes with no one.
+  const n = mixed.length;
+  const clash = (i) => trackOf(mixed[i]) === trackOf(mixed[(i + 1) % n]);
+  const fits = (k, i) => [-1, 1].every((d) => {
+    const nb = (k + d + n) % n;
+    return nb === i || trackOf(mixed[nb]) !== trackOf(mixed[i]);
+  });
+  for (let i = 0; i < n && n > 2; i++) {
+    if (!clash(i)) continue;
+    const b = (i + 1) % n;
+    for (let k = 0; k < n; k++) {
+      if (k === i || k === b) continue;
+      if (trackOf(mixed[k]) === trackOf(mixed[b])) continue;
+      [mixed[b], mixed[k]] = [mixed[k], mixed[b]];
+      if (fits(b, b) && fits(k, k)) break;
+      [mixed[b], mixed[k]] = [mixed[k], mixed[b]];
+    }
+  }
+  return mixed;
+})();
 // Three identical sets so a single set is always wider than the screen, even on very wide
 // displays; the track slides by exactly one set, so the loop has no visible jump.
 const MARQUEE_COPIES = 3;
