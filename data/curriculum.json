@@ -508,7 +508,7 @@
       "author": "Robert Greene",
       "year": 1998,
       "tracks": [
-        "mind"
+        "self"
       ],
       "level": 2,
       "topics": [
@@ -690,6 +690,20 @@
       ],
       "level": 1,
       "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "carnegie-how-to-win-friends",
+      "title": "How to Win Friends and Influence People",
+      "author": "Dale Carnegie",
+      "year": 1936,
+      "tracks": [
+        "self"
+      ],
+      "level": 1,
+      "topics": [
+        "influence"
+      ],
       "status": "draft"
     }
   ]
