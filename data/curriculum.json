@@ -557,32 +557,6 @@
       "status": "draft"
     },
     {
-      "slug": "meditations",
-      "title": "Meditations",
-      "author": "Marcus Aurelius",
-      "year": "c. 170–180",
-      "tracks": [
-        "self"
-      ],
-      "level": 1,
-      "topics": [
-        "inner-field"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "seneca-letters",
-      "title": "Letters from a Stoic",
-      "author": "Seneca",
-      "year": "c. 65",
-      "tracks": [
-        "self"
-      ],
-      "level": 1,
-      "topics": [],
-      "status": "draft"
-    },
-    {
       "slug": "greene-mastery",
       "title": "Mastery",
       "author": "Robert Greene",
@@ -603,54 +577,6 @@
         "self"
       ],
       "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "levine-heller-attached",
-      "title": "Attached",
-      "author": "Amir Levine and Rachel Heller",
-      "year": 2010,
-      "tracks": [
-        "self"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "musashi-five-rings",
-      "title": "The Book of Five Rings",
-      "author": "Miyamoto Musashi",
-      "year": "c. 1645",
-      "tracks": [
-        "self"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "confucius-analects",
-      "title": "The Analects",
-      "author": "Confucius",
-      "year": "c. 5th century BCE",
-      "tracks": [
-        "self"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "holland-dominion",
-      "title": "Dominion",
-      "author": "Tom Holland",
-      "year": 2019,
-      "tracks": [
-        "self"
-      ],
-      "level": 3,
       "topics": [],
       "status": "draft"
     },
@@ -751,6 +677,18 @@
         "imagination"
       ],
       "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "tolle-power-of-now",
+      "title": "The Power of Now",
+      "author": "Eckhart Tolle",
+      "year": 1997,
+      "tracks": [
+        "self"
+      ],
+      "level": 1,
       "topics": [],
       "status": "draft"
     }
