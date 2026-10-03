@@ -561,6 +561,30 @@
       "status": "draft"
     },
     {
+      "slug": "greger-how-not-to-die",
+      "title": "How Not to Die",
+      "author": "Michael Greger with Gene Stone",
+      "year": 2015,
+      "tracks": [
+        "body"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "sonnenburg-good-gut",
+      "title": "The Good Gut",
+      "author": "Justin Sonnenburg and Erica Sonnenburg",
+      "year": 2015,
+      "tracks": [
+        "body"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
       "slug": "topol-deep-medicine",
       "title": "Deep Medicine",
       "author": "Eric Topol",
