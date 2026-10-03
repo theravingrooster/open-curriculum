@@ -24,8 +24,10 @@ const STRING_OPACITY = 0.75;
 // Width in device pixels. Plain WebGL lines are always 1 device pixel, so these are drawn as
 // screen-space quads (three's LineSegments2) to make them thicker.
 const STRING_WIDTH = 4;
-const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
+// A vertex pointing straight at the camera, so at rest the front corner sits on the vertical
+// line through the top and bottom tips. (Rotating by θ turns the +z vertex toward azimuth θ.)
+const START_ANGLE = CAMERA_AZIMUTH;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
 const CAMERA_DISTANCE = 5.2;
 // Frosted-glass finish.
