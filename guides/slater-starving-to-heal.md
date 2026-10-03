@@ -37,6 +37,14 @@ The mechanism, in the book's account, is supervision and gradual extension. Each
 
 Implication: the protocol Slater followed was gradual and medically supervised throughout; the book offers no basis for attempting a prolonged dry fast without that supervision.
 
+## Recovery
+
+Slater reports that she recovered completely. Her memory returned, and she went back to the work the illness had taken from her, research and writing, and to physical activity, hiking and running. The book's epilogue and its title's subtitle, *My Radical Recovery from Late-Stage Lyme Disease and How It Could Help Others*, present the outcome as the reason for writing: a treatment that worked for her, she argues, should be known to others with chronic illness who have run out of options.
+
+The mechanism she credits is the fasting itself, as Filonov explains it: with outside food and water removed, the body turns to clearing what is damaged or infected. She presents her recovery as a test of that idea in the case she knew best, her own.
+
+Implication: take the recovery as a reason to ask whether supervised fasting deserves clinical study for chronic illness, not as evidence that it works; one patient's improvement cannot show what caused it.
+
 ## The body is the doctor
 
 Filonov's theory is that inflammation drives chronic and autoimmune illness, and that fasting removes its causes. During a fast, the body, deprived of outside food, consumes its own damaged and infected cells. The cellular process is autophagy, literally self-eating, and Slater connects Filonov's practice to the work of Yoshinori Ohsumi, who won the 2016 Nobel Prize in Physiology or Medicine for discovering how autophagy works.
