@@ -669,18 +669,6 @@
       "status": "draft"
     },
     {
-      "slug": "orwell-1984",
-      "title": "Nineteen Eighty-Four",
-      "author": "George Orwell",
-      "year": 1949,
-      "tracks": [
-        "imagination"
-      ],
-      "level": 1,
-      "topics": [],
-      "status": "draft"
-    },
-    {
       "slug": "huxley-brave-new-world",
       "title": "Brave New World",
       "author": "Aldous Huxley",
@@ -689,78 +677,6 @@
         "imagination"
       ],
       "level": 1,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "keyes-flowers-for-algernon",
-      "title": "Flowers for Algernon",
-      "author": "Daniel Keyes",
-      "year": 1966,
-      "tracks": [
-        "imagination"
-      ],
-      "level": 1,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "asimov-foundation",
-      "title": "Foundation",
-      "author": "Isaac Asimov",
-      "year": 1951,
-      "tracks": [
-        "imagination"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "herbert-dune",
-      "title": "Dune",
-      "author": "Frank Herbert",
-      "year": 1965,
-      "tracks": [
-        "imagination"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "stephenson-snow-crash",
-      "title": "Snow Crash",
-      "author": "Neal Stephenson",
-      "year": 1992,
-      "tracks": [
-        "imagination"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "liu-three-body-problem",
-      "title": "The Three-Body Problem",
-      "author": "Liu Cixin",
-      "year": 2008,
-      "tracks": [
-        "imagination"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "dostoevsky-karamazov",
-      "title": "The Brothers Karamazov",
-      "author": "Fyodor Dostoevsky",
-      "year": 1880,
-      "tracks": [
-        "imagination"
-      ],
-      "level": 4,
       "topics": [],
       "status": "draft"
     },
