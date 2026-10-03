@@ -17,15 +17,20 @@ const warnings = [];
 const tracks = [...data.tracks].sort((a, b) => a.order - b.order);
 const trackById = new Map(tracks.map((t) => [t.id, t]));
 const topicById = new Map((data.topics || []).map((t) => [t.id, t]));
-const books = data.books;
+// A book with "hidden": true stays in the data file (so it can be restored by deleting the
+// flag) but is left out of the site: no listing, no guide page, no author portrait, and
+// [[slug]] references to it render as plain titles.
+const allBooks = data.books;
+const books = allBooks.filter((b) => !b.hidden);
 const bookBySlug = new Map();
 
 for (const t of tracks) {
   for (const k of ['id', 'name', 'description', 'order']) if (t[k] === undefined) errors.push(`track ${t.id}: missing ${k}`);
 }
 if (new Set(tracks.map((t) => t.id)).size !== tracks.length) errors.push('duplicate track id');
-books.forEach((b, i) => {
+allBooks.forEach((b, i) => {
   b.index = i;
+  if (b.hidden !== undefined && typeof b.hidden !== 'boolean') errors.push(`book ${b.slug}: hidden must be true or false`);
   for (const k of ['slug', 'title', 'author', 'year', 'tracks', 'level', 'status']) {
     if (b[k] === undefined) errors.push(`book ${b.slug || i}: missing ${k}`);
   }
@@ -174,8 +179,10 @@ for (const a of authors) {
     if (c) for (const k of ['creator', 'license', 'licenseUrl', 'source']) if (!c[k]) errors.push(`data/authors.json: ${a.name}: credit needs ${k}`);
   }
 }
+// Authors of hidden books keep their entries, ready for when the books come back.
+const hiddenAuthors = new Set(allBooks.filter((b) => b.hidden).flatMap((b) => splitAuthors(b.author)));
 for (const name of Object.keys(authorData)) {
-  if (!authorByName.has(name)) warnings.push(`data/authors.json: "${name}" is not an author of any book`);
+  if (!authorByName.has(name) && !hiddenAuthors.has(name)) warnings.push(`data/authors.json: "${name}" is not an author of any book`);
 }
 
 function initials(name) {
@@ -256,7 +263,7 @@ pages.set('library.html', layout({
       <div class="tracks track-filter" role="group" aria-label="Show books from">
         <button type="button" class="track filter-box is-active" data-track="all" aria-pressed="true">
           <span class="n">All</span>
-          <span class="name">Every track</span>
+          <span class="name">All tracks</span>
         </button>
 ${tracks.map((t) => `        <button type="button" class="track filter-box" data-track="${t.id}" aria-pressed="false">
           <span class="n">${t.label}</span>
@@ -377,7 +384,7 @@ function inline(s, ctx) {
     .replace(/\[\[([a-z0-9-]+)\]\]/g, (m, slug) => {
       const b = bookBySlug.get(slug);
       if (!b) { errors.push(`${ctx}: [[${slug}]] is not a book in data/curriculum.json`); return m; }
-      return isPublished(b) ? `<a href="${b.slug}.html"><em>${esc(b.title)}</em></a>` : `<em>${esc(b.title)}</em>`;
+      return isPublished(b) && !b.hidden ? `<a href="${b.slug}.html"><em>${esc(b.title)}</em></a>` : `<em>${esc(b.title)}</em>`;
     })
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
     .replace(/(^|[^*\w])\*([^*\n]+)\*(?![*\w])/g, '$1<em>$2</em>');
