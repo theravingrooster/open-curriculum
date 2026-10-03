@@ -9,26 +9,45 @@
     {
       "id": "market",
       "name": "The Market",
-      "description": "How value is created, priced, and destroyed, from the investor's chair and the operator's.",
+      "description": "Investing and speculation: how assets are valued, priced, and mispriced, from the investor's chair.",
       "order": 2
+    },
+    {
+      "id": "firm",
+      "name": "The Firm",
+      "description": "Building and running companies: products, customers, teams, and capital, from the founder's and operator's chair.",
+      "order": 3
     },
     {
       "id": "body",
       "name": "The Body",
       "description": "Medicine, diet, the gut, fasting, cold and breath: the protocols people use on themselves.",
-      "order": 3
+      "order": 4
     },
     {
       "id": "state",
       "name": "The State",
       "description": "States, elites, war, capture, and the stories institutions tell after they have already decided.",
-      "order": 4
+      "order": 5
+    },
+    {
+      "id": "past",
+      "name": "The Past",
+      "description": "What actually happened: wars, empires, and lives, and why they went the way they did.",
+      "order": 6
     },
     {
       "id": "self",
       "name": "The Self",
       "description": "How to live: philosophy that survives contact with work, family, risk, and time.",
-      "order": 5
+      "order": 7
+    },
+    {
+      "id": "imagination",
+      "name": "The Imagination",
+      "description": "Novels and science fiction that carry ideas no argument can: power, freedom, technology, and the human condition.",
+      "guide": "fiction",
+      "order": 8
     }
   ],
   "topics": [
@@ -308,7 +327,7 @@
       "author": "Ben Horowitz",
       "year": 2014,
       "tracks": [
-        "market"
+        "firm"
       ],
       "level": 2,
       "topics": [
@@ -322,7 +341,7 @@
       "author": "Peter Thiel with Blake Masters",
       "year": 2014,
       "tracks": [
-        "market"
+        "firm"
       ],
       "level": 2,
       "topics": [
@@ -693,6 +712,270 @@
         "self"
       ],
       "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "thorndike-outsiders",
+      "title": "The Outsiders",
+      "author": "William N. Thorndike Jr.",
+      "year": 2012,
+      "tracks": [
+        "firm"
+      ],
+      "level": 2,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "knight-shoe-dog",
+      "title": "Shoe Dog",
+      "author": "Phil Knight",
+      "year": 2016,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "ries-lean-startup",
+      "title": "The Lean Startup",
+      "author": "Eric Ries",
+      "year": 2011,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "bryar-carr-working-backwards",
+      "title": "Working Backwards",
+      "author": "Colin Bryar and Bill Carr",
+      "year": 2021,
+      "tracks": [
+        "firm"
+      ],
+      "level": 2,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "hormozi-100m-offers",
+      "title": "$100M Offers",
+      "author": "Alex Hormozi",
+      "year": 2021,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "fitzpatrick-mom-test",
+      "title": "The Mom Test",
+      "author": "Rob Fitzpatrick",
+      "year": 2013,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "thucydides",
+      "title": "History of the Peloponnesian War",
+      "author": "Thucydides",
+      "year": "c. 400 BCE",
+      "tracks": [
+        "past"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "tuchman-guns-of-august",
+      "title": "The Guns of August",
+      "author": "Barbara W. Tuchman",
+      "year": 1962,
+      "tracks": [
+        "past"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "beard-spqr",
+      "title": "SPQR",
+      "author": "Mary Beard",
+      "year": 2015,
+      "tracks": [
+        "past"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "diamond-guns-germs-steel",
+      "title": "Guns, Germs, and Steel",
+      "author": "Jared Diamond",
+      "year": 1997,
+      "tracks": [
+        "past"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "harari-sapiens",
+      "title": "Sapiens",
+      "author": "Yuval Noah Harari",
+      "year": 2011,
+      "tracks": [
+        "past"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "shirer-third-reich",
+      "title": "The Rise and Fall of the Third Reich",
+      "author": "William L. Shirer",
+      "year": 1960,
+      "tracks": [
+        "past"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "chernow-titan",
+      "title": "Titan",
+      "author": "Ron Chernow",
+      "year": 1998,
+      "tracks": [
+        "past"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "orwell-1984",
+      "title": "Nineteen Eighty-Four",
+      "author": "George Orwell",
+      "year": 1949,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "huxley-brave-new-world",
+      "title": "Brave New World",
+      "author": "Aldous Huxley",
+      "year": 1932,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "keyes-flowers-for-algernon",
+      "title": "Flowers for Algernon",
+      "author": "Daniel Keyes",
+      "year": 1966,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "asimov-foundation",
+      "title": "Foundation",
+      "author": "Isaac Asimov",
+      "year": 1951,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "herbert-dune",
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "year": 1965,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "stephenson-snow-crash",
+      "title": "Snow Crash",
+      "author": "Neal Stephenson",
+      "year": 1992,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "liu-three-body-problem",
+      "title": "The Three-Body Problem",
+      "author": "Liu Cixin",
+      "year": 2008,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "dostoevsky-karamazov",
+      "title": "The Brothers Karamazov",
+      "author": "Fyodor Dostoevsky",
+      "year": 1880,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 4,
       "topics": [],
       "status": "draft"
     }

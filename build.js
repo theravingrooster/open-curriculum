@@ -26,6 +26,7 @@ const bookBySlug = new Map();
 
 for (const t of tracks) {
   for (const k of ['id', 'name', 'description', 'order']) if (t[k] === undefined) errors.push(`track ${t.id}: missing ${k}`);
+  if (t.guide !== undefined && t.guide !== 'fiction') errors.push(`track ${t.id}: guide must be "fiction" if set`);
 }
 if (new Set(tracks.map((t) => t.id)).size !== tracks.length) errors.push('duplicate track id');
 allBooks.forEach((b, i) => {
@@ -418,8 +419,14 @@ const BANNED = ['explores', 'delves', 'journey', 'powerful', 'timeless', 'game-c
   'ultimately', "in today's world", 'in today’s world', "it's important to note", 'it’s important to note'];
 const words = (s) => (s.replace(/\[\[[a-z0-9-]+\]\]/g, 'Title').match(/[A-Za-z0-9’'$%.-]+/g) || []).length;
 
+// Fiction tracks ("guide": "fiction" in the data file) use their own guide shape:
+// Premise / The main ideas / ideas / Where it falls short / Related (GUIDE_SPEC.md).
+const isFiction = (b) => b.tracks.some((id) => trackById.get(id).guide === 'fiction');
+
 function lintGuide(b, src) {
   const ctx = b.guidePath;
+  const first = isFiction(b) ? 'Premise' : 'Thesis';
+  const limits = isFiction(b) ? 'Where it falls short' : 'Limits';
   const err = (m) => errors.push(`${ctx}: ${m}`);
   const warn = (m) => warnings.push(`${ctx}: ${m}`);
   const lower = src.toLowerCase();
@@ -436,9 +443,9 @@ function lintGuide(b, src) {
     return { heading: s.slice(0, nl).trim(), body: s.slice(nl + 1).trim() };
   });
   const names = sections.map((s) => s.heading);
-  if (names[0] !== 'Thesis') err('first section must be "## Thesis"');
+  if (names[0] !== first) err(`first section must be "## ${first}"`);
   if (names[1] !== 'The main ideas') err('second section must be "## The main ideas"');
-  if (names[names.length - 2] !== 'Limits') err('second-to-last section must be "## Limits"');
+  if (names[names.length - 2] !== limits) err(`second-to-last section must be "## ${limits}"`);
   if (names[names.length - 1] !== 'Related') err('last section must be "## Related"');
   const ideas = sections.slice(2, -2);
   if (ideas.length < 4 || ideas.length > 8) err(`${ideas.length} idea sections; spec asks for 4–8`);
