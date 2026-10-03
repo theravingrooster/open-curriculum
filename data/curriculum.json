@@ -249,20 +249,6 @@
       "hidden": true
     },
     {
-      "slug": "buffett-letters",
-      "title": "Berkshire Hathaway letters",
-      "author": "Warren Buffett",
-      "year": "1965–present",
-      "tracks": [
-        "market"
-      ],
-      "level": 1,
-      "topics": [
-        "investor"
-      ],
-      "status": "draft"
-    },
-    {
       "slug": "graham-intelligent-investor",
       "title": "The Intelligent Investor",
       "author": "Benjamin Graham",
