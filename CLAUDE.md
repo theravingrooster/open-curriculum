@@ -4,7 +4,7 @@ When writing or editing a book guide, follow GUIDE_SPEC.md exactly. Track member
 
 ## Layout
 
-- `data/curriculum.json` — the only place tracks, topics and books are defined (track order, book tracks, level, status).
+- `data/curriculum.json` — the only place tracks, topics and books are defined (track order, book tracks, level, status). Each book is in exactly one track. `"hidden": true` takes a book off the site (no listing, guide page or portrait; `[[slug]]` renders as plain text) without deleting it or its guide; delete the flag to restore it.
 - `guides/<slug>.md` — guide text for a book. The build wraps it in the guide template (`build.js`), which adds the title line, track labels and prev/next links from the data file.
 - `pages/` — hand-written page bodies (home, mission). `{{placeholders}}` are filled from the data file.
 - `public/` — CSS and favicon, copied as-is.

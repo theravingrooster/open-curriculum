@@ -99,8 +99,7 @@
       "author": "Charlie Munger (ed. Peter D. Kaufman)",
       "year": 2005,
       "tracks": [
-        "mind",
-        "market"
+        "mind"
       ],
       "level": 2,
       "topics": [
@@ -133,7 +132,8 @@
       "topics": [
         "influence"
       ],
-      "status": "published"
+      "status": "published",
+      "hidden": true
     },
     {
       "slug": "greene-human-nature",
@@ -141,8 +141,7 @@
       "author": "Robert Greene",
       "year": 2018,
       "tracks": [
-        "mind",
-        "state"
+        "mind"
       ],
       "level": 3,
       "topics": [],
@@ -158,7 +157,8 @@
       ],
       "level": 3,
       "topics": [],
-      "status": "published"
+      "status": "published",
+      "hidden": true
     },
     {
       "slug": "noise",
@@ -206,7 +206,8 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "published"
+      "status": "published",
+      "hidden": true
     },
     {
       "slug": "popper-conjectures",
@@ -218,7 +219,8 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "published"
+      "status": "published",
+      "hidden": true
     },
     {
       "slug": "kuhn-structure",
@@ -230,7 +232,8 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "draft"
+      "status": "draft",
+      "hidden": true
     },
     {
       "slug": "deutsch-beginning-of-infinity",
@@ -242,7 +245,8 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "draft"
+      "status": "draft",
+      "hidden": true
     },
     {
       "slug": "buffett-letters",
@@ -370,7 +374,7 @@
       "author": "Josh Waitzkin",
       "year": 2007,
       "tracks": [
-        "market"
+        "self"
       ],
       "level": 2,
       "topics": [],
