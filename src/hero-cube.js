@@ -5,8 +5,8 @@
 // Bundled to assets/js/hero-cube.js with `npm run bundle:hero`. Loaded by pages/index.html
 // after the page's load event, and only on wide screens.
 import {
-  WebGLRenderer, Scene, PerspectiveCamera, Mesh, Group, MeshStandardMaterial, BufferGeometry, Float32BufferAttribute,
-  DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3,
+  WebGLRenderer, Scene, PerspectiveCamera, Mesh, Group, MeshPhysicalMaterial, PMREMGenerator, BufferGeometry, Float32BufferAttribute,
+  DirectionalLight, HemisphereLight, NoToneMapping, SRGBColorSpace, Vector3, PlaneGeometry, MeshBasicMaterial, Color,
 } from 'three';
 import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js';
 import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js';
@@ -28,6 +28,10 @@ const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
 const CAMERA_DISTANCE = 5.2;
+// Gem finish.
+const GEM_ROUGHNESS = 0.12;
+const GEM_METALNESS = 0.18;
+const GEM_REFLECTION = 1.2;
 
 // An elongated octahedron with softened edges: flat faces joined by narrow rounded bevels.
 // Built as the octahedron shrunk inward by `radius`, then grown back by a sphere of that radius
@@ -309,6 +313,25 @@ function fracture(a, h, count, seed, soft) {
   return pieces;
 }
 
+// The reflection environment: black, with emissive panels placed around the diamond in camera
+// terms (upper right brightest, matching the key light). Built once and prefiltered.
+function studio() {
+  const env = new Scene();
+  env.background = new Color(0x000000);
+  const panel = (w, h, brightness, x, y, z) => {
+    const m = new Mesh(new PlaneGeometry(w, h), new MeshBasicMaterial({ color: new Color(brightness, brightness, brightness * 0.96) }));
+    m.position.set(x, y, z);
+    m.lookAt(0, 0, 0);
+    env.add(m);
+  };
+  panel(4, 3, 6, 5, 6, 4);     // key softbox, upper right front
+  panel(2, 5, 3, -6, 3, 2);    // tall strip, left
+  panel(5, 1, 2.5, 0, 8, -3);  // overhead strip, behind
+  panel(3, 2, 1.5, 4, -2, -6); // low kicker, back right
+  panel(2, 2, 1, -3, -5, 5);   // faint fill, below front
+  return env;
+}
+
 export function createHeroScene(canvas) {
   const renderer = new WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
   renderer.setClearColor(0x000000, 0); // transparent: the page background shows through
@@ -317,8 +340,24 @@ export function createHeroScene(canvas) {
 
   const scene = new Scene();
 
-  // Diamond: elongated octahedron with softened edges, matte cream.
-  const material = new MeshStandardMaterial({ color: 0xe6ddcf, roughness: 0.9, metalness: 0 });
+  // Reflections: a dark studio with a few bright softboxes, the way jewellery is photographed.
+  // Each flat facet mirrors either darkness or a softbox, so as the diamond turns, facets flash
+  // bright and go dark like a cut gem, while the direct lights below keep the overall shading
+  // from the upper right.
+  const pmrem = new PMREMGenerator(renderer);
+  scene.environment = pmrem.fromScene(studio(), 0.02).texture;
+  pmrem.dispose();
+
+  // Diamond: elongated octahedron with softened edges, cream, glossy like a polished gem: a low
+  // roughness base under a clear coat, so highlights stay sharp and the environment reflects.
+  const material = new MeshPhysicalMaterial({
+    color: 0xe6ddcf,
+    roughness: GEM_ROUGHNESS,
+    metalness: GEM_METALNESS,
+    clearcoat: 1,
+    clearcoatRoughness: 0.04,
+    envMapIntensity: GEM_REFLECTION,
+  });
   // The whole assembly turns around the vertical axis; the pieces inside it never rotate on
   // their own, so every fragment keeps the same orientation as it drifts outward.
   const assembly = new Group();
