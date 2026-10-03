@@ -741,6 +741,18 @@
         "investor"
       ],
       "status": "draft"
+    },
+    {
+      "slug": "dostoevsky-crime-and-punishment",
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "year": 1866,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
     }
   ]
 }
