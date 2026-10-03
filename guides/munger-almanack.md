@@ -86,6 +86,6 @@ Implication: for any ambitious goal, fix the end number first, work out the arit
 
 ## Related
 
-- [[buffett-letters]] — Buffett's annual record of the same partnership's decisions and reasoning.
+- [[essays-of-warren-buffett]] — Buffett's letters, arranged by topic, on the same partnership's decisions and reasoning.
 - [[cialdini-influence]] — the source for much of Munger's catalog of misjudgment tendencies.
 - [[taleb-fooled]] — a challenge to reading any long concentrated record as proof of skill.
