@@ -263,20 +263,6 @@
       "status": "draft"
     },
     {
-      "slug": "high-output-management",
-      "title": "High Output Management",
-      "author": "Andrew S. Grove",
-      "year": 1983,
-      "tracks": [
-        "market"
-      ],
-      "level": 1,
-      "topics": [
-        "operator"
-      ],
-      "status": "draft"
-    },
-    {
       "slug": "graham-financial-statements",
       "title": "The Interpretation of Financial Statements",
       "author": "Benjamin Graham and Spencer B. Meredith",
@@ -307,18 +293,6 @@
       "title": "The Essays of Warren Buffett",
       "author": "Warren Buffett (ed. Lawrence A. Cunningham)",
       "year": 1997,
-      "tracks": [
-        "market"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "grove-paranoid",
-      "title": "Only the Paranoid Survive",
-      "author": "Andrew S. Grove",
-      "year": 1996,
       "tracks": [
         "market"
       ],
@@ -413,30 +387,6 @@
       "title": "Devil Take the Hindmost",
       "author": "Edward Chancellor",
       "year": 1999,
-      "tracks": [
-        "market"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "christensen-innovators-prescription",
-      "title": "The Innovator’s Prescription",
-      "author": "Clayton M. Christensen, Jerome H. Grossman, Jason Hwang",
-      "year": 2009,
-      "tracks": [
-        "market"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "chen-cold-start",
-      "title": "The Cold Start Problem",
-      "author": "Andrew Chen",
-      "year": 2021,
       "tracks": [
         "market"
       ],
