@@ -28,10 +28,11 @@ const START_ANGLE = Math.PI / 4;    // a vertex facing the camera
 const CAMERA_AZIMUTH = 42 * Math.PI / 180;
 const CAMERA_ELEVATION = 19 * Math.PI / 180; // slightly above
 const CAMERA_DISTANCE = 5.2;
-// Gem finish.
-const GEM_ROUGHNESS = 0.12;
-const GEM_METALNESS = 0.18;
-const GEM_REFLECTION = 1.2;
+// Frosted-glass finish.
+const FROST_COLOR = 0xeeece6;
+const FROST_ROUGHNESS = 0.65;
+const FROST_REFLECTION = 1.25;
+const FROST_OPACITY = 0.92;
 
 // An elongated octahedron with softened edges: flat faces joined by narrow rounded bevels.
 // Built as the octahedron shrunk inward by `radius`, then grown back by a sphere of that radius
@@ -348,15 +349,19 @@ export function createHeroScene(canvas) {
   scene.environment = pmrem.fromScene(studio(), 0.02).texture;
   pmrem.dispose();
 
-  // Diamond: elongated octahedron with softened edges, cream, glossy like a polished gem: a low
-  // roughness base under a clear coat, so highlights stay sharp and the environment reflects.
+  // Diamond: elongated octahedron with softened edges in frosted glass: a cool off-white with a
+  // rough surface (so reflections stay soft), a velvety sheen at grazing angles, and slight
+  // transparency so the strings show faintly through the fragments.
   const material = new MeshPhysicalMaterial({
-    color: 0xe6ddcf,
-    roughness: GEM_ROUGHNESS,
-    metalness: GEM_METALNESS,
-    clearcoat: 1,
-    clearcoatRoughness: 0.04,
-    envMapIntensity: GEM_REFLECTION,
+    color: FROST_COLOR,
+    roughness: FROST_ROUGHNESS,
+    metalness: 0,
+    sheen: 1,
+    sheenColor: 0xffffff,
+    sheenRoughness: 0.8,
+    envMapIntensity: FROST_REFLECTION,
+    transparent: true,
+    opacity: FROST_OPACITY,
   });
   // The whole assembly turns around the vertical axis; the pieces inside it never rotate on
   // their own, so every fragment keeps the same orientation as it drifts outward.

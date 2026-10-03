@@ -191,7 +191,8 @@
       ],
       "level": 3,
       "topics": [],
-      "status": "published"
+      "status": "published",
+      "hidden": true
     },
     {
       "slug": "wilson-strangers-redirect",
@@ -582,68 +583,6 @@
       "status": "draft"
     },
     {
-      "slug": "frankl-meaning",
-      "title": "Man’s Search for Meaning",
-      "author": "Viktor E. Frankl",
-      "year": 1946,
-      "tracks": [
-        "self"
-      ],
-      "level": 2,
-      "topics": [
-        "inner-field"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "gracian-worldly-wisdom",
-      "title": "The Art of Worldly Wisdom",
-      "author": "Baltasar Gracián",
-      "year": 1647,
-      "tracks": [
-        "self"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "faber-mazlish-talk",
-      "title": "How to Talk So Kids Will Listen",
-      "author": "Adele Faber and Elaine Mazlish",
-      "year": 1980,
-      "tracks": [
-        "self"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "junger-tribe",
-      "title": "Tribe",
-      "author": "Sebastian Junger",
-      "year": 2016,
-      "tracks": [
-        "self"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "fromm-art-of-loving",
-      "title": "The Art of Loving",
-      "author": "Erich Fromm",
-      "year": 1956,
-      "tracks": [
-        "self"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
       "slug": "greene-mastery",
       "title": "Mastery",
       "author": "Robert Greene",
@@ -716,34 +655,6 @@
       "status": "draft"
     },
     {
-      "slug": "thorndike-outsiders",
-      "title": "The Outsiders",
-      "author": "William N. Thorndike Jr.",
-      "year": 2012,
-      "tracks": [
-        "firm"
-      ],
-      "level": 2,
-      "topics": [
-        "operator"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "knight-shoe-dog",
-      "title": "Shoe Dog",
-      "author": "Phil Knight",
-      "year": 2016,
-      "tracks": [
-        "firm"
-      ],
-      "level": 1,
-      "topics": [
-        "operator"
-      ],
-      "status": "draft"
-    },
-    {
       "slug": "ries-lean-startup",
       "title": "The Lean Startup",
       "author": "Eric Ries",
@@ -755,132 +666,6 @@
       "topics": [
         "operator"
       ],
-      "status": "draft"
-    },
-    {
-      "slug": "bryar-carr-working-backwards",
-      "title": "Working Backwards",
-      "author": "Colin Bryar and Bill Carr",
-      "year": 2021,
-      "tracks": [
-        "firm"
-      ],
-      "level": 2,
-      "topics": [
-        "operator"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "hormozi-100m-offers",
-      "title": "$100M Offers",
-      "author": "Alex Hormozi",
-      "year": 2021,
-      "tracks": [
-        "firm"
-      ],
-      "level": 1,
-      "topics": [
-        "operator"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "fitzpatrick-mom-test",
-      "title": "The Mom Test",
-      "author": "Rob Fitzpatrick",
-      "year": 2013,
-      "tracks": [
-        "firm"
-      ],
-      "level": 1,
-      "topics": [
-        "operator"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "thucydides",
-      "title": "History of the Peloponnesian War",
-      "author": "Thucydides",
-      "year": "c. 400 BCE",
-      "tracks": [
-        "past"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "tuchman-guns-of-august",
-      "title": "The Guns of August",
-      "author": "Barbara W. Tuchman",
-      "year": 1962,
-      "tracks": [
-        "past"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "beard-spqr",
-      "title": "SPQR",
-      "author": "Mary Beard",
-      "year": 2015,
-      "tracks": [
-        "past"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "diamond-guns-germs-steel",
-      "title": "Guns, Germs, and Steel",
-      "author": "Jared Diamond",
-      "year": 1997,
-      "tracks": [
-        "past"
-      ],
-      "level": 1,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "harari-sapiens",
-      "title": "Sapiens",
-      "author": "Yuval Noah Harari",
-      "year": 2011,
-      "tracks": [
-        "past"
-      ],
-      "level": 1,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "shirer-third-reich",
-      "title": "The Rise and Fall of the Third Reich",
-      "author": "William L. Shirer",
-      "year": 1960,
-      "tracks": [
-        "past"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "chernow-titan",
-      "title": "Titan",
-      "author": "Ron Chernow",
-      "year": 1998,
-      "tracks": [
-        "past"
-      ],
-      "level": 2,
-      "topics": [],
       "status": "draft"
     },
     {
@@ -977,6 +762,68 @@
       ],
       "level": 4,
       "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "plutarch-lives",
+      "title": "Greek Lives + Roman Lives",
+      "author": "Plutarch",
+      "year": "c. 100 CE",
+      "tracks": [
+        "past"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "chang-halliday-mao",
+      "title": "Mao: The Unknown Story",
+      "author": "Jung Chang and Jon Halliday",
+      "year": 2005,
+      "tracks": [
+        "past"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "gao-born-red",
+      "title": "Born Red",
+      "author": "Gao Yuan",
+      "year": 1987,
+      "tracks": [
+        "past"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "hessler-river-town",
+      "title": "River Town",
+      "author": "Peter Hessler",
+      "year": 2001,
+      "tracks": [
+        "past"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "roth-leaps",
+      "title": "LEAPS",
+      "author": "Harrison Roth",
+      "year": 1994,
+      "tracks": [
+        "market"
+      ],
+      "level": 3,
+      "topics": [
+        "investor"
+      ],
       "status": "draft"
     }
   ]

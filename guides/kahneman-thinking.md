@@ -82,6 +82,6 @@ Because decisions are made on memories, people choose for the remembering self a
 
 ## Related
 
-- [[noise]] — Kahneman's later book on random scatter in judgment, the error this book leaves mostly aside.
-- [[klein-sources-of-power]] — Klein's case for expert intuition, which Kahneman answers with the conditions under which intuition can be trusted.
+- [[wilson-strangers-redirect]] — the unconscious processes behind the fast judgments Kahneman describes, and how little introspection reaches them.
+- [[greene-human-nature]] — the same biases told through historical cases rather than experiments.
 - [[taleb-fooled]] — applies the same failures of probabilistic judgment to trading and track records.
