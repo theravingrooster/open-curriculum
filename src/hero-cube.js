@@ -32,7 +32,6 @@ const CAMERA_DISTANCE = 5.2;
 const FROST_COLOR = 0xeeece6;
 const FROST_ROUGHNESS = 0.65;
 const FROST_REFLECTION = 1.25;
-const FROST_OPACITY = 0.92;
 
 // An elongated octahedron with softened edges: flat faces joined by narrow rounded bevels.
 // Built as the octahedron shrunk inward by `radius`, then grown back by a sphere of that radius
@@ -350,8 +349,9 @@ export function createHeroScene(canvas) {
   pmrem.dispose();
 
   // Diamond: elongated octahedron with softened edges in frosted glass: a cool off-white with a
-  // rough surface (so reflections stay soft), a velvety sheen at grazing angles, and slight
-  // transparency so the strings show faintly through the fragments.
+  // rough surface (so reflections stay soft) and a velvety sheen at grazing angles. It is opaque:
+  // with any transparency, the fragments' hidden inner faces and the intact diamond kept behind
+  // them during the first cracks show through and add up to flat white patches.
   const material = new MeshPhysicalMaterial({
     color: FROST_COLOR,
     roughness: FROST_ROUGHNESS,
@@ -360,8 +360,6 @@ export function createHeroScene(canvas) {
     sheenColor: 0xffffff,
     sheenRoughness: 0.8,
     envMapIntensity: FROST_REFLECTION,
-    transparent: true,
-    opacity: FROST_OPACITY,
   });
   // The whole assembly turns around the vertical axis; the pieces inside it never rotate on
   // their own, so every fragment keeps the same orientation as it drifts outward.
