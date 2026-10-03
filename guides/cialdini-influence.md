@@ -78,4 +78,4 @@ Implication: when you feel a rush to act before something runs out, ask whether 
 
 - [[munger-almanack]] — Munger's catalogue of misjudgment, which draws heavily on this book.
 - [[kahneman-thinking]] — the underlying theory of fast, automatic judgment that these tactics exploit.
-- [[lifton-thought-reform]] — the same commitment and social-proof mechanisms pushed to their extreme in coercive persuasion.
+- [[greene-48-laws]] — the same levers of influence written up as rules for gaining power.

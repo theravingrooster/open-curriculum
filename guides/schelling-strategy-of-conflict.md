@@ -79,5 +79,5 @@ Implication: in any rivalry, look for arrangements in which moving first pays. M
 
 ## Related
 
-- [[thucydides]] — the fear of a rival's growing power as a cause of war, analyzed two millennia earlier.
-- [[machiavelli-prince-discourses]] — credibility, reputation and the uses of fear in power.
+- [[greene-33-strategies]] — the strategy of war applied to everyday conflict.
+- [[machiavelli-prince]] — credibility, reputation and the uses of fear in power.

@@ -138,6 +138,18 @@
       "status": "published"
     },
     {
+      "slug": "proctor-agnotology",
+      "title": "Agnotology",
+      "author": "Robert N. Proctor and Londa Schiebinger",
+      "year": 2008,
+      "tracks": [
+        "mind"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
       "slug": "klein-sources-of-power",
       "title": "Sources of Power",
       "author": "Gary Klein",
@@ -457,36 +469,10 @@
       "status": "published"
     },
     {
-      "slug": "thucydides",
-      "title": "History of the Peloponnesian War",
-      "author": "Thucydides",
-      "year": "c. 400 BCE",
-      "tracks": [
-        "state"
-      ],
-      "level": 1,
-      "topics": [
-        "states"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "durant-lessons",
-      "title": "The Lessons of History",
-      "author": "Will and Ariel Durant",
-      "year": 1968,
-      "tracks": [
-        "state"
-      ],
-      "level": 1,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "machiavelli-prince-discourses",
-      "title": "The Prince + Discourses",
+      "slug": "machiavelli-prince",
+      "title": "The Prince",
       "author": "Niccolò Machiavelli",
-      "year": "1531–1532",
+      "year": 1532,
       "tracks": [
         "state"
       ],
@@ -494,42 +480,6 @@
       "topics": [
         "states"
       ],
-      "status": "draft"
-    },
-    {
-      "slug": "dictators-handbook",
-      "title": "The Dictator’s Handbook",
-      "author": "Bruce Bueno de Mesquita and Alastair Smith",
-      "year": 2011,
-      "tracks": [
-        "state"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "miller-chip-war",
-      "title": "Chip War",
-      "author": "Chris Miller",
-      "year": 2022,
-      "tracks": [
-        "state"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "le-bon-crowd",
-      "title": "The Crowd",
-      "author": "Gustave Le Bon",
-      "year": 1895,
-      "tracks": [
-        "state"
-      ],
-      "level": 2,
-      "topics": [],
       "status": "draft"
     },
     {
@@ -547,18 +497,6 @@
       "status": "draft"
     },
     {
-      "slug": "demick-nothing-to-envy",
-      "title": "Nothing to Envy",
-      "author": "Barbara Demick",
-      "year": 2009,
-      "tracks": [
-        "state"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
       "slug": "sacks-thiel-diversity-myth",
       "title": "The Diversity Myth",
       "author": "David O. Sacks and Peter Thiel",
@@ -567,68 +505,6 @@
         "state"
       ],
       "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "caro-power-broker",
-      "title": "The Power Broker",
-      "author": "Robert A. Caro",
-      "year": 1974,
-      "tracks": [
-        "state"
-      ],
-      "level": 3,
-      "topics": [
-        "states"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "tocqueville-democracy",
-      "title": "Democracy in America",
-      "author": "Alexis de Tocqueville",
-      "year": "1835–1840",
-      "tracks": [
-        "state"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "yergin-prize",
-      "title": "The Prize",
-      "author": "Daniel Yergin",
-      "year": 1990,
-      "tracks": [
-        "state"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "hersh-reporter",
-      "title": "Reporter, then the investigations",
-      "author": "Seymour M. Hersh",
-      "year": 2018,
-      "tracks": [
-        "state"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "lifton-thought-reform",
-      "title": "Thought Reform and the Psychology of Totalism",
-      "author": "Robert Jay Lifton",
-      "year": 1961,
-      "tracks": [
-        "state"
-      ],
-      "level": 3,
       "topics": [],
       "status": "draft"
     },
@@ -658,44 +534,6 @@
       "topics": [
         "states"
       ],
-      "status": "draft"
-    },
-    {
-      "slug": "reiterman-raven",
-      "title": "Raven",
-      "author": "Tim Reiterman with John Jacobs",
-      "year": 1982,
-      "tracks": [
-        "state"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "manufacturing-consent",
-      "title": "Manufacturing Consent",
-      "author": "Edward S. Herman and Noam Chomsky",
-      "year": 1988,
-      "tracks": [
-        "state"
-      ],
-      "level": 3,
-      "topics": [
-        "influence"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "arendt-origins",
-      "title": "The Origins of Totalitarianism",
-      "author": "Hannah Arendt",
-      "year": 1951,
-      "tracks": [
-        "state"
-      ],
-      "level": 4,
-      "topics": [],
       "status": "draft"
     },
     {
