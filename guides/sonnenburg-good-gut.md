@@ -74,4 +74,4 @@ Implication: build meals around plants and add fermented foods regularly. Measur
 ## Related
 
 - [[greger-how-not-to-die]] — a physician's case for a fiber-rich, plant-based diet against the leading causes of death.
-- [[longo-longevity]] — diet and fasting as tools for slowing aging.
+- [[slater-starving-to-heal]] — prolonged fasting as treatment, the far end of changing what the gut is fed.

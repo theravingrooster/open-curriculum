@@ -15,7 +15,7 @@
     {
       "id": "body",
       "name": "The Body",
-      "description": "Western medicine, Chinese medicine, trauma, attention, and the protocols people use on themselves.",
+      "description": "Medicine, diet, the gut, fasting, cold and breath: the protocols people use on themselves.",
       "order": 3
     },
     {
@@ -41,16 +41,6 @@
       "id": "operator",
       "name": "The operator",
       "description": "Building and running the machine, not pricing it."
-    },
-    {
-      "id": "medicine",
-      "name": "Medicine and the animal",
-      "description": "Clinicians writing clearly."
-    },
-    {
-      "id": "attention-crafts",
-      "name": "Chinese medicine and attention crafts",
-      "description": "TCM, hypnosis, breath, fasting."
     },
     {
       "id": "influence",
@@ -407,102 +397,10 @@
       "status": "draft"
     },
     {
-      "slug": "gawande-being-mortal",
-      "title": "Being Mortal",
-      "author": "Atul Gawande",
-      "year": 2014,
-      "tracks": [
-        "body"
-      ],
-      "level": 1,
-      "topics": [
-        "medicine"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "kalanithi-breath",
-      "title": "When Breath Becomes Air",
-      "author": "Paul Kalanithi",
-      "year": 2016,
-      "tracks": [
-        "body"
-      ],
-      "level": 1,
-      "topics": [
-        "medicine"
-      ],
-      "status": "draft"
-    },
-    {
       "slug": "gawande-better-complications",
       "title": "Better + Complications",
       "author": "Atul Gawande",
       "year": "2002–2007",
-      "tracks": [
-        "body"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "gawande-checklist",
-      "title": "The Checklist Manifesto",
-      "author": "Atul Gawande",
-      "year": 2009,
-      "tracks": [
-        "body"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "kubler-ross-death",
-      "title": "On Death and Dying",
-      "author": "Elisabeth Kübler-Ross",
-      "year": 1969,
-      "tracks": [
-        "body"
-      ],
-      "level": 2,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "kaptchuk-web",
-      "title": "The Web That Has No Weaver",
-      "author": "Ted J. Kaptchuk",
-      "year": 1983,
-      "tracks": [
-        "body"
-      ],
-      "level": 2,
-      "topics": [
-        "attention-crafts"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "lembke-dopamine",
-      "title": "Dopamine Nation",
-      "author": "Anna Lembke",
-      "year": 2021,
-      "tracks": [
-        "body"
-      ],
-      "level": 2,
-      "topics": [
-        "attention-crafts"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "longo-longevity",
-      "title": "The Longevity Diet",
-      "author": "Valter Longo",
-      "year": 2018,
       "tracks": [
         "body"
       ],
@@ -535,64 +433,26 @@
       "status": "published"
     },
     {
-      "slug": "topol-deep-medicine",
-      "title": "Deep Medicine",
-      "author": "Eric Topol",
-      "year": 2019,
+      "slug": "hof-wim-hof-method",
+      "title": "The Wim Hof Method",
+      "author": "Wim Hof",
+      "year": 2020,
       "tracks": [
         "body"
       ],
-      "level": 3,
+      "level": 1,
       "topics": [],
       "status": "draft"
     },
     {
-      "slug": "keown-spark",
-      "title": "The Spark in the Machine",
-      "author": "Daniel Keown",
-      "year": 2014,
+      "slug": "slater-starving-to-heal",
+      "title": "Starving to Heal in Siberia",
+      "author": "Michelle B. Slater",
+      "year": 2022,
       "tracks": [
         "body"
       ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "raz-suggestible",
-      "title": "The Suggestible Brain",
-      "author": "Amir Raz",
-      "year": 2024,
-      "tracks": [
-        "body"
-      ],
-      "level": 3,
-      "topics": [],
-      "status": "draft"
-    },
-    {
-      "slug": "van-der-kolk-body",
-      "title": "The Body Keeps the Score",
-      "author": "Bessel van der Kolk",
-      "year": 2014,
-      "tracks": [
-        "body"
-      ],
-      "level": 3,
-      "topics": [
-        "attention-crafts"
-      ],
-      "status": "draft"
-    },
-    {
-      "slug": "yapko-trancework",
-      "title": "Trancework",
-      "author": "Michael D. Yapko",
-      "year": 1984,
-      "tracks": [
-        "body"
-      ],
-      "level": 4,
+      "level": 2,
       "topics": [],
       "status": "draft"
     },

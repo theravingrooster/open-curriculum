@@ -63,4 +63,4 @@ Implication: use a checklist rather than willpower. Ticking off servings each da
 ## Related
 
 - [[sonnenburg-good-gut]] — the gut microbes that explain part of why fiber-rich plant foods matter.
-- [[longo-longevity]] — a researcher's case for a mostly plant-based diet combined with periodic fasting.
+- [[slater-starving-to-heal]] — the opposite intervention: a patient's account of treating disease by not eating at all.
