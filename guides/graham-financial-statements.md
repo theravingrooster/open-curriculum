@@ -53,7 +53,7 @@ Implication: value a company on its average earnings over several years, adjuste
 
 ## The safety of fixed charges
 
-For bonds and preferred stocks, the question is not growth but safety: will the company always be able to pay what it owes? The book's chapter on the safety of fixed charges and preferred dividends measures this by how many times earnings cover interest and preferred dividends, and sets minimum average coverage standards that differ for public utilities, railroads and industrial companies, reflecting how stable each kind of business is. For a holding company's bonds, the preferred dividends of its subsidiaries count as fixed charges ahead of them.
+For bonds and preferred stocks, the question is not growth but safety: whether the company will always be able to pay what it owes. The book's chapter on the safety of fixed charges and preferred dividends measures this by how many times earnings cover interest and preferred dividends, and sets minimum average coverage standards that differ for public utilities, railroads and industrial companies, reflecting how stable each kind of business is. For a holding company's bonds, the preferred dividends of its subsidiaries count as fixed charges ahead of them.
 
 The mechanism is that coverage measures the cushion between earnings and obligations. The more variable a company's earnings, the larger the cushion it needs.
 
