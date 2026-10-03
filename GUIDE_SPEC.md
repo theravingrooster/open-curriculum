@@ -20,6 +20,19 @@ Rank ideas by how much they change a decision, and how non-obvious they are. An 
 5. Limits. Where the argument breaks: what's been contested, what hasn't held up, where it doesn't generalize. Two or three points, stated as facts.
 6. Related. 2–3 other books from the curriculum data file that extend or challenge this one. Title, plus one clause on the connection. Link published guides; show drafts as plain text.
 
+## Fiction guides
+Books in a fiction track (The Imagination) use a different structure. Everything else in this spec applies, except that the ideas belong to the story, not to an argument.
+1. Title line. Title, author, year.
+2. Premise. One or two sentences: the setup, and what the book is really about. Then one line warning that the guide discusses the ending.
+3. The main ideas. 5–7 bullets, under 200 words in total: the ideas the story dramatizes.
+4. Ideas. 4–8 sections, one per idea. Each section:
+   - The idea, in one or two exact sentences.
+   - How the story carries it: the specific scene, character or turn of plot.
+   - The implication: what it changes in how the reader sees the world. One or two sentences.
+   100–250 words each.
+5. Where it falls short. Two or three points, stated as facts: dated assumptions, what history or science later showed, blind spots.
+6. Related. 2–3 books, fiction or nonfiction, as above.
+
 ## Writing rules
 - Every sentence carries information. If removing a sentence loses nothing, remove it.
 - No introductions, transitions, recaps or closing lines.

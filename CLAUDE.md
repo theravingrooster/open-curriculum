@@ -14,7 +14,7 @@ When writing or editing a book guide, follow GUIDE_SPEC.md exactly. Track member
 
 ## Guide markdown
 
-- Sections are `## Thesis`, `## The main ideas`, one `## ` per idea, `## Limits`, `## Related`.
+- Sections are `## Thesis`, `## The main ideas`, one `## ` per idea, `## Limits`, `## Related`. Fiction tracks (`"guide": "fiction"` on the track) use `## Premise` and `## Where it falls short` in place of Thesis and Limits; see GUIDE_SPEC.md.
 - Refer to another book with `[[slug]]`. It renders as a link when that guide is published, plain text when it is a draft.
 - `*italics*` and `[text](url)` are supported. Nothing else.
 
