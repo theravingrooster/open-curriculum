@@ -559,6 +559,18 @@
       "status": "draft"
     },
     {
+      "slug": "sacks-thiel-diversity-myth",
+      "title": "The Diversity Myth",
+      "author": "David O. Sacks and Peter Thiel",
+      "year": 1995,
+      "tracks": [
+        "state"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
       "slug": "caro-power-broker",
       "title": "The Power Broker",
       "author": "Robert A. Caro",
