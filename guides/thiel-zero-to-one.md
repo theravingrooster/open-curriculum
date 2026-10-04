@@ -46,7 +46,7 @@ Implication: define your market honestly. If it is crowded, look for one where y
 
 Thiel names four characteristics of monopolies. Proprietary technology, ideally an order of magnitude better than its closest substitute. Network effects, which make a product more useful as more people use it. Economies of scale, which lower costs as the business grows. Branding, which is durable only when it rests on substance.
 
-The route to monopoly starts small. A startup should dominate a small market and then expand into related ones. Amazon began with books, Facebook with students at Harvard and PayPal with a few thousand high-volume sellers on eBay. Starting with a big market usually means either a market without a clear starting point or one full of competitors.
+The route to monopoly starts small. A startup should dominate a small market and then expand into related ones. Amazon began with books, Facebook with students at Harvard and PayPal with a few thousand high-volume sellers on eBay.
 
 He adds the idea of last-mover advantage. Being first matters less than being the last to make a great development in a market and so enjoy years of monopoly profits.
 
@@ -56,7 +56,7 @@ Implication: start where you can win completely, build an advantage that compoun
 
 ## Definite optimism and the power law
 
-Thiel classifies attitudes to the future along two axes: optimistic or pessimistic, definite or indefinite. A definite optimist believes the future will be better and makes plans to build it. An indefinite optimist believes it will be better but makes no specific plans, preferring to keep options open. He argues that the United States moved from definite optimism, the era of large engineering projects, to indefinite optimism, with its emphasis on diversification and process over vision.
+Thiel classifies attitudes to the future along two axes: optimistic or pessimistic, definite or indefinite. A definite optimist believes the future will be better and makes plans to build it. An indefinite optimist believes it will be better but makes no specific plans, preferring to keep options open. He argues that the United States moved from definite optimism, the era of large engineering projects, to indefinite optimism from about 1982, when a long bull market began and finance eclipsed engineering, with an emphasis on diversification and process over vision.
 
 He attacks the idea that success is mostly luck. A founder who believes in a definite future can design toward it; one who treats life as a lottery spreads small bets and builds nothing large.
 
@@ -68,7 +68,7 @@ Implication: concentrate effort and capital on the few things that could matter 
 
 Every great business, Thiel argues, is built on a secret: an important truth that is unknown or unbelieved by most people. He divides questions into easy ones, which conventions answer; impossible ones, which are mysteries; and hard but achievable ones, which are secrets.
 
-He argues that people have stopped looking for secrets because of incrementalism, risk aversion, complacency and the sense that everything worth discovering has already been found. That leaves many secrets in plain sight. He gives Airbnb and the ride-hailing companies as examples: each saw unused capacity, spare rooms or idle cars, that existing businesses had ignored.
+He argues that people have stopped looking for secrets because of incrementalism, risk aversion, complacency and what he calls flatness: the belief that in a crowded, competitive world someone smarter will find any secret first. That leaves many secrets in plain sight. He gives Airbnb and the ride-hailing companies as examples: each saw unused capacity, spare rooms or idle cars, that existing businesses had ignored.
 
 Secrets come in two kinds: about nature, what the physical world allows, and about people, what they do not know about themselves or hide from others.
 
@@ -76,7 +76,7 @@ Implication: look for truths that seem obvious once stated but that no establish
 
 ## Foundations, people and distribution
 
-Thiel states what he calls Thiel's law: a startup messed up at its foundation cannot be fixed. The choice of co-founders matters as much as any later decision. Ownership, who holds the equity, possession, who runs the company, and control, who governs it, should be aligned. A board of three is ideal; more than five is unwieldy for a private company. Chief executives of startups should be paid little in cash, about $150,000 a year at most in Founders Fund's practice, so that their interest lies in the equity.
+Thiel states what he calls Thiel's law: a startup messed up at its foundation cannot be fixed. The choice of co-founders matters as much as any later decision. Ownership, who holds the equity, possession, who runs the company, and control, who governs it, should be aligned. A board of three is ideal; more than five is unwieldy for a private company. The chief executive of an early-stage, venture-backed startup should be paid no more than $150,000 a year in cash, so that their interest lies in the equity.
 
 He describes the early PayPal team, later called the PayPal mafia, as a group of people who liked working together, and credits that cohesion for the many companies its members went on to found.
 
