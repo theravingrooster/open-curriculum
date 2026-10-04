@@ -25,7 +25,7 @@ Implication: comfort and constant activity can hide an absence of purpose. Ask w
 
 ## Spectacle without feeling
 
-The novel's set pieces show a generation for whom horror has become entertainment. After a concert, Clay's friends take him into an alley to see the body of a young man, apparently dead of an overdose, and they stare at it with fascination. At a party, a snuff film is screened, and several of the guests are excited by it; Clay and Blair are among the few repelled.
+The novel's set pieces show a generation for whom horror has become entertainment. After a concert, Clay's friends take him into an alley to see the body of a young man, apparently dead of an overdose, and they stare at it with fascination. At a party, a snuff film is screened, and several of the guests are excited by it; Clay and Blair are the only ones repelled.
 
 Clay himself is not exempt. When Blair hits a coyote on the road, he watches it die, for about ten minutes. He records these scenes in the same flat voice he uses for everything else.
 
@@ -35,9 +35,9 @@ Implication: be wary of a habit of treating others' suffering as something to wa
 
 ## Julian
 
-Julian, a friend from Clay's school days, asks to borrow money, saying it is for an abortion. When Clay goes to find out what has happened to it, he learns that Julian owes Finn, a dealer and pimp who keeps him supplied with heroin and sells him for sex to wealthy men.
+Julian, a friend from Clay's school days, asks to borrow money, saying it is for an abortion. When Clay asks for the money back, Julian takes him to meet Finn, a dealer and pimp who keeps him supplied with heroin and sells him for sex to wealthy men.
 
-Clay accompanies Julian to a hotel room where Julian meets a client, a married businessman. Clay could leave, but stays out of a morbid curiosity and watches, detached from what he sees.
+Clay accompanies Julian to a hotel room where Julian meets a client, a married businessman. Clay stays for hours and watches, detached from what he sees; elsewhere he admits that what he wants is to see the worst.
 
 The episode shows how the same wealth that surrounds these young people can consume them. Julian, from a rich family, has become a commodity to be bought by other rich people, and his friends' response is to look on.
 
@@ -45,7 +45,7 @@ Implication: watching a friend being harmed without intervening is a choice, not
 
 ## The right to take it
 
-The novel's darkest scene comes near the end. Clay's dealer, Rip, shows him and others a twelve-year-old girl, drugged and tied to a bed in his apartment, whom Rip and his friends are sexually abusing. Clay objects that it is wrong. Rip's answer is that if you want something, you have the right to take it. When Clay says that Rip has everything, Rip replies, in effect, that he has nothing to lose.
+The novel's darkest scene comes near the end. Clay's dealer, Rip, shows him and others a twelve-year-old girl, drugged and tied to a bed in his apartment, whom Rip and his friends are sexually abusing. Clay says, "I don't think it's right." Rip answers: "What's right? If you want something, you have the right to take it." When Clay protests that Rip has everything, Rip says he has nothing to lose.
 
 The scene is the end point of the world the novel describes. Rip is not a monster from outside that world but its product: someone who has been given everything and therefore recognizes no limit on what he may take, and no consequence that could touch him.
 
@@ -55,7 +55,9 @@ Implication: a culture that denies people nothing teaches them that their wants 
 
 ## Leaving
 
-Clay's family barely engages with him; the adults in the novel are as empty as the young people they have left to themselves. At the end of the break, Clay returns east to college.
+Clay's family barely engages with him. His parents are separated; his father, who works in the film business, sees him for lunches at expensive restaurants, and his mother is preoccupied and, Clay discovers, seeing another man. He is not sure of his younger sisters' ages. His psychiatrist is too absorbed in himself to help. The adults in the novel are as empty as the young people they have left to themselves.
+
+Near the end, Blair asks Clay whether he ever loved her, and he says no. He explains that he does not want to care, because caring would only make things worse. Then he returns east to college.
 
 The novel closes with Clay remembering a song he heard in Los Angeles, whose images were of people driven mad by living in the city, and of parents so hungry and unfulfilled that they ate their own children. Those images, he says, were so violent and malicious that they seemed his only point of reference for a long time afterward.
 
