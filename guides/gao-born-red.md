@@ -14,9 +14,9 @@ The Cultural Revolution was carried out in large part by ordinary teenagers, and
 
 Gao Yuan was born in 1952, the son of a county official in north China. Being born red meant having the right class background: a family of revolutionaries and Communist officials rather than landlords or capitalists. In the China of his childhood it was a mark of privilege and political reliability.
 
-His memoir, written while he was a graduate student at Stanford and published in 1987, covers 1966 to early 1969, the years of the Cultural Revolution, Mao's campaign to purge the Communist Party and society of supposed enemies of the revolution. It is set mainly in the Number One Middle School of a county town he calls Yizhen, a few hours by train from Beijing, where he was a boarding student. He changed the names of places and classmates because, he explains, everyone, innocent or guilty, had been caught up in a movement beyond anyone's ability to control.
+His memoir, written while he was a graduate student at Stanford and published in 1987, covers 1966 to early 1969, the first and most violent years of the Cultural Revolution, Mao's campaign to purge the Communist Party and society of supposed enemies of the revolution. It is set mainly in the Number One Middle School of a county town in Hebei he calls Yizhen, four hours by train south of Beijing, where he was a boarding student. It opens in the spring of 1966 with an earthquake that sends the boys running from their dormitory; the vice-principal, Lin Sheng, organizes relief for the victims, and within months he is one of the students' targets. He changed the names of places and classmates because, he explains, everyone, innocent or guilty, had been caught up in a movement beyond anyone's ability to control.
 
-The book reconstructs those years from his diary, and tells them from the viewpoint of the teenager he was, without the hindsight of an adult narrator.
+The book reconstructs those years from his diary. The historian Gail Hershatter noted that it never abandons the voice of someone on the edge of childhood.
 
 Implication: to understand how a society turns on itself, look at the experience of ordinary participants, not only the decisions of leaders.
 
@@ -34,7 +34,7 @@ Implication: when legitimate authority is suddenly removed and the young are giv
 
 As the movement went on, the students split into two factions. Gao's was the Red Rebels; their rivals called themselves East-is-Red. Both claimed to be the true followers of Mao, and the conflict between them soon mattered more than any original cause.
 
-The rivalry escalated. The school and then the town became armed camps, with the factions fighting with weapons. Even after the military took control, rival factions captured and tortured each other's members, sometimes to death. The scholar Jonathan Unger, who had interviewed many former Red Guards from Canton, wrote that the violence Gao describes was more horrific than anything recounted to him.
+The rivalry escalated. The school and then the town became armed camps, with the factions fighting with weapons. Even after the military took control, rival factions captured and tortured each other's members, sometimes to death. The scholar Jonathan Unger, writing in *The Australian Journal of Chinese Affairs*, who had interviewed many former Red Guards from Canton, wrote that the violence Gao describes was more horrific than anything recounted to him.
 
 The mechanism is that once groups define themselves by their opposition to each other, each act of violence justifies the next, and members who hesitate risk being treated as traitors.
 
@@ -42,7 +42,7 @@ Implication: in any conflict between factions, watch for the point at which defe
 
 ## Father and son
 
-Running through the book is Gao's relationship with his father, a county official who was in and out of trouble during these years as the political winds shifted. The status that had protected the family could become a liability overnight, as officials became targets and accusations changed with each new phase of the campaign.
+Running through the book is Gao's relationship with his father, a veteran Communist and former guerrilla leader who headed the county government. At the start of the campaign he came under attack for paying too much attention to economic matters instead of class struggle, and he was in and out of trouble for the rest of these years as the political winds shifted. The status that had protected the family could become a liability overnight, as officials became targets and accusations changed with each new phase of the campaign.
 
 Gao's own position was precarious in the same way: a participant in the attacks on others, he could become a target himself if his faction lost or his family's standing fell. At the end of the book he finds safety by enlisting in the People's Liberation Army.
 
@@ -52,7 +52,7 @@ Implication: in a campaign of denunciation, past loyalty and good background off
 
 ## Limits
 
-- It gives little political context. The reviewer Stanley Rosen, in the *Journal of Asian Studies*, noted that the text does not provide enough chronological or political detail to anchor a general reader, though he judged that William A. Joseph's foreword fills most of the gaps.
+- It gives little political context or new history. Stanley Rosen, in the *Journal of Asian Studies*, noted that the text does not provide enough chronological or political detail to anchor a general reader, though William A. Joseph's foreword fills most of the gaps; Pye judged that it adds little new knowledge of the movement, though it is excellent at showing how slogan-shouting gave way to torture and fighting.
 - It is a reconstruction. The narrative was recreated later from a diary, with all names and places disguised, so details cannot be checked against other sources.
 - It describes one county town in north China. The course of the Cultural Revolution varied widely across the country, and the experience of a well-connected official's son was not that of children from bad class backgrounds.
 
