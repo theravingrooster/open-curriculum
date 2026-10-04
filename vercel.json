@@ -2,6 +2,11 @@
   "buildCommand": "npm test",
   "outputDirectory": "dist",
   "cleanUrls": true,
+  "git": {
+    "deploymentEnabled": {
+      "claude/**": false
+    }
+  },
   "rewrites": [
     {
       "source": "/favicon.ico",
