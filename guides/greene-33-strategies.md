@@ -25,7 +25,7 @@ Implication: treat recurring conflicts at work and in public life as strategic p
 
 The first part concerns the war within. Its four strategies are: declare war on your enemies, the polarity strategy; do not fight the last war, the guerrilla-war-of-the-mind strategy; amidst the turmoil of events, do not lose your presence of mind, the counterbalance strategy; and create a sense of urgency and desperation, the death-ground strategy.
 
-The polarity strategy holds that clarity comes from identifying opponents: knowing what one is against sharpens what one is for. Greene's example is Margaret Thatcher, who built her political identity by sharply defining her opponents. The second strategy warns against applying the lessons of past successes to new situations. The third asks for emotional control under pressure. The fourth draws on the idea of fighting with no line of retreat, as when Hernán Cortés destroyed his ships after landing in Mexico, leaving his men no option but to advance.
+The polarity strategy holds that clarity comes from identifying opponents: knowing what one is against sharpens what one is for. Greene's example is Margaret Thatcher, who framed the 1979 election as a crusade against socialism and branded the moderates in her own party as "wets"; the chapter's reversal notes that she eventually made too many enemies. The second strategy warns against applying the lessons of past successes to new situations. The third asks for emotional control under pressure. The fourth draws on the idea of fighting with no line of retreat, as when Hernán Cortés destroyed his ships after landing in Mexico, leaving his men no option but to advance.
 
 The mechanism is that most strategic failures begin in the mind, with confusion about goals, attachment to old methods, panic or a lack of urgency.
 
@@ -35,7 +35,7 @@ Implication: before engaging any opponent, settle your own aims, discard methods
 
 The second part concerns groups. Its strategies are: avoid the snares of groupthink, the command-and-control strategy; segment your forces, the controlled-chaos strategy; and transform your war into a crusade, through morale strategies.
 
-Greene argues that a group needs a single, clear chain of command, because committees and consensus produce compromise and delay. But that command must not mean central control of every detail. The controlled-chaos strategy divides an organization into units that can act on their own initiative within a shared purpose. Morale, finally, comes from giving people a cause larger than themselves and from leaders who share their hardships.
+Greene argues that a group needs a single, clear chain of command, because committees and consensus produce compromise and delay. But that command must not mean central control of every detail. The controlled-chaos strategy divides an organization into units that can act on their own initiative within a shared purpose, as Napoleon did when he organized his army into corps under marshals who were given a mission and left to carry it out, which made it faster than its rigidly commanded opponents. Morale, finally, comes from giving people a cause larger than themselves and from leaders who share their hardships.
 
 The mechanism is that speed and adaptability come from decentralized execution, while coherence comes from unified direction and shared purpose.
 
@@ -53,9 +53,9 @@ Implication: in a conflict you did not choose, do not respond to every provocati
 
 ## Offensive war
 
-The fourth and longest part covers offense, beginning with grand strategy: lose battles but win the war. Greene argues that a campaign should be planned from its ultimate goal backward, so that individual defeats can be accepted if they serve the larger aim.
+The fourth part covers offense, beginning with grand strategy: lose battles but win the war. Greene argues that a campaign should be planned from its ultimate goal backward, so that individual defeats can be accepted if they serve the larger aim.
 
-The strategies that follow include: know your enemy, the intelligence strategy; overwhelm resistance with speed and suddenness, the blitzkrieg strategy; control the dynamic, forcing strategies; hit them where it hurts, the center-of-gravity strategy, which takes from Clausewitz the idea of striking the source of an opponent's strength; defeat them in detail, the divide-and-conquer strategy; expose and attack your opponent's soft flank, the turning strategy; and envelop the enemy, the annihilation strategy, whose model is Hannibal's encirclement of a larger Roman army at Cannae.
+The strategies that follow include: know your enemy, the intelligence strategy; overwhelm resistance with speed and suddenness, the blitzkrieg strategy; control the dynamic, forcing strategies; hit them where it hurts, the center-of-gravity strategy, which takes from Clausewitz the idea of striking the source of an opponent's strength, illustrated by Mao Zedong's recognition that China's center of gravity was its vast peasant population; defeat them in detail, the divide-and-conquer strategy; expose and attack your opponent's soft flank, the turning strategy; and envelop the enemy, the annihilation strategy, whose model is Hannibal's encirclement of a larger Roman army at Cannae.
 
 The part ends with three strategies about finishing: maneuver them into weakness, the ripening-for-the-sickle strategy; negotiate while advancing, the diplomatic-war strategy; and know how to end things, the exit strategy. Greene argues that a war ended badly, with resentment or loose ends, plants the next one.
 
@@ -63,7 +63,7 @@ Implication: before starting any campaign, define what winning looks like and ho
 
 ## Unconventional war
 
-The fifth part, the largest after offense, covers what Greene calls unconventional or dirty war: conflict waged indirectly. Its strategies include: weave a seamless blend of fact and fiction, misperception strategies; take the line of least expectation, the ordinary-extraordinary strategy; occupy the moral high ground, the righteous strategy; deny them targets, the strategy of the void; seem to work for the interests of others while furthering your own, the alliance strategy; give your rivals enough rope to hang themselves, the one-upmanship strategy; take small bites, the fait accompli strategy; penetrate their minds, communication strategies; destroy from within, the inner-front strategy; dominate while seeming to submit, the passive-aggression strategy; and sow uncertainty and panic through acts of terror, the chain-reaction strategy.
+The fifth part, which like the fourth contains eleven strategies, covers what Greene calls unconventional or dirty war: conflict waged indirectly. Its strategies include: weave a seamless blend of fact and fiction, misperception strategies; take the line of least expectation, the ordinary-extraordinary strategy; occupy the moral high ground, the righteous strategy; deny them targets, the strategy of the void; seem to work for the interests of others while furthering your own, the alliance strategy; give your rivals enough rope to hang themselves, the one-upmanship strategy; take small bites, the fait accompli strategy; penetrate their minds, communication strategies; destroy from within, the inner-front strategy; dominate while seeming to submit, the passive-aggression strategy; and sow uncertainty and panic through acts of terror, the chain-reaction strategy.
 
 Greene's argument is that in daily life, where open conflict is socially costly, most struggles take these indirect forms. Understanding them serves defense as much as attack: a person who recognizes passive aggression, manufactured moral outrage or incremental seizure of ground can counter them.
 
@@ -73,7 +73,7 @@ Implication: learn to recognize indirect tactics when they are used against you,
 
 ## Limits
 
-- Its evidence is a selection of historical anecdotes. Each strategy is supported by episodes chosen because they illustrate it, and the book does not examine cases where the same strategy failed.
+- Its evidence is a selection of historical anecdotes. Each strategy is supported by episodes chosen because they illustrate it, and failure is examined only briefly, in a short reversal at the end of each chapter.
 - It compresses military theory into maxims. Clausewitz and Sun Tzu wrote about war between states; their concepts, such as the center of gravity, lose much of their meaning when applied to office politics or personal relationships.
 - Its final part treats deception, manipulation and terror as tools for everyday use, and the book offers little guidance on when such methods are justified.
 
