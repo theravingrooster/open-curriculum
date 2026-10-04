@@ -14,7 +14,7 @@ A ruler who wants to hold power must act according to how people actually behave
 
 ## Effectual truth
 
-Niccolò Machiavelli wrote *The Prince* in 1513, after the Medici family returned to power in Florence, ended the republic he had served as a diplomat and official, and had him arrested and tortured on suspicion of conspiracy. Released in an amnesty, he wrote from his farm outside the city that he spent his evenings in conversation with the ancients, and had composed from it a little work on principalities. He dedicated it to a Medici, Lorenzo di Piero, hoping for employment. It was printed in 1532, five years after his death.
+Niccolò Machiavelli wrote *The Prince* in 1513, after the Medici family returned to power in Florence, ended the republic he had served as a diplomat and official, and had him arrested and tortured on suspicion of conspiracy. Released in an amnesty, he wrote from his farm outside the city that he spent his evenings in conversation with the ancients, and had composed from it a little work on principalities. He meant it first for Giuliano de' Medici and, after Giuliano's death, dedicated it to Lorenzo di Piero de' Medici, hoping for employment. It was printed in 1532, five years after his death.
 
 His method is announced in chapter 15. Many writers, he says, have imagined republics and principalities that never existed. He intends to follow the effectual truth of the matter, what actually happens, rather than the imagination of it. The gap between how people live and how they ought to live is so wide that a ruler who abandons what is done for what ought to be done brings about his own ruin.
 
@@ -48,7 +48,7 @@ In chapter 8, Machiavelli examines rulers who rose through crime. Agathocles of 
 
 Machiavelli refuses to call such methods virtù: killing fellow citizens and betraying friends may win power, but not glory. Yet he explains why Agathocles survived. Cruelty can be well used or badly used. It is well used when it is done all at once, out of necessity for one's security, and not continued, and is then turned as far as possible to the subjects' benefit. It is badly used when it begins small and grows over time.
 
-The mechanism is that injuries done all at once are felt less and forgotten sooner, while benefits should be given little by little so that they are savored. A ruler who keeps inflicting harm keeps his subjects in fear and can never rely on them.
+The mechanism is that injuries done all at once are tasted less and so offend less, while benefits should be given little by little so that they are savored. A ruler who keeps inflicting harm keeps his subjects in fear and can never rely on them.
 
 Implication: if harsh measures are unavoidable, take them at once and completely, then stop. Spread benefits out over time.
 
