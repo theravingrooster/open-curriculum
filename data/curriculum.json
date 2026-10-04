@@ -681,6 +681,30 @@
       "status": "draft"
     },
     {
+      "slug": "ellis-less-than-zero",
+      "title": "Less Than Zero",
+      "author": "Bret Easton Ellis",
+      "year": 1985,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "ellis-american-psycho",
+      "title": "American Psycho",
+      "author": "Bret Easton Ellis",
+      "year": 1991,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
       "slug": "tolle-power-of-now",
       "title": "The Power of Now",
       "author": "Eckhart Tolle",
