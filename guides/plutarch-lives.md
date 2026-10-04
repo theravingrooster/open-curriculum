@@ -43,7 +43,7 @@ Implication: judge a life or an enterprise by how it ends and what it leaves beh
 
 ## The gifts that destroy
 
-The Athenian lives show how a statesman's strengths become his undoing. Themistocles built the Athenian navy and won the battle of Salamis against Persia, but his ambition and self-promotion led to his ostracism, and he ended his life in the service of the Persian king. Pericles, who led Athens at its height, rebuilt the Acropolis and governed through his authority with the people, died in the plague early in the war with Sparta, and Athens lacked his restraint afterward.
+The Athenian lives show how a statesman's strengths become his undoing. Themistocles built the Athenian navy and won the battle of Salamis against Persia, but his ambition and self-promotion led to his ostracism, and he ended his life in exile under the Persian king, where, Plutarch says, he took poison rather than lead a Persian army against Greece. Pericles, who led Athens at its height, rebuilt the Acropolis and governed through his authority with the people, died in the plague early in the war with Sparta, and Athens lacked his restraint afterward.
 
 Alcibiades is Plutarch's study in brilliance without principle. Charming, talented and adaptable, he changed his manners to suit wherever he was, Spartan austerity in Sparta, luxury in Ionia, and Plutarch compares him to a chameleon. He switched sides repeatedly, from Athens to Sparta to Persia and back, and was trusted by none of them for long.
 
@@ -63,7 +63,7 @@ Implication: watch for the moment when success removes the checks on a person's 
 
 ## The fall of the Republic
 
-The Roman volume traces, life by life, how the Roman Republic came apart. Cato the Elder embodies its old austerity, and ended his speeches in the Senate with the view that Carthage should be destroyed. Tiberius and Gaius Gracchus tried to redistribute public land to the poor and were killed by opponents in the Senate, the first political murders of their kind in Rome. Marius recruited soldiers from among the poor, creating armies loyal to their generals. Sulla marched on Rome with his army and drew up lists of enemies to be killed. Pompey and Caesar each commanded such armies.
+The Roman volume traces, life by life, how the Roman Republic came apart. Cato the Elder embodies its old austerity, and added to his vote on every question in the Senate that Carthage should be destroyed. Tiberius and Gaius Gracchus tried to redistribute public land to the poor and were killed in violence led by their opponents in the Senate; Plutarch calls Tiberius's death the first civil strife in Rome to end in bloodshed since the kings were expelled. Marius recruited soldiers from among the poor, creating armies loyal to their generals. Sulla marched on Rome with his army and drew up lists of enemies to be killed. Pompey and Caesar each commanded such armies.
 
 Caesar's life is full of the signs of character Plutarch looks for. Captured by pirates as a young man, he joked that he would crucify them, then did. Reading about Alexander in Spain, he wept that he had achieved nothing at an age when Alexander had conquered much of the world. Crossing the Rubicon into Italy with his army, he said, in Greek, let the die be cast. Antony's life ends the volume with his love for Cleopatra, whose arrival on a gilded barge on the river Cydnus Plutarch describes.
 
