@@ -405,6 +405,20 @@
       "status": "published"
     },
     {
+      "slug": "douglas-trading-in-the-zone",
+      "title": "Trading in the Zone",
+      "author": "Mark Douglas",
+      "year": 2000,
+      "tracks": [
+        "market"
+      ],
+      "level": 2,
+      "topics": [
+        "investor"
+      ],
+      "status": "published"
+    },
+    {
       "slug": "chancellor-devil",
       "title": "Devil Take the Hindmost",
       "author": "Edward Chancellor",
