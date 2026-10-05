@@ -67,7 +67,6 @@ Implication: research whose failure could cause a pandemic should be funded only
 
 ## Limits
 
-- Its claims about intelligence go beyond the official findings. The government's statements endorse a laboratory origin, inadequate biosafety and misconduct by EcoHealth and its funders, but not Huff's claim that the research was a cover for intelligence collection or that Daszak worked with the CIA; a 2021 intelligence assessment concluded that the virus was not developed as a biological weapon.
 - Several of its claims rest on Huff's testimony alone. His accounts of what Daszak told him and of surveillance and break-ins at his home have not been corroborated, and EcoHealth described his role as an associate vice president working on computer models.
 - His inside view ends in 2016. He left EcoHealth more than three years before the outbreak, so his account of the research and events that followed relies on public records rather than his own observation.
 
