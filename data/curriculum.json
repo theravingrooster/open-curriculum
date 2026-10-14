@@ -322,7 +322,7 @@
       "topics": [
         "investor"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "essays-of-warren-buffett",
@@ -580,7 +580,7 @@
       ],
       "level": 2,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "greene-33-strategies",
