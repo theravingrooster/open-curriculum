@@ -311,6 +311,20 @@
       "status": "published"
     },
     {
+      "slug": "fisher-common-stocks",
+      "title": "Common Stocks and Uncommon Profits",
+      "author": "Philip A. Fisher",
+      "year": 1958,
+      "tracks": [
+        "market"
+      ],
+      "level": 2,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
       "slug": "essays-of-warren-buffett",
       "title": "The Essays of Warren Buffett",
       "author": "Warren Buffett (ed. Lawrence A. Cunningham)",
@@ -555,6 +569,18 @@
         "influence"
       ],
       "status": "published"
+    },
+    {
+      "slug": "deida-superior-man",
+      "title": "The Way of the Superior Man",
+      "author": "David Deida",
+      "year": 1997,
+      "tracks": [
+        "self"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
     },
     {
       "slug": "greene-33-strategies",
