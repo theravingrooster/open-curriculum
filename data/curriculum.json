@@ -781,6 +781,458 @@
         "influence"
       ],
       "status": "published"
+    },
+    {
+      "slug": "lowenstein-when-genius-failed",
+      "title": "When Genius Failed",
+      "author": "Roger Lowenstein",
+      "year": 2000,
+      "tracks": [
+        "market"
+      ],
+      "level": 2,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "lewis-big-short",
+      "title": "The Big Short",
+      "author": "Michael Lewis",
+      "year": 2010,
+      "tracks": [
+        "market"
+      ],
+      "level": 1,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "mayer-100-baggers",
+      "title": "100 Baggers",
+      "author": "Christopher W. Mayer",
+      "year": 2015,
+      "tracks": [
+        "market"
+      ],
+      "level": 2,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "pabrai-dhandho",
+      "title": "The Dhandho Investor",
+      "author": "Mohnish Pabrai",
+      "year": 2007,
+      "tracks": [
+        "market"
+      ],
+      "level": 2,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "stanley-millionaire-next-door",
+      "title": "The Millionaire Next Door",
+      "author": "Thomas J. Stanley and William D. Danko",
+      "year": 1996,
+      "tracks": [
+        "market"
+      ],
+      "level": 1,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "cassidy-dot-con",
+      "title": "Dot.con",
+      "author": "John Cassidy",
+      "year": 2002,
+      "tracks": [
+        "market"
+      ],
+      "level": 2,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "paul-losing-a-million",
+      "title": "What I Learned Losing a Million Dollars",
+      "author": "Jim Paul and Brendan Moynihan",
+      "year": 1994,
+      "tracks": [
+        "market"
+      ],
+      "level": 2,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "stevenson-trading-game",
+      "title": "The Trading Game",
+      "author": "Gary Stevenson",
+      "year": 2024,
+      "tracks": [
+        "market"
+      ],
+      "level": 1,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "hurst-generation-desperation",
+      "title": "Generation Desperation",
+      "author": "Alexander Hurst",
+      "year": 2026,
+      "tracks": [
+        "market"
+      ],
+      "level": 1,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "einhorn-fooling-some",
+      "title": "Fooling Some of the People All of the Time",
+      "author": "David Einhorn",
+      "year": 2008,
+      "tracks": [
+        "market"
+      ],
+      "level": 3,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "david-pharmagellan",
+      "title": "The Pharmagellan Guide to Biotech Forecasting and Valuation",
+      "author": "Frank S. David, Seth Robey and Andrew Matthews",
+      "year": 2017,
+      "tracks": [
+        "market"
+      ],
+      "level": 3,
+      "topics": [
+        "investor"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "dalio-principles",
+      "title": "Principles",
+      "author": "Ray Dalio",
+      "year": 2017,
+      "tracks": [
+        "firm"
+      ],
+      "level": 2,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "godin-tribes",
+      "title": "Tribes",
+      "author": "Seth Godin",
+      "year": 2008,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "hao-empire-of-ai",
+      "title": "Empire of AI",
+      "author": "Karen Hao",
+      "year": 2025,
+      "tracks": [
+        "firm"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "wynn-williams-careless-people",
+      "title": "Careless People",
+      "author": "Sarah Wynn-Williams",
+      "year": 2025,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "ridge-any-dumb-ass",
+      "title": "Any Dumb-Ass Can Do It",
+      "author": "Garry Ridge",
+      "year": 2025,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [
+        "operator"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "wilson-god-and-larry-ellison",
+      "title": "The Difference Between God and Larry Ellison",
+      "author": "Mike Wilson",
+      "year": 1997,
+      "tracks": [
+        "firm"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "gladwell-revenge-tipping-point",
+      "title": "Revenge of the Tipping Point",
+      "author": "Malcolm Gladwell",
+      "year": 2024,
+      "tracks": [
+        "mind"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "hawking-brief-history",
+      "title": "A Brief History of Time",
+      "author": "Stephen Hawking",
+      "year": 1988,
+      "tracks": [
+        "mind"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "leibniz-monadology",
+      "title": "The Monadology",
+      "author": "Gottfried Wilhelm Leibniz",
+      "year": 1714,
+      "tracks": [
+        "mind"
+      ],
+      "level": 4,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "mukherjee-emperor-of-all-maladies",
+      "title": "The Emperor of All Maladies",
+      "author": "Siddhartha Mukherjee",
+      "year": 2010,
+      "tracks": [
+        "body"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "imber-genius-on-the-edge",
+      "title": "Genius on the Edge",
+      "author": "Gerald Imber",
+      "year": 2010,
+      "tracks": [
+        "body"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "wilson-brain-on-porn",
+      "title": "Your Brain on Porn",
+      "author": "Gary Wilson",
+      "year": 2014,
+      "tracks": [
+        "body"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "sun-tzu-art-of-war",
+      "title": "The Art of War",
+      "author": "Sun Tzu",
+      "year": "c. 5th century BCE",
+      "tracks": [
+        "state"
+      ],
+      "level": 1,
+      "topics": [
+        "states"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "rosa-smart-money",
+      "title": "Smart Money",
+      "author": "Brunello Rosa with Casey Larsen",
+      "year": 2024,
+      "tracks": [
+        "state"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "proctor-nazi-war-on-cancer",
+      "title": "The Nazi War on Cancer",
+      "author": "Robert N. Proctor",
+      "year": 1999,
+      "tracks": [
+        "past"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "talese-thy-neighbors-wife",
+      "title": "Thy Neighbor's Wife",
+      "author": "Gay Talese",
+      "year": 1981,
+      "tracks": [
+        "past"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "jorgenson-naval",
+      "title": "The Almanack of Naval Ravikant",
+      "author": "Eric Jorgenson",
+      "year": 2020,
+      "tracks": [
+        "self"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "itzler-living-with-a-seal",
+      "title": "Living with a SEAL",
+      "author": "Jesse Itzler",
+      "year": 2015,
+      "tracks": [
+        "self"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "gospel-of-thomas",
+      "title": "The Gospel of Thomas",
+      "author": "Attributed to Didymos Judas Thomas; trans. Thomas O. Lambdin",
+      "year": "c. 1st–2nd century CE",
+      "tracks": [
+        "self"
+      ],
+      "level": 3,
+      "topics": [
+        "inner-field"
+      ],
+      "status": "draft"
+    },
+    {
+      "slug": "stevenson-jekyll-and-hyde",
+      "title": "Strange Case of Dr Jekyll and Mr Hyde",
+      "author": "Robert Louis Stevenson",
+      "year": 1886,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "camus-the-stranger",
+      "title": "The Stranger",
+      "author": "Albert Camus",
+      "year": 1942,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "crowley-diary-of-a-drug-fiend",
+      "title": "Diary of a Drug Fiend",
+      "author": "Aleister Crowley",
+      "year": 1922,
+      "tracks": [
+        "imagination"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "aesop-fables",
+      "title": "Aesop's Fables",
+      "author": "Aesop",
+      "year": "c. 6th century BCE",
+      "tracks": [
+        "imagination"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
+    },
+    {
+      "slug": "doyle-sherlock-holmes",
+      "title": "The Sign of Four + The Hound of the Baskervilles",
+      "author": "Arthur Conan Doyle",
+      "year": "1890, 1902",
+      "tracks": [
+        "imagination"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "draft"
     }
   ]
 }
