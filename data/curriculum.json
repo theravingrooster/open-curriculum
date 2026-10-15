@@ -1000,7 +1000,7 @@
       "topics": [
         "operator"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "wilson-god-and-larry-ellison",
@@ -1012,7 +1012,7 @@
       ],
       "level": 2,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "gladwell-revenge-tipping-point",
@@ -1024,7 +1024,7 @@
       ],
       "level": 1,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "hawking-brief-history",
@@ -1036,7 +1036,7 @@
       ],
       "level": 2,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "leibniz-monadology",
@@ -1048,7 +1048,7 @@
       ],
       "level": 4,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "mukherjee-emperor-of-all-maladies",
