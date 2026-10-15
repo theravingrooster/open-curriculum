@@ -35,7 +35,7 @@ Implication: when a respectable person seems bound to a disreputable one, the bo
 
 ## The gentlemen's silence
 
-Utterson and his circle are men of reputation who avoid scandal. Utterson's principle, he says, is to let his brother go to the devil in his own way. Enfield's rule is that the more a thing looks odd, the less he asks.
+Utterson and his circle are men of reputation who avoid scandal. Utterson's principle, he says, is to let his brother go to the devil in his own way. Enfield's rule is that the more a thing looks like trouble or scandal, the less he asks.
 
 Their discretion protects Jekyll for a long time. They suspect something shameful, and they choose not to inquire too closely, preferring to preserve appearances. Dr Hastie Lanyon, a former friend who broke with Jekyll over his unorthodox science, is the only one to see the full truth, when Hyde transforms back into Jekyll in front of him. The shock destroys his health, and he dies.
 
@@ -45,9 +45,9 @@ Implication: when everyone in a circle avoids a question, ask what the silence i
 
 ## The growth of Hyde
 
-At first Jekyll controls the transformations, taking the drug to become Hyde and again to return. Hyde's pleasures, never fully described, become steadily more brutal. Then Hyde beats to death an elderly member of Parliament, Sir Danvers Carew, in the street, in a fit of rage witnessed by a maid.
+At first Jekyll controls the transformations, taking the drug to become Hyde and again to return. Hyde's pleasures, never fully described, become steadily more brutal. One morning he wakes in his own bed to find that he has become Hyde without taking the drug. Two months later, Hyde beats to death an elderly member of Parliament, Sir Danvers Carew, in the street, in a fit of rage witnessed by a maid.
 
-Jekyll resolves to give Hyde up and for a time succeeds, returning to sociability and good works. But the change has begun to happen on its own. One day, sitting on a bench in Regent's Park, he finds himself transformed into Hyde without taking the drug. The doses needed to return to Jekyll grow larger.
+Jekyll resolves to give Hyde up and for a time succeeds, returning to sociability and good works. But the involuntary changes return. One day, sitting on a bench in Regent's Park, he finds himself transformed into Hyde again. The doses needed to return to Jekyll grow larger.
 
 The mechanism is that an impulse indulged freely, without the restraint of conscience, gains strength each time, until it no longer needs permission.
 
