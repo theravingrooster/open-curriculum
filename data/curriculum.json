@@ -1098,7 +1098,7 @@
       "topics": [
         "states"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "rosa-smart-money",
@@ -1172,7 +1172,7 @@
       "topics": [
         "inner-field"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "stevenson-jekyll-and-hyde",
@@ -1220,7 +1220,7 @@
       ],
       "level": 1,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "doyle-sherlock-holmes",
@@ -1232,7 +1232,7 @@
       ],
       "level": 1,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     }
   ]
 }
