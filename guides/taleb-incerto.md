@@ -7,7 +7,7 @@ The events that matter most are rare, extreme and unpredictable, so instead of t
 - A Black Swan is a rare event with an extreme impact that is explained only after the fact.
 - In some domains a single observation can dominate the total. Tools built for the bell curve fail there.
 - History shows the survivors, not the losers, so the evidence that would warn us is missing.
-- People are far more confident in their forecasts than their accuracy justifies.
+- People are far more confident in their forecasts than their accuracy justifies, and squeeze an unknown world into tidy categories.
 - Some things are fragile, some robust, and some antifragile: they gain from shocks and volatility.
 - Protect against ruin first. Pair very safe holdings with small bets that have unlimited upside.
 - Decision makers should have skin in the game, sharing the downside of the risks they impose.
@@ -42,15 +42,17 @@ Silent evidence also hides the cost of risk. People who survived a risky course 
 
 Implication: before inferring a cause from a set of successes, ask how many others did the same thing and failed. When you have survived a risk, do not take the survival as evidence that the risk was small.
 
-## Epistemic arrogance and the ludic fallacy
+## Epistemic arrogance and the Procrustean bed
 
-People overestimate what they know. Taleb cites a test in which subjects gave ranges they were 98 percent sure contained the true value of various quantities. The true value fell outside the range 45 percent of the time, not the 2 percent their confidence implied.
+People overestimate what they know. Taleb cites a test in which subjects gave ranges they were 98 percent sure contained the true value of various quantities. The true value fell outside the range 45 percent of the time.
 
-The ludic fallacy, from the Latin for game, is the error of modeling real uncertainty on games of chance, where the odds are known. Taleb's case is a casino that spent heavily on sophisticated surveillance and risk models for cheating and gambling losses. Its four largest losses came from none of them. A white tiger in the casino's star show mauled one of its performers, costing about $100 million. A disgruntled contractor tried to dynamite the casino. The owner's daughter was kidnapped. And an employee failed to file required tax forms with the Internal Revenue Service, exposing the casino to penalties.
+The ludic fallacy, from the Latin for game, is the error of modeling real uncertainty on games of chance, where the odds are known. Taleb's case is a casino that spent heavily on surveillance and gambling-risk models; its four largest losses came from none of them, including a white tiger mauling a performer in its star show, at a cost of about $100 million.
 
-The mechanism is that a model can only price the risks its builders thought of. The risks outside it are unmeasured, and they are where the large losses come from.
+In *The Bed of Procrustes* (2010; expanded 2016), a book of aphorisms, Taleb names the general habit after the host of Greek myth who stretched or cut his guests to fit his bed. Facing the unknown, he writes, people squeeze the world into crisp commoditized ideas, reductive categories and prepackaged narratives. His targets include defining intelligence as what classrooms can test and treating a salary as safety: "The three most harmful addictions are heroin, carbohydrates, and a monthly salary."
 
-Implication: treat any risk estimate as conditional on the model that produced it. Spend some of the effort on the question of what the model leaves out.
+The mechanism is that a model can only price the risks its builders thought of, and the large losses come from outside it.
+
+Implication: treat any risk estimate as conditional on the model that produced it, and ask what the model leaves out.
 
 ## The barbell
 
@@ -96,6 +98,6 @@ Implication: separate risks that can be recovered from and risks that cannot, an
 
 ## Related
 
-- [[taleb-fooled]] — Taleb's first book, on mistaking luck for skill, which these three extend.
+- [[taleb-fooled]] — Taleb's first book, on mistaking luck for skill, which these four extend.
 - [[popper-conjectures]] — the falsificationism behind Taleb's treatment of induction and black swans.
 - [[munger-almanack]] — a case for a few large concentrated bets, against the barbell's many small ones.
