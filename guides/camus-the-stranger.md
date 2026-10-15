@@ -37,9 +37,9 @@ Implication: actions without reasons are still actions, and the absence of a mot
 
 ## The trial
 
-The second half of the novel follows Meursault through prison and trial. The examining magistrate, a devout man, waves a crucifix at him and demands that he repent. Meursault feels nothing and says so, and the magistrate calls him Monsieur Antichrist.
+The second half of the novel follows Meursault through prison and trial. The examining magistrate, a devout man, waves a crucifix at him and demands that he repent. Meursault says he does not believe in God, and the magistrate comes to call him Monsieur Antichrist.
 
-At the trial, the prosecution says little about the killing itself. Instead it calls witnesses from the old people's home to testify that Meursault did not cry at his mother's funeral, smoked and drank coffee beside her body, and began an affair the next day. The prosecutor argues that he buried his mother with a criminal heart, and that a man without a soul is a danger to society. Meursault is sentenced to be beheaded in a public square.
+At the trial, the prosecution argues that the killing was premeditated, but it builds its case above all on Meursault's character. It calls witnesses from the old people's home to testify that Meursault did not cry at his mother's funeral, smoked and drank coffee beside her body, and began an affair the next day. The prosecutor argues that he buried his mother with a criminal heart, and that a man without a soul is a danger to society. Meursault is sentenced to be beheaded in a public square.
 
 Camus later summed up the novel, in a preface for an American edition, as the story of a man condemned because he does not play the game.
 
@@ -51,7 +51,7 @@ Implication: be wary when judgment of a person rests on whether they showed the 
 
 In his cell, awaiting execution, Meursault repeatedly refuses to see the prison chaplain. When the chaplain comes anyway and urges him to turn to God, Meursault erupts, seizing him and shouting that none of the chaplain's certainties is worth one strand of a woman's hair, and that he, Meursault, has been right about his life.
 
-The outburst empties him. Afterward, looking at the night sky, he opens himself for the first time to what he calls the gentle indifference of the world. Finding it so like himself, he feels that he has been happy and is happy still. He hopes only that on the day of his execution there will be a large crowd to greet him with cries of hate.
+The outburst empties him. Afterward, looking at the night sky, he opens himself for the first time to what he calls the gentle indifference of the world. Finding it so like himself, he feels that he had been happy and that he is happy again. He hopes only that on the day of his execution there will be a large crowd to greet him with cries of hate.
 
 The mechanism is that once Meursault gives up hope of meaning or rescue, he is free to accept his life as it was, without regret.
 
@@ -70,7 +70,7 @@ Implication: consider which shared fictions you depend on, and how you treat peo
 ## Where it falls short
 
 - Its victim has no name. The Arab whom Meursault kills is never named or given an inner life, and critics including Edward Said have argued that the novel reflects the blind spots of French colonial Algeria. Kamel Daoud's novel *The Meursault Investigation* (2013) retells the story from the dead man's brother's side.
-- Its trial is weighted to make a point. By having the court condemn Meursault for his behavior at the funeral rather than for the killing, the novel shifts sympathy away from the fact that he shot a man five times.
+- Its trial is weighted to make a point. By having the court dwell on Meursault's behavior at the funeral more than on the killing, the novel shifts sympathy away from the fact that he shot a man five times.
 - Its hero is a thought experiment more than a person. Meursault's near-total lack of emotion serves the philosophy, which limits what the novel can show about real people's moral lives.
 
 ## Related

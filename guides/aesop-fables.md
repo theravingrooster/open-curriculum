@@ -16,9 +16,9 @@ This guide discusses the endings of the fables it describes.
 
 ## Who was Aesop
 
-Aesop is said to have been a slave who lived on the Greek island of Samos in the sixth century BCE; the historian Herodotus mentions him. Little else about him is certain, and many of the fables attributed to him were composed or adapted by others over centuries. The collection grew through ancient compilations and retellings, including the Latin verse of Phaedrus and the Greek verse of Babrius in the first centuries CE, and later collectors added many more. The morals now attached to the fables were often added later as well.
+Aesop is said to have been a slave belonging to Iadmon, a man of the Greek island of Samos, in the sixth century BCE; the historian Herodotus mentions him. Little else about him is certain, and many of the fables attributed to him were composed or adapted by others over centuries. The collection grew through ancient compilations and retellings, including the Latin verse of Phaedrus and the Greek verse of Babrius in the first centuries CE, and later collectors added many more. The morals now attached to the fables were often added later as well.
 
-The fables were part of ancient education and conversation. Plato reports that Socrates, awaiting execution, spent his last days putting Aesop's fables into verse.
+The fables were part of ancient education and conversation. Plato reports that Socrates, in prison awaiting execution, put some of Aesop's fables into verse.
 
 Their form is simple. Animals stand for human types: the cunning fox, the proud lion, the vain crow. A brief situation leads to a sharp turn, and the lesson follows.
 

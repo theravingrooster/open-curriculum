@@ -38,11 +38,11 @@ Implication: if your work is the main source of your stimulation, consider what 
 
 ## The Agra treasure
 
-Mary Morstan comes to Baker Street with a mystery. Her father, an army officer, vanished years earlier, and since then she has received a single pearl every year from an unknown sender. Now a letter asks her to a meeting.
+Mary Morstan comes to Baker Street with a mystery. Her father, an army officer, vanished ten years earlier. Some years later, after she answered a newspaper advertisement asking for her address, she began to receive a single pearl every year from an unknown sender. Now a letter asks her to a meeting.
 
 The trail leads to the Sholto brothers, whose father served with hers in India and came home with a great treasure. When the treasure is found, one brother is murdered in a locked room by a poisoned thorn. Holmes, aided by a tracking dog and a band of street boys, traces the killers: Jonathan Small, a one-legged former soldier, and his companion Tonga, an islander from the Andamans. After a chase down the Thames, Tonga is shot and Small captured. The treasure box is empty. Small has thrown the jewels into the river.
 
-Small tells the story behind it. During the Indian rebellion of 1857, he and three companions murdered a merchant for his jewels, and the treasure brought betrayal and ruin to everyone who held it.
+Small tells the story behind it. During the Indian rebellion of 1857, he and three companions murdered a man posing as a merchant who was carrying a rajah's treasure, and took the jewels. The treasure brought betrayal and ruin to everyone who held it.
 
 The mechanism is that wealth taken by crime binds its holders in suspicion and betrayal, so it destroys them rather than enriching them.
 
@@ -50,7 +50,7 @@ Implication: judge a fortune by how it was obtained. Gains won by wrongdoing car
 
 ## The legend of the hound
 
-*The Hound of the Baskervilles*, serialized in 1901 and 1902, begins with an old family legend. A seventeenth-century ancestor, Hugo Baskerville, was killed on Dartmoor by a spectral hound, and the curse is said to haunt his descendants. Now Sir Charles Baskerville has been found dead on the moor, apparently of fright, and beside his body Dr Mortimer saw the footprints of a gigantic hound.
+*The Hound of the Baskervilles*, serialized in 1901 and 1902, begins with an old family legend. A seventeenth-century ancestor, Hugo Baskerville, was killed on Dartmoor by a spectral hound, and the curse is said to haunt his descendants. Now Sir Charles Baskerville has been found dead on the moor, apparently of fright, and a little distance from his body Dr Mortimer saw the footprints of a gigantic hound.
 
 Holmes refuses the supernatural explanation. He assumes that a human agent is at work and that the legend is being used, perhaps deliberately, to frighten.
 
@@ -66,7 +66,7 @@ Holmes sends Watson to Dartmoor to protect the new heir, Sir Henry Baskerville, 
 
 Each mystery has an innocent or surprising explanation. Barrymore is helping his wife's brother, the convict. The stranger in the hut is Holmes himself, secretly investigating while Watson draws attention. And the friendly Stapleton, who introduces a woman as his sister, has in fact been passing off his wife as his sister to use her in his scheme.
 
-The convict, wearing old clothes of Sir Henry's, is killed by the hound in Sir Henry's place. In the end, Holmes and Watson save Sir Henry from the hound, and Stapleton flees into the Grimpen Mire, a deadly bog, and is never seen again.
+The convict, wearing old clothes of Sir Henry's, is hunted by the hound in Sir Henry's place and falls to his death on the rocks. In the end, Holmes and Watson save Sir Henry from the hound, and Stapleton flees into the Grimpen Mire, a deadly bog, and is never seen again.
 
 The mechanism is that people who seem suspicious often have ordinary secrets, while the dangerous one is often the person who seems most helpful.
 

@@ -4,7 +4,7 @@ Salvation comes not from belief in events or obedience to rules but from underst
 
 ## The main ideas
 
-- The sayings themselves are the path. Whoever finds their interpretation will not taste death.
+- The sayings themselves are the path. Whoever finds their interpretation will not experience death.
 - Seeking is a process that troubles before it astonishes.
 - The kingdom is inside you and outside you, already present but unseen.
 - Self-knowledge is the beginning of spiritual life. Not knowing oneself is a kind of poverty.
@@ -16,9 +16,9 @@ Salvation comes not from belief in events or obedience to rules but from underst
 
 The Gospel of Thomas is a collection of 114 sayings attributed to Jesus, most introduced simply by "Jesus said." Unlike the gospels of the New Testament, it contains no account of Jesus's birth, miracles, death or resurrection. It is only teaching.
 
-A complete copy in Coptic was found in 1945 near Nag Hammadi in Egypt, among a cache of early Christian texts buried in a jar. Fragments of the same work in Greek had been found earlier at Oxyrhynchus, also in Egypt. The text opens: "These are the secret sayings which the living Jesus spoke and which Didymos Judas Thomas wrote down." Thomas O. Lambdin's translation, used here, appears in the standard English edition of the Nag Hammadi texts.
+A complete copy in Coptic was found in 1945 near Nag Hammadi in Egypt, among a cache of mostly early Christian texts buried in a jar. Fragments of the same work in Greek had been found earlier at Oxyrhynchus, also in Egypt. The text opens: "These are the secret sayings which the living Jesus spoke and which Didymos Judas Thomas wrote down." Thomas O. Lambdin's translation, used here, appears in the standard English edition of the Nag Hammadi texts.
 
-Scholars debate its date, with proposals ranging from the late first century to the second, and whether its sayings are independent of the canonical gospels. About half have parallels in Matthew, Mark and Luke.
+Scholars debate its date, with proposals ranging from the mid-first century to the late second, and whether its sayings are independent of the canonical gospels. About half have parallels in Matthew, Mark and Luke.
 
 Implication: read it as a window into how some early Christians understood Jesus, as a teacher of wisdom rather than chiefly as the subject of a story.
 
@@ -46,7 +46,7 @@ Implication: before looking for meaning in some future change, ask what you are 
 
 ## Know yourself
 
-The same saying continues with a challenge. When people come to know themselves, they will be known and will realize that they are children of the living Father. But if they do not know themselves, they live in poverty, and they are that poverty.
+Saying 3 continues with a challenge. When people come to know themselves, they will be known and will realize that they are children of the living Father. But if they do not know themselves, they live in poverty, and they are that poverty.
 
 Another saying makes the point sharper. What a person has within them will save them if they bring it forth; what they lack within them will destroy them.
 

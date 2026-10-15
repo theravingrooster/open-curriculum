@@ -52,7 +52,7 @@ Implication: do not assume that a price is right because a market set it, and do
 
 ## Regulation and its limits
 
-Chancellor closes by describing speculation as an anarchic force. After each crash, it provokes government restriction: new laws, new regulators, new rules on trading and credit. But in time, he argues, it slips its chains and runs amok again, as memories fade and new instruments escape the old rules.
+Chancellor closes by describing speculation as an anarchic force. After each crash, it provokes government restriction: new laws, new regulators, new rules on trading and credit. But in time, he argues, it slips its chains and runs amok again, as memories fade and new instruments escape the old rules. Each generation of investors, having missed the last crash, comes to believe the old lessons do not apply to it.
 
 The mechanism is that regulation is written for the last crisis, while speculation moves to whatever is new and unregulated.
 
