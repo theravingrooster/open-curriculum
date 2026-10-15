@@ -14,7 +14,7 @@ War is a matter of life and death for a state and must be approached through car
 
 ## The text and its author
 
-*The Art of War* is a short Chinese treatise in thirteen chapters, traditionally attributed to Sun Wu, known as Sun Tzu or Master Sun, a general said to have served the state of Wu around the end of the sixth century BCE. The historian Sima Qian, writing about four centuries later, tells the story that the king of Wu tested Sun Tzu by asking him to drill the palace women. When they laughed at his orders, Sun Tzu had the king's two favorite concubines, who led them, executed, and the rest obeyed perfectly.
+*The Art of War* is a short Chinese treatise in thirteen chapters, traditionally attributed to Sun Wu, known as Sun Tzu or Master Sun, a general said to have served the state of Wu around the end of the sixth century BCE. The historian Sima Qian, writing about four centuries later, tells the story that the king of Wu tested Sun Tzu by asking him to drill the palace women. When they laughed at his orders a second time, after he had explained them, Sun Tzu had the king's two favorite concubines, who led them, executed, and the rest obeyed perfectly.
 
 Many scholars believe the text took shape later, during the Warring States period, and may combine the work of several hands. A copy written on bamboo slips, found in a tomb at Yinqueshan in 1972, shows it was circulating by the second century BCE. Lionel Giles's English translation of 1910 remains widely read.
 
@@ -34,7 +34,7 @@ Implication: before any contest, compare your position honestly against your opp
 
 Sun Tzu argues that to fight and win every battle is not the highest skill. The supreme excellence consists in breaking the enemy's resistance without fighting. The best policy is to attack the enemy's strategy, then its alliances, then its army in the field; the worst is to besiege walled cities.
 
-He is equally concerned with cost. An army in the field drains the state's treasury and exhausts its people, and there is no instance of a country benefiting from prolonged warfare. Speed is worth more than cleverness: a quick war, even clumsily fought, is better than a long one.
+He is equally concerned with cost. An army in the field drains the state's treasury and exhausts its people, and there is no instance of a country benefiting from prolonged warfare. He has heard of clumsy haste in war, but never of cleverness joined to long delay: a quick war, even clumsily fought, is better than a long one.
 
 The mechanism is that fighting destroys resources on both sides, so the victor who wins by maneuver keeps what the victor who wins by battle loses.
 
@@ -66,7 +66,7 @@ Implication: secure your own position first, then look for where your opponent i
 
 "If you know the enemy and know yourself, you need not fear the result of a hundred battles," Sun Tzu writes. If you know yourself but not the enemy, for every victory you will suffer a defeat. If you know neither, you will lose every battle.
 
-Knowledge of the enemy, he argues, cannot be obtained from spirits or by deduction from experience. It must come from people. The final chapter describes five kinds of spies, including local inhabitants, officials within the enemy's camp and enemy spies turned to one's own side, and says that no one in the army should be more richly rewarded or more closely trusted.
+Knowledge of the enemy, he argues, cannot be obtained from spirits, inferred from past experience or worked out by calculation. It must come from people. The final chapter describes five kinds of spies, including local inhabitants, officials within the enemy's camp and enemy spies turned to one's own side, and says that no one in the army should be more richly rewarded or more closely trusted.
 
 The mechanism is that the side with better information can apply all the other principles; the side without it is guessing.
 
