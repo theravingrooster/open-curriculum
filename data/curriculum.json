@@ -906,7 +906,7 @@
       "topics": [
         "investor"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "einhorn-fooling-some",
@@ -920,7 +920,7 @@
       "topics": [
         "investor"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "david-pharmagellan",
@@ -934,7 +934,7 @@
       "topics": [
         "investor"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "dalio-principles",
@@ -948,7 +948,7 @@
       "topics": [
         "operator"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "godin-tribes",
@@ -962,7 +962,7 @@
       "topics": [
         "operator"
       ],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "hao-empire-of-ai",
@@ -974,7 +974,7 @@
       ],
       "level": 2,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "wynn-williams-careless-people",
@@ -986,7 +986,7 @@
       ],
       "level": 1,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "ridge-any-dumb-ass",
