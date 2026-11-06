@@ -1075,6 +1075,18 @@
       "status": "draft"
     },
     {
+      "slug": "laughlin-crime-of-reason",
+      "title": "The Crime of Reason",
+      "author": "Robert B. Laughlin",
+      "year": 2008,
+      "tracks": [
+        "mind"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "draft"
+    },
+    {
       "slug": "mukherjee-emperor-of-all-maladies",
       "title": "The Emperor of All Maladies",
       "author": "Siddhartha Mukherjee",
