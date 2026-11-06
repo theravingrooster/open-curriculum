@@ -1015,6 +1015,18 @@
       "status": "published"
     },
     {
+      "slug": "gallagher-turn-down-a-billion",
+      "title": "How to Turn Down a Billion Dollars",
+      "author": "Billy Gallagher",
+      "year": 2018,
+      "tracks": [
+        "firm"
+      ],
+      "level": 1,
+      "topics": [],
+      "status": "published"
+    },
+    {
       "slug": "gladwell-revenge-tipping-point",
       "title": "Revenge of the Tipping Point",
       "author": "Malcolm Gladwell",
@@ -1047,6 +1059,30 @@
         "mind"
       ],
       "level": 4,
+      "topics": [],
+      "status": "published"
+    },
+    {
+      "slug": "saad-consuming-instinct",
+      "title": "The Consuming Instinct",
+      "author": "Gad Saad",
+      "year": 2011,
+      "tracks": [
+        "mind"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "published"
+    },
+    {
+      "slug": "laughlin-crime-of-reason",
+      "title": "The Crime of Reason",
+      "author": "Robert B. Laughlin",
+      "year": 2008,
+      "tracks": [
+        "mind"
+      ],
+      "level": 2,
       "topics": [],
       "status": "published"
     },
@@ -1224,9 +1260,9 @@
     },
     {
       "slug": "doyle-sherlock-holmes",
-      "title": "The Sign of Four + The Hound of the Baskervilles",
+      "title": "A Study in Scarlet + The Sign of Four + The Hound of the Baskervilles",
       "author": "Arthur Conan Doyle",
-      "year": "1890, 1902",
+      "year": "1887, 1890, 1902",
       "tracks": [
         "imagination"
       ],

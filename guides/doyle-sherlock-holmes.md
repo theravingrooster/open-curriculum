@@ -1,24 +1,28 @@
 ## Premise
 
-In two of Arthur Conan Doyle's novels, Sherlock Holmes, a consulting detective in London, solves a murder over a stolen Indian treasure and a death on Dartmoor blamed on a supernatural hound, both narrated by his friend Dr John Watson; together they show a method of thinking that trusts observation and reason over appearance, legend and fear, and the cost to the mind that lives only for problems.
+In three of Arthur Conan Doyle's novels, Sherlock Holmes, a consulting detective in London, solves two murders written off as the work of a mysterious avenger, a murder over a stolen Indian treasure and a death on Dartmoor blamed on a supernatural hound, all narrated by his friend Dr John Watson; together they show a method of thinking that trusts observation and reason over appearance, legend and fear, and the cost to the mind that lives only for problems.
 
-This guide discusses the whole plot of both novels, including the endings.
+This guide discusses the whole plot of all three novels, including the endings.
 
 ## The main ideas
 
 - Careful observation of small details reveals what others overlook.
+- Knowledge is worth storing only if it is useful. A mind cluttered with facts works worse.
 - When you have eliminated the impossible, whatever remains, however improbable, must be the truth.
 - A mind built for problems suffers without them.
 - Wealth gained by crime corrupts everyone who touches it.
 - Apparently supernatural events have natural explanations, often human ones.
-- People and places are rarely what they first appear.
-- A good narrator, slower than the hero, lets the reader follow the reasoning.
+- People and places are rarely what they first appear, and a good narrator, slower than the hero, lets the reader follow the reasoning.
 
 ## The science of deduction
 
-*The Sign of Four*, published in 1890, opens with Holmes demonstrating his method on Watson. Watson hands him a watch and challenges him to deduce something about its owner. From scratches, pawnbrokers' marks and the state of the keyhole, Holmes deduces that it belonged to Watson's elder brother, a man of careless habits who had good prospects, fell into poverty and drank. Watson is hurt, thinking Holmes must have made inquiries. Holmes explains each inference.
+*A Study in Scarlet*, first published in *Beeton's Christmas Annual* in November 1887, introduces both men. Watson, an army surgeon wounded at the Battle of Maiwand, is back in London and needs lodgings. A friend introduces him to Holmes at St Bartholomew's Hospital, and Holmes's first words to him are "You have been in Afghanistan, I perceive."
 
-Later in the novel, Holmes states the principle most associated with him: when you have eliminated the impossible, whatever remains, however improbable, must be the truth.
+Soon afterward Watson reads a magazine article claiming that a trained observer can read a person's history and trade at a glance. He calls it ineffable twaddle. Holmes tells him he wrote it.
+
+*The Sign of Four*, published in 1890, opens with Holmes demonstrating his method on Watson again. Watson hands him a watch and challenges him to deduce something about its owner. From scratches, pawnbrokers' marks and the state of the keyhole, Holmes deduces that it belonged to Watson's elder brother, a man of careless habits who had good prospects, fell into poverty and drank. Holmes explains each inference.
+
+Later in that novel, Holmes states the principle most associated with him: when you have eliminated the impossible, whatever remains, however improbable, must be the truth.
 
 His method combines close observation, broad specialized knowledge and the willingness to follow evidence to unexpected conclusions.
 
@@ -26,9 +30,27 @@ The mechanism is that most people see without observing. Attending deliberately 
 
 Implication: before drawing a conclusion, look for the small, specific details of a situation and ask what each one implies.
 
+## The brain attic
+
+Living with Holmes, Watson is puzzled by the gaps in his knowledge. Holmes knows chemistry deeply and the history of every crime of the century, but he does not know that the Earth goes round the Sun, and, once told, says he will do his best to forget it. Watson draws up a list headed "Sherlock Holmes—his limits," rating his knowledge of literature, philosophy and astronomy as nil.
+
+Holmes explains: "I consider that a man's brain originally is like a little empty attic," to be stocked only with furniture the owner will use. Every useless fact crowds out a useful one, and it is a mistake to think the room can expand without limit.
+
+The mechanism is that attention and memory are limited, so what a person chooses not to learn shapes their thinking as much as what they learn.
+
+Implication: decide deliberately what knowledge your work requires, and do not feel obliged to stock your mind with everything.
+
+## Rache
+
+The case begins at an empty house in Lauriston Gardens, off the Brixton Road, where an American, Enoch Drebber, lies dead without a wound. On the wall, written in blood, is the word "RACHE." The Scotland Yard detective Lestrade takes it for an unfinished "Rachel"; Holmes knows it is German for revenge. Drebber's secretary, Joseph Stangerson, is later found stabbed in his hotel, with the same word on the wall and a box holding two pills, one harmless, one poison.
+
+Holmes has his band of street boys find the killer and snaps handcuffs on a cabman, Jefferson Hope, called up to Baker Street. The second half of the novel leaves London for Utah decades earlier, telling how Drebber and Stangerson's Mormon community forced the woman Hope loved, Lucy Ferrier, into marriage with Drebber, and how she died. Hope pursued both men for years, letting each choose a pill. He dies of an aneurysm before he can be tried, and the newspapers give the credit to the Scotland Yard men.
+
+Implication: a crime that looks senseless may follow a long and private logic, which only patient reasoning will uncover.
+
 ## A mind that rebels at stagnation
 
-The same novel opens with Holmes injecting himself with cocaine. When Watson protests, Holmes explains that his mind rebels at stagnation. Given a problem, he needs no artificial stimulant; without one, he cannot bear the dullness of existence.
+*The Sign of Four* opens with Holmes injecting himself with cocaine. When Watson protests, Holmes explains that his mind rebels at stagnation. Given a problem, he needs no artificial stimulant; without one, he cannot bear the dullness of existence.
 
 The case that follows rescues him from boredom. At its end, Watson announces that he is engaged to Mary Morstan, the client, and observes that he has gained a wife and others the credit, and asks what remains for Holmes. Holmes answers that for him there still remains the cocaine bottle.
 
@@ -74,7 +96,7 @@ Implication: separate what is merely odd from what is actually threatening, and 
 
 ## Watson
 
-Both novels are narrated by Watson, a doctor and former army surgeon, who is intelligent and brave but slower than Holmes. He records what he sees without understanding it, so that the reader, like Watson, is given the clues but not the conclusions.
+All three novels are narrated by Watson, apart from the Utah chapters of *A Study in Scarlet*, which have an unnamed narrator. Watson is a doctor and former army surgeon, who is intelligent and brave but slower than Holmes. He records what he sees without understanding it, so that the reader, like Watson, is given the clues but not the conclusions.
 
 In *The Hound of the Baskervilles*, Doyle gives Watson his largest role, sending him alone to the moor while Holmes stays hidden. His reports, and his mistakes, carry much of the novel.
 
@@ -84,7 +106,7 @@ Implication: when explaining a line of reasoning, show the evidence before the c
 
 ## Where it falls short
 
-- Its imperial outlook is ugly. *The Sign of Four* depicts Tonga as a savage and treats Indian and Andamanese characters through crude racial stereotypes common in Victorian Britain.
+- Its portraits of other peoples are crude. *The Sign of Four* depicts Tonga as a savage and treats Indian and Andamanese characters through Victorian racial stereotypes, and *A Study in Scarlet* portrays the Mormon church as a murderous theocracy, drawing on anti-Mormon writing that historians consider inaccurate.
 - Its women are mostly passive. Mary Morstan exists largely to be rescued and married, and Beryl Stapleton is a pawn in her husband's scheme.
 - Its detective is infallible by design. Holmes's deductions often depend on coincidence and on inferences that only the author can guarantee are correct, so the method looks more reliable on the page than it would be in life.
 
