@@ -43,11 +43,17 @@
       "order": 7
     },
     {
+      "id": "universe",
+      "name": "The Universe",
+      "description": "Physics and the natural world: how nature actually works, from atoms to galaxies, explained by the scientists who worked it out.",
+      "order": 8
+    },
+    {
       "id": "imagination",
       "name": "The Imagination",
       "description": "Novels and science fiction that carry ideas no argument can: power, freedom, technology, and the human condition.",
       "guide": "fiction",
-      "order": 8
+      "order": 9
     }
   ],
   "topics": [
@@ -1044,9 +1050,9 @@
       "author": "Stephen Hawking",
       "year": 1988,
       "tracks": [
-        "mind"
+        "universe"
       ],
-      "level": 2,
+      "level": 1,
       "topics": [],
       "status": "published"
     },
@@ -1208,6 +1214,42 @@
       "topics": [
         "inner-field"
       ],
+      "status": "published"
+    },
+    {
+      "slug": "feynman-lectures-1",
+      "title": "The Feynman Lectures on Physics, Volume I",
+      "author": "Richard P. Feynman, Robert B. Leighton and Matthew Sands",
+      "year": 1963,
+      "tracks": [
+        "universe"
+      ],
+      "level": 2,
+      "topics": [],
+      "status": "published"
+    },
+    {
+      "slug": "feynman-lectures-2",
+      "title": "The Feynman Lectures on Physics, Volume II",
+      "author": "Richard P. Feynman, Robert B. Leighton and Matthew Sands",
+      "year": 1964,
+      "tracks": [
+        "universe"
+      ],
+      "level": 3,
+      "topics": [],
+      "status": "published"
+    },
+    {
+      "slug": "feynman-lectures-3",
+      "title": "The Feynman Lectures on Physics, Volume III",
+      "author": "Richard P. Feynman, Robert B. Leighton and Matthew Sands",
+      "year": 1965,
+      "tracks": [
+        "universe"
+      ],
+      "level": 3,
+      "topics": [],
       "status": "published"
     },
     {
