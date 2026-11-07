@@ -1226,7 +1226,7 @@
       ],
       "level": 2,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "feynman-lectures-2",
@@ -1238,7 +1238,7 @@
       ],
       "level": 3,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "feynman-lectures-3",
@@ -1250,7 +1250,7 @@
       ],
       "level": 3,
       "topics": [],
-      "status": "draft"
+      "status": "published"
     },
     {
       "slug": "stevenson-jekyll-and-hyde",

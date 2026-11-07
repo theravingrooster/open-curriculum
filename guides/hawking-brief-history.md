@@ -82,3 +82,4 @@ Implication: understanding the laws of nature is a different question from under
 
 - [[leibniz-monadology]] — an earlier attempt to explain why there is a universe at all, from first principles.
 - [[parrish-mental-models]] — thinking from first principles, the habit physics depends on.
+- [[feynman-lectures-1]] — the physics behind the story, taught from first principles by one of its masters.
