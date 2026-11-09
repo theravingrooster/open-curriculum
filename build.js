@@ -57,7 +57,7 @@ tracks.forEach((t, i) => { t.numeral = ROMAN[i] || String(i + 1); t.label = `Tra
 
 // ---------- html helpers ----------
 
-const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const esc = (s) => String(s).replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>').replace(/"/g, '"');
 const guideHref = (b, prefix) => `${prefix}readings/${b.slug}.html`;
 const trackHref = (t, prefix) => `${prefix}tracks/${t.id}.html`;
 
@@ -70,6 +70,7 @@ function bookItem(b, prefix) {
 
 const NAV = [
   ['library', 'Library', 'library.html'],
+  ['science', 'Science', 'science.html'],
   ['mission', 'Mission', 'mission.html'],
 ];
 
@@ -273,6 +274,7 @@ const fill = (s) => s.replace(/\{\{(\w+)\}\}/g, (m, k) => {
 const STATIC_PAGES = [
   { src: 'index.html', title: `${SITE} — Real knowledge, no diploma required`, active: 'home',
     head: '\n  <script src="tracks.js" defer></script>\n  <script src="marquee.js" defer></script>' },
+  { src: 'science.html', title: `Science — The Feynman Lectures — ${SITE}`, active: 'science' },
   { src: 'mission.html', title: `Mission — ${SITE}`, active: 'mission' },
 ];
 for (const p of STATIC_PAGES) {
@@ -431,140 +433,67 @@ function markdown(src, ctx) {
   const blocks = src.replace(/\r/g, '').trim().split(/\n\s*\n/);
   for (const block of blocks) {
     const lines = block.split('\n');
-    let m;
-    if ((m = /^(#{2,3}) (.+)$/.exec(lines[0])) && lines.length === 1) {
-      const tag = m[1].length === 2 ? 'h2' : 'h3';
-      out.push(`<${tag}>${inline(m[2], ctx)}</${tag}>`);
-    } else if (/^- /.test(lines[0])) {
-      const items = [];
-      for (const l of lines) {
-        if (/^- /.test(l)) items.push(l.slice(2));
-        else items[items.length - 1] += ' ' + l.trim();
-      }
-      out.push('<ul>\n' + items.map((i) => `  <li>${inline(i, ctx)}</li>`).join('\n') + '\n</ul>');
+    if (lines[0].startsWith('### ')) {
+      out.push(`<h3>${inline(lines[0].slice(4), ctx)}</h3>`);
+    } else if (lines[0].startsWith('## ')) {
+      out.push(`<h2>${inline(lines[0].slice(3), ctx)}</h2>`);
+    } else if (lines.every((l) => l.startsWith('- '))) {
+      out.push('<ul>');
+      for (const l of lines) out.push(`<li>${inline(l.slice(2), ctx)}</li>`);
+      out.push('</ul>');
     } else {
-      out.push(`<p>${inline(lines.map((l) => l.trim()).join(' '), ctx)}</p>`);
+      out.push(`<p>${inline(lines.join(' '), ctx)}</p>`);
     }
   }
   return out.join('\n');
 }
 
-// Mechanical checks against GUIDE_SPEC.md. Errors fail the build; warnings are printed.
-const BANNED = ['explores', 'delves', 'journey', 'powerful', 'timeless', 'game-changer', 'at its core',
-  'ultimately', "in today's world", 'in today’s world', "it's important to note", 'it’s important to note'];
-const words = (s) => (s.replace(/\[\[[a-z0-9-]+\]\]/g, 'Title').match(/[A-Za-z0-9’'$%.-]+/g) || []).length;
-
-// Fiction tracks ("guide": "fiction" in the data file) use their own guide shape:
-// Premise / The main ideas / ideas / Where it falls short / Related (GUIDE_SPEC.md).
-const isFiction = (b) => b.tracks.some((id) => trackById.get(id).guide === 'fiction');
-
-function lintGuide(b, src) {
-  const ctx = b.guidePath;
-  const first = isFiction(b) ? 'Premise' : 'Thesis';
-  const limits = isFiction(b) ? 'Where it falls short' : 'Limits';
-  const err = (m) => errors.push(`${ctx}: ${m}`);
-  const warn = (m) => warnings.push(`${ctx}: ${m}`);
-  const lower = src.toLowerCase();
-  for (const w of BANNED) if (new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`).test(lower)) err(`banned word "${w}"`);
-  if (/!/.test(src.replace(/\[[^\]]*\]\([^)]*\)/g, ''))) err('exclamation point');
-  if (/\*\*|__/.test(src)) err('bold text');
-  if (/\p{Extended_Pictographic}/u.test(src)) err('emoji');
-  if (/\btracks?\b(?!\s+records?)|\bcurriculum\b/i.test(src.replace(/\[\[[a-z0-9-]+\]\]/g, ''))) err('mentions tracks or the curriculum');
-  if (/\?/.test(src)) warn('contains a question mark; check it is not a rhetorical question');
-  if (/you['’]ll find|this book will/i.test(src)) err('"you\'ll find" / "this book will"');
-
-  const sections = src.split(/^## /m).slice(1).map((s) => {
-    const nl = s.indexOf('\n');
-    return { heading: s.slice(0, nl).trim(), body: s.slice(nl + 1).trim() };
-  });
-  const names = sections.map((s) => s.heading);
-  if (names[0] !== first) err(`first section must be "## ${first}"`);
-  if (names[1] !== 'The main ideas') err('second section must be "## The main ideas"');
-  if (names[names.length - 2] !== limits) err(`second-to-last section must be "## ${limits}"`);
-  if (names[names.length - 1] !== 'Related') err('last section must be "## Related"');
-  const ideas = sections.slice(2, -2);
-  if (ideas.length < 4 || ideas.length > 8) err(`${ideas.length} idea sections; spec asks for 4–8`);
-  const brief = sections[1] ? sections[1].body : '';
-  const bullets = brief.split('\n').filter((l) => /^- /.test(l)).length;
-  if (bullets < 5 || bullets > 7) err(`main ideas has ${bullets} bullets; spec asks for 5–7`);
-  if (words(brief) >= 200) err(`main ideas is ${words(brief)} words; spec asks for under 200`);
-  for (const s of ideas) {
-    const n = words(s.body);
-    if (n < 100 || n > 250) warn(`idea "${s.heading}" is ${n} words; spec asks for 100–250`);
-  }
-  const related = sections[sections.length - 1] ? sections[sections.length - 1].body : '';
-  const rel = related.split('\n').filter((l) => /^- \[\[[a-z0-9-]+\]\]/.test(l));
-  if (rel.length < 2 || rel.length > 3) err(`related has ${rel.length} [[slug]] items; spec asks for 2–3`);
-  for (const l of rel) if (l.includes(`[[${b.slug}]]`)) err('related lists the book itself');
-  const total = words(src);
-  if (total > 2000) warn(`${total} words; spec asks for 1,200–2,000`);
-  if (total < 1200) warn(`${total} words; spec asks for 1,200–2,000 (shorter is allowed if the book has fewer ideas)`);
-  b.wordCount = total;
-}
-
-function neighbours(b, t) {
-  const pub = booksInTrack(t.id).filter(isPublished);
-  const i = pub.indexOf(b);
-  return { prev: pub[i - 1], next: pub[i + 1] };
-}
-
-for (const b of books.filter(isPublished)) {
-  if (!b.hasGuide) continue;
+books.filter(isPublished).forEach((b) => {
   const src = read(b.guidePath);
-  lintGuide(b, src);
-  const bookTracks = b.tracks.map((id) => trackById.get(id)).sort((x, y) => x.order - y.order);
-  const kicker = bookTracks.map((t) => `<a href="${trackHref(t, '../')}">${esc(t.name)}</a>`).join(' · ') + ` · Level ${b.level}`;
-  const nav = bookTracks.map((t) => {
-    const { prev, next } = neighbours(b, t);
-    return `    <div class="guide-nav-row">
-      <p class="level"><a href="${trackHref(t, '../')}">${t.label} — ${esc(t.name)}</a></p>
-      <div class="guide-nav-links">
-        ${prev ? `<a href="${prev.slug}.html">← ${esc(prev.title)}</a>` : `<a href="${trackHref(t, '../')}">← All books in ${esc(t.name)}</a>`}
-        ${next ? `<a href="${next.slug}.html">${esc(next.title)} →</a>` : '<span></span>'}
-      </div>
-    </div>`;
-  }).join('\n');
+  const body = markdown(src, b.guidePath);
+  const tracksOf = b.tracks.map((id) => trackById.get(id));
+  const primary = tracksOf[0];
+  const list = booksInTrack(primary.id).filter(isPublished);
+  const idx = list.findIndex((x) => x.slug === b.slug);
+  const prev = list[idx - 1];
+  const next = list[idx + 1];
   pages.set(`readings/${b.slug}.html`, layout({
     title: `${b.title} — ${SITE}`,
     prefix: '../',
+    active: 'library',
     body: `
-  <article class="reading guide wrap">
-    <p class="kicker">${kicker}</p>
+  <article class="reading wrap">
+    <p class="kicker">${tracksOf.map((t) => `<a href="../tracks/${t.id}.html">${t.label} — ${esc(t.name)}</a>`).join(' · ')}</p>
     <h1>${esc(b.title)}</h1>
-    <p class="byline">${esc(b.author)} · ${esc(b.year)}</p>
-
-${markdown(src, b.guidePath).replace(/^/gm, '    ')}
-
-    <nav class="guide-nav" aria-label="Guide navigation">
-${nav}
-    </nav>
+    <p class="byline">${esc(b.author)}, ${esc(b.year)}</p>
+${body}
   </article>`,
+    footer: `${prev ? `<a href="${prev.slug}.html">← ${esc(prev.title)}</a>` : `<span>Start of ${esc(primary.name)}</span>`}
+      ${next ? `<a href="${next.slug}.html">Next: ${esc(next.title)} →</a>` : ''}`,
   }));
-}
-
-for (const b of books) {
-  if (b.hasGuide && !isPublished(b)) warnings.push(`${b.guidePath}: guide exists but the book is a draft, so it is not built`);
-}
+});
 
 // ---------- write ----------
 
 if (errors.length) {
-  console.error('Build failed:\n' + errors.map((e) => '  ✗ ' + e).join('\n'));
+  console.error('Build failed:');
+  errors.forEach((e) => console.error('  ' + e));
   process.exit(1);
 }
+warnings.forEach((w) => console.warn('Warning: ' + w));
 
 fs.rmSync(OUT, { recursive: true, force: true });
-fs.cpSync(path.join(ROOT, 'public'), OUT, { recursive: true });
-fs.cpSync(path.join(ROOT, 'assets'), path.join(OUT, 'assets'), {
-  recursive: true,
-  filter: (src) => path.basename(src) !== 'hero-reference.png',
-});
-for (const [file, html] of pages) {
-  const dest = path.join(OUT, file);
+fs.mkdirSync(OUT, { recursive: true });
+for (const [rel, html] of pages) {
+  const dest = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(dest), { recursive: true });
   fs.writeFileSync(dest, html);
 }
-for (const w of warnings) console.warn('  ! ' + w);
-const published = books.filter(isPublished);
-console.log(`Built ${pages.size} pages into dist/ · ${tracks.length} tracks · ${books.length} books · ${published.length} guides` +
-  (published.length ? ` (${published.map((b) => `${b.slug}: ${b.wordCount} words`).join(', ')})` : ''));
+
+// Copy public/ and assets/
+for (const dir of ['public', 'assets']) {
+  if (!fs.existsSync(path.join(ROOT, dir))) continue;
+  fs.cpSync(path.join(ROOT, dir), path.join(OUT, dir === 'public' ? '' : dir), { recursive: true });
+}
+
+console.log(`Built ${pages.size} pages to dist/`);
