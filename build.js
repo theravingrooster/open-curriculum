@@ -256,6 +256,211 @@ for (const p of STATIC_PAGES) {
   pages.set(p.src, layout({ title: p.title, active: p.active, head: p.head || '', body: fill(read(`pages/${p.src}`)) }));
 }
 
-// Note: the rest of the original build.js logic for library, tracks, topics, credits, guides, and write is preserved in the full file history.
-// For this update we focus on the Science integration; full original logic remains in prior commits.
-console.log('Science page integrated. Full build logic available in repo history.');
+// ---------- library ----------
+
+pages.set('library.html', layout({
+  title: `Library — ${SITE}`,
+  active: 'library',
+  body: `
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">The library</p>
+      <h1>Every book, by track.</h1>
+      <p class="lede">${books.length} books across ${tracks.length} tracks. Published guides are linked; drafts are listed without a page yet.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="tracks track-filter" role="group" aria-label="Show books from">
+        <button type="button" class="track filter-box is-active" data-track="all" aria-pressed="true">
+          <span class="n">All</span>
+          <span class="name">All tracks</span>
+        </button>
+${tracks.map((t) => `        <button type="button" class="track filter-box" data-track="${t.id}" aria-pressed="false">
+          <span class="n">${t.label}</span>
+          <span class="name">${esc(t.name)}</span>
+        </button>`).join('\n')}
+      </div>
+    </div>
+  </section>
+
+  <section class="library-list">
+    <div class="wrap">
+      <div class="toc">
+${tracks.map((t) => `        <div class="toc-track" id="${t.id}">
+          <h2><a href="${trackHref(t, '')}">${t.label} — ${esc(t.name)}</a></h2>
+          <p class="desc">${esc(t.description)}</p>
+          <ul class="toc-list">
+${booksInTrack(t.id).map((b) => '            ' + bookItem(b, '')).join('\n')}
+          </ul>
+        </div>`).join('\n\n')}
+      </div>
+    </div>
+  </section>`,
+}));
+
+// ---------- track pages ----------
+
+tracks.forEach((t, i) => {
+  const prev = tracks[i - 1];
+  const next = tracks[i + 1];
+  const list = booksInTrack(t.id);
+  const levels = [...new Set(list.map((b) => b.level))];
+  pages.set(`tracks/${t.id}.html`, layout({
+    title: `${t.label} — ${t.name} — ${SITE}`,
+    prefix: '../',
+    active: 'library',
+    body: `
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">${t.label}</p>
+      <h1>${esc(t.name)}</h1>
+      <p class="lede">${esc(t.description)}</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap topics">
+${levels.map((lv) => `      <div class="topic">
+        <h3>Level ${lv}</h3>
+        <ul class="readings">
+${list.filter((b) => b.level === lv).map((b) => '          ' + bookItem(b, '../')).join('\n')}
+        </ul>
+      </div>`).join('\n')}
+    </div>
+  </section>`,
+    footer: `${prev ? `<a href="${prev.id}.html">← ${esc(prev.name)}</a>` : `<span>${t.label} of ${ROMAN[tracks.length - 1] || tracks.length}</span>`}
+      ${next ? `<a href="${next.id}.html">Next: ${esc(next.name)} →</a>` : ''}`,
+  }));
+});
+
+// ---------- topics ----------
+
+pages.set('topics.html', layout({
+  title: `Topics — ${SITE}`,
+  active: 'topics',
+  body: `
+  <div class="hero">
+    <div class="wrap">
+      <p class="kicker">Browse by topic</p>
+      <h1>Tracks are doors. Topics are rooms.</h1>
+      <p class="lede">The tracks set the sequence. These shelves cut across them, for clusters that are real but should not get their own track.</p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap topics">
+${(data.topics || []).map((tp) => `      <div class="topic" id="${tp.id}">
+        <h3>${esc(tp.name)}</h3>
+        <p class="desc">${esc(tp.description)}</p>
+        <ul class="readings">
+${books.filter((b) => (b.topics || []).includes(tp.id)).map((b) => '          ' + bookItem(b, '')).join('\n')}
+        </ul>
+      </div>`).join('\n')}
+    </div>
+  </section>`,
+}));
+
+// ---------- credits ----------
+
+const credited = authors.filter((a) => a.portrait && a.credit);
+const placeholders = authors.filter((a) => !a.portrait);
+pages.set('credits.html', layout({
+  title: `Credits — ${SITE}`,
+  body: `
+  <article class="reading wrap">
+    <p class="kicker">Credits</p>
+    <h1>Credits</h1>
+    <ul>
+${credited.map((a) => `      <li><strong>${esc(a.name)}</strong> — portrait by ${esc(a.credit.creator)}, <a href="${a.credit.licenseUrl}" rel="license noopener">${esc(a.credit.license)}</a>, <a href="${a.credit.source}" rel="noopener">source</a>.</li>`).join('\n')}
+      <li>The home page background is rendered with <a href="https://threejs.org/" rel="noopener">Three.js</a>, © Three.js Authors, <a href="https://github.com/mrdoob/three.js/blob/dev/LICENSE" rel="license noopener">MIT License</a>.</li>
+      <li>Type is Source Serif 4 and Source Sans 3 by Adobe, <a href="https://openfontlicense.org/" rel="license noopener">SIL Open Font License</a>, served by Google Fonts.</li>
+    </ul>
+  </article>`,
+}));
+
+// ---------- guides ----------
+
+// Minimal Markdown: ## / ### headings, "- " bullets, paragraphs, *em*, [text](url),
+// and [[slug]] for a book in the data file (linked if published, plain title if draft).
+function inline(s, ctx) {
+  return esc(s)
+    .replace(/\[\[([a-z0-9-]+)\]\]/g, (m, slug) => {
+      const b = bookBySlug.get(slug);
+      if (!b) { errors.push(`${ctx}: [[${slug}]] is not a book in data/curriculum.json`); return m; }
+      return isPublished(b) && !b.hidden ? `<a href="${b.slug}.html"><em>${esc(b.title)}</em></a>` : `<em>${esc(b.title)}</em>`;
+    })
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/(^|[^\*\w])\*([^\*\n]+)\*(?![\*\w])/g, '$1<em>$2</em>');
+}
+
+function markdown(src, ctx) {
+  const out = [];
+  const blocks = src.replace(/\r/g, '').trim().split(/\n\s*\n/);
+  for (const block of blocks) {
+    const lines = block.split('\n');
+    if (lines[0].startsWith('### ')) {
+      out.push(`<h3>${inline(lines[0].slice(4), ctx)}</h3>`);
+    } else if (lines[0].startsWith('## ')) {
+      out.push(`<h2>${inline(lines[0].slice(3), ctx)}</h2>`);
+    } else if (lines.every((l) => l.startsWith('- '))) {
+      out.push('<ul>');
+      for (const l of lines) out.push(`<li>${inline(l.slice(2), ctx)}</li>`);
+      out.push('</ul>');
+    } else {
+      out.push(`<p>${inline(lines.join(' '), ctx)}</p>`);
+    }
+  }
+  return out.join('\n');
+}
+
+books.filter(isPublished).forEach((b) => {
+  const src = read(b.guidePath);
+  const body = markdown(src, b.guidePath);
+  const tracksOf = b.tracks.map((id) => trackById.get(id));
+  const primary = tracksOf[0];
+  const list = booksInTrack(primary.id).filter(isPublished);
+  const idx = list.findIndex((x) => x.slug === b.slug);
+  const prev = list[idx - 1];
+  const next = list[idx + 1];
+  pages.set(`readings/${b.slug}.html`, layout({
+    title: `${b.title} — ${SITE}`,
+    prefix: '../',
+    active: 'library',
+    body: `
+  <article class="reading wrap">
+    <p class="kicker">${tracksOf.map((t) => `<a href="../tracks/${t.id}.html">${t.label} — ${esc(t.name)}</a>`).join(' · ')}</p>
+    <h1>${esc(b.title)}</h1>
+    <p class="byline">${esc(b.author)}, ${esc(b.year)}</p>
+${body}
+  </article>`,
+    footer: `${prev ? `<a href="${prev.slug}.html">← ${esc(prev.title)}</a>` : `<span>Start of ${esc(primary.name)}</span>`}
+      ${next ? `<a href="${next.slug}.html">Next: ${esc(next.title)} →</a>` : ''}`,
+  }));
+});
+
+// ---------- write ----------
+
+if (errors.length) {
+  console.error('Build failed:');
+  errors.forEach((e) => console.error('  ' + e));
+  process.exit(1);
+}
+warnings.forEach((w) => console.warn('Warning: ' + w));
+
+fs.rmSync(OUT, { recursive: true, force: true });
+fs.mkdirSync(OUT, { recursive: true });
+for (const [rel, html] of pages) {
+  const dest = path.join(OUT, rel);
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.writeFileSync(dest, html);
+}
+
+// Copy public/ and assets/
+for (const dir of ['public', 'assets']) {
+  if (!fs.existsSync(path.join(ROOT, dir))) continue;
+  fs.cpSync(path.join(ROOT, dir), path.join(OUT, dir === 'public' ? '' : dir), { recursive: true });
+}
+
+console.log(`Built ${pages.size} pages to dist/`);
