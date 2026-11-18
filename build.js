@@ -397,6 +397,7 @@ function inline(s, ctx) {
       return isPublished(b) && !b.hidden ? `<a href="${b.slug}.html"><em>${esc(b.title)}</em></a>` : `<em>${esc(b.title)}</em>`;
     })
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2">$1</a>')
+    .replace(/\*\*([^\*\n]+)\*\*/g, '<strong>$1</strong>')
     .replace(/(^|[^\*\w])\*([^\*\n]+)\*(?![\*\w])/g, '$1<em>$2</em>');
 }
 
