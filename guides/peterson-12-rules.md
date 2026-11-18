@@ -21,5 +21,5 @@ The book is a work of popular psychology and cultural commentary rather than a c
 
 ## Related
 
-- [[frankl-mans-search]] — a prior account of meaning as the response to unavoidable suffering.
+- Viktor Frankl, *Man’s Search for Meaning* — a prior account of meaning as the response to unavoidable suffering.
 - [[greene-mastery]] — a later treatment of the long apprenticeship required to become competent in a domain.
