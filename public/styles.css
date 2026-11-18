@@ -656,3 +656,38 @@ footer.site .wrap {
   header.site .wrap { flex-direction: column; gap: 0.5rem; }
   .portrait-row { grid-template-columns: 1fr; }
 }
+
+/* Library search */
+.library-search {
+  margin-top: 1.25rem;
+  max-width: 28rem;
+}
+.library-search input[type="search"] {
+  width: 100%;
+  padding: 0.55rem 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  outline: none;
+}
+.library-search input[type="search"]:focus {
+  border-color: var(--ink-soft);
+}
+.library-search input[type="search"]::placeholder {
+  color: var(--ink-soft);
+  opacity: 0.7;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
