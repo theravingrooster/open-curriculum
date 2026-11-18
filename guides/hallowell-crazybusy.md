@@ -20,4 +20,4 @@ The evidence is clinical observation and case material rather than controlled tr
 ## Related
 
 - [[kahneman-thinking]] — System 1 / System 2 provides a complementary account of why overload produces shallow, error-prone decisions.
-- [[newport-deep-work]] — a later treatment of the same attention problem focused on protecting long blocks of focused time.
+- Cal Newport, *Deep Work* — a later treatment of the same attention problem focused on protecting long blocks of focused time.
