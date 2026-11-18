@@ -261,12 +261,17 @@ for (const p of STATIC_PAGES) {
 pages.set('library.html', layout({
   title: `Library — ${SITE}`,
   active: 'library',
+  head: '\n  <script src="library.js" defer></script>',
   body: `
   <div class="hero">
     <div class="wrap">
       <p class="kicker">The library</p>
       <h1>Every book, by track.</h1>
       <p class="lede">${books.length} books across ${tracks.length} tracks. Published guides are linked; drafts are listed without a page yet.</p>
+      <div class="library-search">
+        <label class="sr-only" for="library-search">Search books</label>
+        <input id="library-search" type="search" placeholder="Search by title or author…" autocomplete="off" />
+      </div>
     </div>
   </div>
 
